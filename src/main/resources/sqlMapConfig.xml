@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+	PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+		
+		<typeAliases>
+				<package name="com.bean"/>
+		</typeAliases>
+		<plugins><!-- mybatis 分页插件 -->
+    		<!-- com.github.pagehelper为PageHelper类所在包名 -->
+    		<plugin interceptor="com.github.pagehelper.PageInterceptor">
+       		 <!-- 使用下面的方式配置参数，后面会有所有的参数介绍 
+       		 <property name="param1" value="value1"/>   -->
+			</plugin>
+		</plugins>
+</configuration>

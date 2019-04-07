@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.JinhuoMapper">
+		<select id="GetAllJinhuo" resultType="Jinhuo">
+				select * from jinhuo
+		</select>
+		<update id="DelTableJinhuo">
+   				 truncate TABLE jinhuo
+		</update>
+		<delete id="DelJinhuo">   
+				delete from jinhuo where drugname=#{drugname} and changshang=#{changshang} and pihao=#{pihao}  and amount=#{amount}
+		</delete>
+		<insert id="AddJinhuo" parameterType="Jinhuo">
+				insert into jinhuo  values(#{drugname},#{changshang},#{beginprice},#{price},#{amount},#{sum},#{begindate},#{date},#{pihao},#{beizhu},#{location},#{unit},#{guige},#{tiaoxingma},#{jinhuo_time},#{gonghuoshang})
+		</insert>
+		<!-- ///////////////////////////////// -->
+		<insert id="AddJinhuorecords" parameterType="Jinhuo">
+				insert into jinhuorecords  values(#{drugname},#{changshang},#{beginprice},#{price},#{amount},#{sum},#{begindate},#{date},#{pihao},#{beizhu},#{location},#{unit},#{guige},#{tiaoxingma},#{jinhuo_time},#{gonghuoshang})
+		</insert>
+		<select id="CountGhsRecords" resultType="java.lang.Integer">
+				select count(*) from jinhuorecords where gonghuoshang = #{gonghuoshang}
+		</select>
+		<delete id="DelJinhuoRecords">   
+				delete from jinhuorecords where gonghuoshang=#{gonghuoshang}
+		</delete>
+		
+		
+</mapper>

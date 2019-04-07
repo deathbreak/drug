@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+  		<display-name>ssm_spring</display-name>
+  		<welcome-file-list>
+  					<welcome-file>index.jsp</welcome-file>
+  		</welcome-file-list>
+  		  	
+  		<context-param>
+  					<param-name>contextConfigLocation</param-name>
+  					<param-value>classpath:spring_config.xml</param-value>
+  		</context-param>
+  		<listener>  
+  					<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  		</listener>  	
+  		  		
+  <servlet>
+    <servlet-name>drug</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+   	<!-- springmvc配置文件默认的名字 [<servlet-name>-servlet.xml] -->
+   		<init-param>
+   				<param-name>contextConfigLocation</param-name>
+   				<param-value>classpath:springmvc-config.xml</param-value>
+   		</init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>drug</servlet-name>
+    <url-pattern>/</url-pattern>
+  </servlet-mapping>
+
+  <!-- 解决springmvc的post乱码问题
+  		相当于原生servlet:
+  		request.setCharacterEncoding("UTF-8");
+  		response.setCharacterEncoding("UTF-8");
+  -->	
+ 		<filter>		
+			<filter-name>CharacterEncodingFilter</filter-name>
+			<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>			
+			<init-param>
+				<param-name>encoding</param-name>
+				<param-value>UTF-8</param-value>
+			</init-param>
+			<init-param>
+				<param-name>forceRequestEncoding</param-name>
+				<param-value>true</param-value>
+			</init-param>
+			<init-param>
+				<param-name>forceResponseEncoding</param-name>
+				<param-value>true</param-value>
+			</init-param>
+		</filter>
+		<filter-mapping>
+			<filter-name>CharacterEncodingFilter</filter-name>
+			<url-pattern>/*</url-pattern>
+		</filter-mapping>
+	
+	
+	<!-- restful风格的fileter  form隐藏域提交_methon="DELETE/PUT等" -->
+	<filter>  
+  	 	<filter-name>hiddenHttpMethodFilter</filter-name>  
+  	 	<filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>  
+	</filter>  
+	<filter-mapping>  
+   		<filter-name>hiddenHttpMethodFilter</filter-name>  
+   		<url-pattern>/*</url-pattern>  
+	</filter-mapping>  
+</web-app>

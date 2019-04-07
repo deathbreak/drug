@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.SellMapper">
+		<delete id="DeleteSellByDCPA">   
+				delete from sell where drugname=#{drugname} and changshang=#{changshang} and pihao=#{pihao} and amount=#{amount}
+		</delete>
+		<select id="GetAllSell" resultType="Sell">
+				select * from sell
+		</select>
+		<select id="QuerySellByDCP" resultType="Sell">
+				select * from sell where drugname=#{drugname} and changshang=#{changshang} and pihao=#{pihao}
+		</select>
+		<insert id="AddSell" parameterType="Sell">
+				insert into sell values(#{drugname},#{changshang},#{price},#{date},#{pihao},#{beizhu},#{count},#{unit},#{guige},#{amount},#{sum})
+		</insert>
+		<update id="UpdateSellCountSum">
+				update sell set `amount`=#{amount},`sum`=#{sum} where `drugname`=#{drugname} and `changshang`=#{changshang} and `pihao`=#{pihao}
+		</update>
+		
+		<update id="DelTableSell">
+   				 truncate TABLE sell
+		</update>
+		
+		<!-- sellrecords -->
+		<insert id="AddSellrecords" parameterType="Sellrecords">
+				insert into sellrecords values(#{drugname},#{changshang},#{price},#{date},#{pihao},#{beizhu},#{unit},#{guige},#{amount},#{sum},#{selltime})
+		</insert>
+		<select id="GetAllSellrecords" resultType="Sellrecords">
+				select * from sellrecords
+		</select>
+		<select id="GetRecordsByST" resultType="Sellrecords">
+				select * from sellrecords where selltime like "%"#{selltime}"%"
+		</select>
+		<delete id="DeleteSellrecords">  
+				delete from sellrecords where drugname=#{drugname} and changshang=#{changshang} and pihao=#{pihao} and selltime=#{selltime}
+		</delete>
+		<!-- sellover -->
+		<insert id="AddSellover" parameterType="Sellover">
+				insert into sellover values(#{drugname},#{changshang},#{price},#{date},#{pihao},#{beizhu},#{count},#{unit},#{guige})
+		</insert>
+		<select id="GetAllSellover" resultType="Sellover">
+				select * from sellover
+		</select>
+		<delete id="DelSellover">  
+				delete from sellover where drugname=#{drugname} and changshang=#{changshang} and pihao=#{pihao}
+		</delete>
+</mapper>
+
+
+
+
+

@@ -1,0 +1,162 @@
+package com.service;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import com.bean.Sell;
+import com.bean.Sellover;
+import com.bean.Sellrecords;
+import com.bean.Store;
+import com.mapper.SellMapper;
+import com.mapper.StoreMapper;
+import com.utils.*;
+
+
+
+@Service
+public class SellService {
+		
+	@Autowired
+	SellMapper sell;
+	
+	@Autowired
+	StoreMapper store;
+	
+	public List<Sell> GetAllSellService(){
+		return sell.GetAllSell();
+	}
+
+	public void DeleteSellService(String drugname, String changshang,
+			String pihao, String amount) {
+		sell.DeleteSellByDCPA(drugname, changshang, pihao, amount);
+		
+	}
+
+	public List<Store> ForSellSelectService(String qd) {
+		if(qd==""||qd==null){
+			List<Store> re = store.GetAllStore();
+			return re;
+		}else{
+			if(Boolean_tiaoxingma.CheckParam(qd)){
+				List<Store> re2 = store.QueryBySTiao(qd);
+				return re2;
+			}else{
+				List<Store> re3 = store.QueryBySName(qd);
+				return re3;
+			}
+		}
+	}
+
+	public List<Store> QueryDCPinStoreService(String drugname, String changshang,
+			String pihao) {
+		return store.QueryByNCP(drugname, changshang, pihao);
+	}
+
+	public void ProSellService(String drugname, String changshang,
+			String pihao, String amount) {
+		
+			List<Store> sssss = store.QueryByNCP(drugname, changshang, pihao);
+			
+			if(!sssss.isEmpty()){
+				Store xs = sssss.get(0);
+				List<Sell> checksell = sell.QuerySellByDCP(drugname, changshang, pihao);
+				int flag = checksell.size();
+				if(flag<=0){
+					String sum = "";
+					sum=StringPro.mul(xs.getPrice(),amount);
+					Sell as = new Sell(xs.getDrugname(),xs.getChangshang(),xs.getPrice(), xs.getDate(),xs.getPihao(),xs.getBeizhu(), xs.getCount(), xs.getUnit(), xs.getGuige(), amount, sum);
+					sell.AddSell(as);
+				}else{
+					Sell dd = checksell.get(0);
+					String newamount=StringPro.add(dd.getAmount(),amount);
+                    String sum2=StringPro.mul(newamount,dd.getPrice());
+                    sell.UpdateSellCountSum(newamount, sum2, drugname, changshang, pihao);
+				}
+			}
+			
+	}
+
+	public void SellitService() {
+		List<Sell> updatesell = sell.GetAllSell();
+		if(!updatesell.isEmpty()){
+			SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
+            String date2=df.format(new Date());
+			for (Sell udsell : updatesell) {
+				sell.AddSellrecords(new Sellrecords(udsell.getDrugname(), udsell.getChangshang(), udsell.getPrice(), udsell.getDate(), udsell.getPihao(), udsell.getBeizhu(), udsell.getUnit(), udsell.getGuige(), udsell.getAmount(), udsell.getSum(), date2));
+				String newcount=StringPro.sub(udsell.getCount(),udsell.getAmount());
+				store.UpdateStoreCount(newcount, udsell.getDrugname(), udsell.getChangshang(), udsell.getPihao());
+				if(newcount.equals("0")){
+					sell.AddSellover(new Sellover(udsell.getDrugname(), udsell.getChangshang(), udsell.getPrice(), udsell.getDate(), udsell.getPihao(), udsell.getBeizhu(), newcount, udsell.getUnit(), udsell.getGuige()));
+                    store.DeleteCountZero();
+                }
+			}
+			sell.DelTableSell();
+		}
+	}
+
+	public void PrintService() {
+		List<Sell> check = sell.GetAllSell();
+		if(!check.isEmpty()){
+			Print p=new Print();
+			String sum="0";
+			for (int a=check.size()-1;a>=0;a--) {
+				Sell ff=(Sell)check.get(a);
+                sum=StringPro.add(sum,ff.getSum());
+			}
+			p.printSheet("0001","久合院药店","李群",sum,"现金","普通会员","7802273","江坡渡大桥边",check);
+		}
+	}
+	
+	public List<Sellrecords> GetRecordsService(String selltime){
+		if(selltime.equals("")||selltime==null){
+			return sell.GetAllSellrecords();
+		}else{
+			return sell.GetRecordsByST(selltime);
+		}
+	}
+
+	public void DelRecordsService(String drugname, String changshang,
+			String pihao, String selltime) {
+		sell.DeleteSellrecords(drugname, changshang, pihao, selltime);
+		
+	}
+	public List<Sellover> GetASService(){
+		return sell.GetAllSellover();
+	}
+
+	public void DelSelloverService(String drugname, String changshang,
+			String pihao) {
+		sell.DelSellover(drugname, changshang, pihao);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

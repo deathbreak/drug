@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.DrugMapper">
+		<select id="QueryByNameCS" resultType="Drug">
+				select * from druginfo where `drugname`=#{drugname} and `changshang`=#{changshang}
+		</select>	
+		<select id="QueryByTiao" resultType="Drug">
+				select * from druginfo where `tiaoxingma`=#{tiaoxingma} 
+		</select>	
+		<insert id="AddDrug" parameterType="Drug">
+		insert into druginfo(`drugname`,`changshang`,`beizhu`,`location`,`unit`,`guige`,`tiaoxingma`)values(#{drugname},#{changshang},#{beizhu},#{location},#{unit},#{guige},#{tiaoxingma})
+		</insert>
+		<delete id="DeleteDrug">   
+			delete from druginfo where `drugname`=#{drugname} and `changshang`=#{changshang}
+		</delete>
+		<select id="GetAllDrug" resultType="Drug">
+				select * from druginfo
+		</select>
+		<select id="QueryByName" resultType="Drug">
+				select * from druginfo where `drugname` like "%"#{drugname}"%"
+		</select>
+		<update id="Update">
+				update druginfo set drugname=#{dd.drugname},changshang=#{dd.changshang},beizhu=#{dd.beizhu},location=#{dd.location},unit=#{dd.unit},guige=#{dd.guige},tiaoxingma=#{dd.tiaoxingma} where drugname=#{olddn} and changshang = #{oldcs}
+		</update>
+</mapper>
