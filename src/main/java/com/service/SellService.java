@@ -1,6 +1,7 @@
 package com.service;
 
 import java.text.SimpleDateFormat;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
@@ -124,10 +125,12 @@ public class SellService {
 			p.printSheet("0001","久合院药店","李群",sum,"现金","普通会员","7802273","江坡渡大桥边",check);
 		}
 	}
-	
+	//倒序输出结果
 	public List<Sellrecords> GetRecordsService(String selltime){
 		if(selltime.equals("")||selltime==null){
-			return sell.GetAllSellrecords();
+			List<Sellrecords> re = sell.GetAllSellrecords();
+			Collections.reverse(re);
+			return re;
 		}else{
 			return sell.GetRecordsByST(selltime);
 		}
