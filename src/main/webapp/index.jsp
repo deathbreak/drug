@@ -10,7 +10,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>销售管理系统</title>
-	<script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>	
+	<script src="static-res/js/jquery.js"></script>	
 	<link href="static-res/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
 	<link href="static-res/css/index_css.css" rel="stylesheet">
 	<script src="static-res/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>	

@@ -66,83 +66,41 @@ public class LoginController {
 	}
 	
 	@RequestMapping("/date")  //date 效期提示
-	public String to_date(HttpSession hs,Map<String,Object> map){
-		Manager fl = (Manager) hs.getAttribute("login");
-		if(fl!=null) { 
+	public String to_date(Map<String,Object> map){
 			map.put("datetips", SS.CheckStoreService());
 			return "date/date";
-		}else{
-			return "../../index";
-		}
 	}
 	@RequestMapping("/rx")  //rx 
-	public String to_rx(HttpSession hs){
-		Manager fl = (Manager) hs.getAttribute("login");
-		if(fl!=null) { 
+	public String to_rx(){
 			return "rx/rx";
-		}else{
-			return "../../index";
-		}
 	}
 	@RequestMapping("/sellover")  //sellover 
-	public String to_sellover(HttpSession hs,Map<String,Object> map){
-		Manager fl = (Manager) hs.getAttribute("login");
-		if(fl!=null) { 
+	public String to_sellover(Map<String,Object> map){
 			map.put("sellover", SellS.GetASService());
 			return "sellover/sellover";
-		}else{
-			return "../../index";
-		}
 	}
-	//delsellover
-	@RequestMapping("/delsellover")  //sellover 
-	public String to_delsellover(HttpSession hs,String drugname,String changshang,String pihao){
-		Manager fl = (Manager) hs.getAttribute("login");
-		if(fl!=null) { 
+	@RequestMapping("/delsellover")  //delsellover
+	public String to_delsellover(String drugname,String changshang,String pihao){
 			SellS.DelSelloverService(drugname,changshang,pihao);
 			return "redirect:/sellover";
-		}else{
-			return "../../index";
-		}
 	}
-	
 	@RequestMapping("/storetip")  //storetip 
-	public String to_storetip(HttpSession hs){
-		Manager fl = (Manager) hs.getAttribute("login");
-		if(fl!=null) { 
+	public String to_storetip(){
 			return "storetip/storetip";
-		}else{
-			return "../../index";
-		}
 	}
 	@RequestMapping(value="/tips")  //tips销售记录
-	public String to_tips(HttpSession hs,Map<String,Object> map){
-		Manager fl = (Manager) hs.getAttribute("login");
-		if(fl!=null) { 
+	public String to_tips(Map<String,Object> map){
 			map.put("alltips", SellS.GetRecordsService(""));
 			return "tips/tips";
-		}else{
-			return "../../index";
-		}
 	}
 	@RequestMapping(value="/gettips",method=RequestMethod.POST)  //tips销售记录
-	public String to_gettips(HttpSession hs,String selltime,Map<String,Object> map){
-		Manager fl = (Manager) hs.getAttribute("login");
-		if(fl!=null) { 
+	public String to_gettips(String selltime,Map<String,Object> map){
 			map.put("alltips", SellS.GetRecordsService(selltime));
 			return "tips/tips";
-		}else{
-			return "../../index";
-		}
 	}
-	@RequestMapping(value="/deltips",method=RequestMethod.POST)  //tips销售记录
-	public String to_deltips(HttpSession hs,String drugname,String changshang,String pihao,String selltime){
-		Manager fl = (Manager) hs.getAttribute("login");
-		if(fl!=null) { 
+	@RequestMapping(value="/deltips",method=RequestMethod.POST)  //deltips销售记录
+	public String to_deltips(String drugname,String changshang,String pihao,String selltime){
 			SellS.DelRecordsService(drugname, changshang, pihao, selltime);
 			return "redirect:/tips";
-		}else{
-			return "../../index";
-		}
 	}
 }

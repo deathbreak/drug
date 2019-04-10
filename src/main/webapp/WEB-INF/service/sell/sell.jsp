@@ -11,7 +11,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     
     
     <title>销售管理系统</title>
-    <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>	
+    <script src="static-res/js/jquery.js"></script>	
 	<link href="static-res/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
 	<link href="static-res/css/main.css" rel="stylesheet">
 	<script src="static-res/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
@@ -121,6 +121,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div>
 					<a class="btn btn-info btn-lg" href="<%=basePath%>sellit" role="button">结算</a>
 					<a class="btn btn-primary btn-lg" href="#" role="button" disabled>打印小票</a>
+					<!-- printsell -->
 			</div>
 		</div>
 		

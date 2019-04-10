@@ -33,7 +33,17 @@
 			<property name="basename" value="i18n"></property>
 	</bean>
 	
-	
+	<!-- 拦截器配置，登录拦截器 -->
+	<mvc:interceptors>
+			<mvc:interceptor>
+					<mvc:mapping path="/**"/>
+					<mvc:exclude-mapping path="/static-res/**"/>
+					<mvc:exclude-mapping path="/index.jsp" />
+					<mvc:exclude-mapping path="/login" />
+					<mvc:exclude-mapping path="/" />
+					<bean class="com.interceptors.LoginInterceptor"></bean>
+			</mvc:interceptor>
+	</mvc:interceptors>
 	<!-- 处理静态资源不能访问等 -->
 	
 	
