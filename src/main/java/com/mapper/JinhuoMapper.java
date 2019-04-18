@@ -17,4 +17,6 @@ public interface JinhuoMapper {
 		void AddJinhuorecords(Jinhuo j);
 		int CountGhsRecords(String gonghuoshang);
 		void DelJinhuoRecords(String gonghuoshang);
+		List<Jinhuo> GAJRecords();
+		List<Jinhuo> GJRGHS(String ghs);
 }

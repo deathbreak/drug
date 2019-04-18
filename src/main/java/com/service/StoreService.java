@@ -116,4 +116,7 @@ public class StoreService {
 			return re;
 		}
 	}
+	public List<Store> YJService(int c){
+		return store.StoreYJ(c);
+	}
 }

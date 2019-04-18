@@ -1,6 +1,7 @@
 package com.service;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
@@ -8,24 +9,14 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+import com.bean.Rxdrug;
+import com.bean.Rxperson;
 import com.bean.Sell;
 import com.bean.Sellover;
 import com.bean.Sellrecords;
 import com.bean.Store;
+import com.mapper.RxdrugMapper;
+import com.mapper.RxpersonMapper;
 import com.mapper.SellMapper;
 import com.mapper.StoreMapper;
 import com.utils.*;
@@ -41,6 +32,11 @@ public class SellService {
 	@Autowired
 	StoreMapper store;
 	
+	@Autowired
+	RxdrugMapper rdm;
+	
+	@Autowired
+	RxpersonMapper rpm;
 	public List<Sell> GetAllSellService(){
 		return sell.GetAllSell();
 	}
@@ -95,12 +91,22 @@ public class SellService {
 			
 	}
 
-	public void SellitService() {
+	public List<Rxdrug> SellitService() {
 		List<Sell> updatesell = sell.GetAllSell();
 		if(!updatesell.isEmpty()){
+			
+			
 			SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
             String date2=df.format(new Date());
+            List<Rxdrug> CheckRxdrug = new ArrayList<Rxdrug>();
 			for (Sell udsell : updatesell) {
+				
+				if(udsell.getBeizhu().equals("处方药")) {
+					Rxdrug rd = new Rxdrug(date2,udsell.getDrugname(),udsell.getChangshang(),udsell.getDate(),udsell.getPihao(),udsell.getAmount());
+					rdm.AddRxdrug(rd);
+					CheckRxdrug.add(rd);
+				}
+				
 				sell.AddSellrecords(new Sellrecords(udsell.getDrugname(), udsell.getChangshang(), udsell.getPrice(), udsell.getDate(), udsell.getPihao(), udsell.getBeizhu(), udsell.getUnit(), udsell.getGuige(), udsell.getAmount(), udsell.getSum(), date2));
 				String newcount=StringPro.sub(udsell.getCount(),udsell.getAmount());
 				store.UpdateStoreCount(newcount, udsell.getDrugname(), udsell.getChangshang(), udsell.getPihao());
@@ -110,6 +116,14 @@ public class SellService {
                 }
 			}
 			sell.DelTableSell();
+			if(CheckRxdrug.size()>0) {
+				return CheckRxdrug;
+			}else {
+				return null;
+			}
+			
+		}else {
+			return null;
 		}
 	}
 
@@ -148,6 +162,23 @@ public class SellService {
 	public void DelSelloverService(String drugname, String changshang,
 			String pihao) {
 		sell.DelSellover(drugname, changshang, pihao);
+	}
+	/**
+	 * 
+	 * @return 未记录的处方药条数
+	 */
+	public Integer RxCountService() {
+		return rdm.CountNullRx();
+	}
+
+	public String AddRxPersonService(Rxperson rx) {
+			List<Rxperson> check = rpm.GetByTime(rx.getTime());
+			if(check.size()==0) {
+				rpm.AddRxperson(rx);
+				return "添加处方药信息成功";
+			}else {
+				return "添加失败,已经添加了这个处方药信息";
+			}
 	}
 }
 

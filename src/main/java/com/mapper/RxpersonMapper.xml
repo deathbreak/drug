@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.RxpersonMapper">
+		<insert id="AddRxperson" parameterType="Rxperson">
+			insert into rxperson 
+			values(#{time},#{name},#{gendar},#{age},#{phone},#{location},#{hospital},#{htime},#{yz},#{ysname},#{zdys})
+		</insert>
+		<select id="GetByTime" resultType="Rxperson">
+			select * from rxperson where `time` = #{time}
+		</select>
+		<select id="GetequalsTime" resultType="java.lang.String">
+			SELECT rxdrug.time from rxdrug,rxperson where rxdrug.time = rxperson.time group by time
+		</select>
+		<select id="GetDateTime" resultType="java.lang.String">
+			SELECT * from (SELECT rxdrug.time from rxdrug,rxperson where rxdrug.time = rxperson.time group by time)as a where a.time like "%"#{time}"%"
+		</select>
+		<update id="UpdateRxp" parameterType="Rxperson">
+			update rxperson set `name`=#{name},`gendar`=#{gendar},`age`=#{age},`phone`=#{phone},`location`=#{location},`hospital`=#{hospital},`htime`=#{htime},`yz`=#{yz},`ysname`=#{ysname},`zdys`=#{zdys} where `time`=#{time} 
+		</update>
+		<delete id="DelRxp">
+			delete from rxperson where `time` = #{time}
+		</delete>
+</mapper>

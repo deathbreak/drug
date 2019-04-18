@@ -53,6 +53,61 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</div>
 			</nav>
 		</div>
+		<div class="row">
+			<h4>设置预警数量:</h4>
+			<form action="<%=basePath%>storetip" method="post">
+				<select name="c">
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+					<option>6</option>
+					<option>7</option>
+					<option>8</option>
+					<option>9</option>
+					<option>10</option>
+				</select>
+				<button type="submit">提交</button>
+			</form>
+		</div>
+		<c:if test="${empty yj}">
+				<div class="row">
+					没有记录。
+				</div>
+		</c:if>
+		<c:if test="${yj.size()>0 }">
+			<div class="row">
+				<div class="col-md-12">
+					<table class="table table-hover table-condensed table-bordered">
+						<tr>
+							<th>药品名称</th>
+							<th>厂商</th>
+							<th>销售价格</th>
+							<th>有效期至</th>
+							<th>批号</th>
+							<th>备注</th>
+							<th>单位</th>
+							<th>规格</th>
+							<th>数量</th>
+						</tr>
+						<c:forEach items="${yj }" var="dq">
+							<tr>
+								<td>${dq.drugname }</td>
+								<td>${dq.changshang }</td>
+								<td>${dq.price }</td>
+								<td>${dq.date }</td>
+								<td>${dq.pihao }</td>
+								<td>${dq.beizhu }</td>
+								<td>${dq.unit }</td>
+								<td>${dq.guige }</td>
+								<td>${dq.count }</td>
+							</tr>
+						</c:forEach>
+					</table>
+				</div>
+			</div>
+			</c:if>
 	</div>
   </body>
 </html>

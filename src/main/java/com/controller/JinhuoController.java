@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.bean.Drug;
@@ -30,11 +31,16 @@ public class JinhuoController {
 			map.put("jinhuo", JS.GetAllJinhuoService());
 			return "tostore/tostore";
 	}
-	@RequestMapping("/jhrecords")  //jhrecords
-	public String to_jhrecords(){
+	
+	@RequestMapping("/jhrecords")  //jhrecords查看进货记录
+	public String to_jhrecords(@RequestParam(value="pn",defaultValue="1")Integer pn,
+			@RequestParam(value="querydrug",defaultValue="")String qd,Map<String,Object> map){
+			map.put("queryresult",JS.QueryJFYService(pn,qd));
+			map.put("querystring", qd);
+			map.put("ghsinfo", JS.GetAllGhsService());
 			return "tostore/jhrecords";
 	}
-	@RequestMapping("/ghsinfo")  //jhrecords
+	@RequestMapping("/ghsinfo")  //ghsinfo
 	public String to_ghsinfo(){
 			return "tostore/ghsinfo";
 	}

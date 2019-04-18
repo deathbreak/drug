@@ -27,8 +27,9 @@
 		<update id="UpdateStoreSomeInfo">
 				UPDATE store SET `beginprice`=#{beginprice},`price`=#{price},`begindate`=#{begindate},`date`=#{date},`pihao`=#{pihao},`count`=#{count} WHERE drugname=#{drugname} and changshang=#{changshang} and pihao=#{guige}
 		</update>
-		
-		
+		<select id="StoreYJ" resultType="Store">
+				SELECT * from store where `count` &lt;= #{count}
+		</select>
 		<delete id="DeleteCountZero">   
 				delete from store where count='0'
 		</delete>

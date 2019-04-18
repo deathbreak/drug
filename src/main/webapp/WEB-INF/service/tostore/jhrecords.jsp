@@ -62,6 +62,116 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</ul>
 		</div>
 		
+		<div class="row">
+			<form action="<%=basePath%>jhrecords" method="post">
+				<select style="height:20px" name="querydrug">
+					<option>点击选择查看对应供货商的进货记录</option>
+					<c:if test="${not empty ghsinfo }">
+						<c:forEach items="${ghsinfo }" var="ghs">
+							<option>${ghs.gonghuoshang }</option>
+						</c:forEach>
+					</c:if>
+				</select>
+				<button type="submit" class="btn btn-info btn-sm">查看</button>
+				<span>${queryresult.list[0].gonghuoshang }:</span>
+			</form>
+		</div>
+		
+		<!--  -->
+		<c:if test="${queryresult.list.size()==0}">
+			<div class="row">
+				<div class="page-header">
+					<h3 class="text-center">没有相关进货记录</h3>
+				</div>
+			</div>
+		</c:if>
+		<c:if test="${queryresult.list.size()>0}">
+			<div class="row">
+				<div class="col-md-12">
+					<table class="table table-hover table-condensed table-bordered">
+						<tr>
+							<th>药品名称</th>
+							<th>厂商</th>
+							<th>备注</th>
+							<th>数量</th>
+							<th>有效期</th>
+							<th>批号</th>
+							<td>进货时间</td>
+							<th>供货商</th>
+						</tr>
+						<c:forEach items="${queryresult.list }" var="dq">
+							<tr>
+								<td>${dq.drugname }</td>
+								<td>${dq.changshang }</td>
+								<td>${dq.beizhu }</td>
+								<td>${dq.amount }</td>
+								<td>${dq.date }</td>
+								<td>${dq.pihao }</td>
+								<td>${dq.jinhuo_time }</td>
+								<td>${dq.gonghuoshang }</td>
+							</tr>
+						</c:forEach>
+					</table>
+				</div>
+			</div>
+			<!--  -->
+			
+			<div class="row">
+				<div class="col-md-6" style="padding-top:27px"><strong>当前第${queryresult.pageNum}页,总${queryresult.pages}页,共${queryresult.total}条记录</strong></div>
+				<div class="col-md-6">
+					<nav aria-label="Page navigation">
+					<ul class="pagination">
+						<li><a href="<%=basePath%>jhrecords?pn=1&querydrug=${querystring }">首页</a></li>
+						<c:if test="${queryresult.hasPreviousPage }">
+							<li><a href="<%=basePath%>jhrecords?pn=${queryresult.pageNum - 1}&querydrug=${querystring }"
+								aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
+							</a></li>
+						</c:if>
+
+
+						<c:forEach items="${queryresult.navigatepageNums }" var="page_Num">
+							<c:if test="${page_Num == queryresult.pageNum}">
+								<li class="active"><a href="#">${page_Num }</a></li>
+							</c:if>
+							<c:if test="${page_Num != queryresult.pageNum}">
+								<li><a href="<%=basePath%>jhrecords?pn=${page_Num }&querydrug=${querystring }">${page_Num }</a></li>
+							</c:if>
+						</c:forEach>
+						<c:if test="${queryresult.hasNextPage }">
+							<li><a href="<%=basePath%>jhrecords?pn=${queryresult.pageNum + 1}&querydrug=${querystring }"
+								aria-label="Next"> <span aria-hidden="true">&raquo;</span>
+							</a></li>
+						</c:if>
+
+						<li><a href="<%=basePath%>jhrecords?pn=${queryresult.pages}&querydrug=${querystring }">末页</a></li>
+						<!--  -->
+						<li>
+							<div class="btn-group dropup">
+								<button type="button" class="btn btn-default dropdown-toggle"
+									data-toggle="dropdown" aria-haspopup="true"
+									aria-expanded="false">
+									跳转 <span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu">
+									<c:forEach var="x" begin="1" end="${queryresult.pages}"
+										step="10">
+										<li><a
+											href="<%=basePath%>jhrecords?pn=${x}&querydrug=${querystring }">跳转至第${x }页</a></li>
+									</c:forEach>
+								</ul>
+							</div>
+						</li>
+						<!--  -->
+					</ul>
+					</nav>
+				</div>
+			</div>
+			<!--  -->
+		</c:if>
+		<!--  -->
+		
+		
+		
 	</div>
   </body>
 </html>

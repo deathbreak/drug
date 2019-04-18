@@ -12,6 +12,8 @@ import com.bean.Jinhuo;
 import com.bean.Json;
 import com.bean.Msg;
 import com.bean.Store;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.mapper.DrugMapper;
 import com.mapper.GonghuoshangMapper;
 import com.mapper.JinhuoMapper;
@@ -62,7 +64,7 @@ public class JinhuoService {
 		public void DelGhsAndRecordsService(String it){
 			ghs.DelGHS(it);
 			jin.DelJinhuoRecords(it);
-		}
+			}
 		/**
 		 * del check
 		 * @param it
@@ -130,6 +132,20 @@ public class JinhuoService {
 					List<Drug> re3 = drug.QueryByName(qd);
 					return re3;
 				}
+			}
+		}
+		public PageInfo<Jinhuo> QueryJFYService(Integer pn, String qd) {
+			if(qd==""||qd==null){
+				PageHelper.startPage(pn, 8);
+				List<Jinhuo> re = jin.GAJRecords();
+				//使用pageinfo包装查询后的结果，只需要将pageinfo交给页面就行了PageInfo(ee,5)  5是连续显示多少页	
+				PageInfo<Jinhuo> page_1 = new PageInfo<Jinhuo>(re,5);
+				return page_1;
+			}else{
+					PageHelper.startPage(pn, 8);
+					List<Jinhuo> re3 = jin.GJRGHS(qd);
+					PageInfo<Jinhuo> page_3 = new PageInfo<Jinhuo>(re3,5);
+					return page_3;
 			}
 		}
 }

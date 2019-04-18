@@ -1,5 +1,6 @@
 package com.controller;
 
+import java.util.List;
 import java.util.Map;
 
 
@@ -8,6 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.bean.Rxdrug;
+import com.bean.Rxperson;
 import com.service.SellService;
 
 
@@ -54,15 +57,28 @@ public class SellController {
 	
 	//sellit
 	@RequestMapping(value="/sellit")  
-	public String to_sellit(){
-			SeS.SellitService();
+	public String to_sellit(Map<String,Object> map){
+		List<Rxdrug> check = SeS.SellitService();
+		if(check==null) {
 			return "redirect:/sell";
+		}else {
+			map.put("rxinfo", check);
+			map.put("rxcount", SeS.RxCountService());
+			return "sell/sell";
+		}
 	}
 	//printsell
 	@RequestMapping(value="/printsell")  
 	public String to_printsell(){
 			SeS.PrintService();
 			return "redirect:/sell";
+	}
+	//
+	//addrxperson
+	@RequestMapping(value="/addrxperson")  
+	public String to_addRxperson(Rxperson Rx,Map<String,Object> map){
+		map.put("msg", SeS.AddRxPersonService(Rx));
+		return "sell/sell";
 	}
 }
 

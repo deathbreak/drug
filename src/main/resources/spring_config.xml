@@ -46,7 +46,7 @@
 		<!-- 配置事务通知 -->
 		<tx:advice id="txAdvice" transaction-manager="transactionManager">
 				<tx:attributes>
-						<tx:method name="*Service"/>
+						<tx:method name="*Service" propagation="REQUIRED"/>
 						<tx:method name="update*Service" isolation="DEFAULT" propagation="REQUIRED" read-only="false"/>
 						<tx:method name="get*Service" read-only="true"/>
 				</tx:attributes>

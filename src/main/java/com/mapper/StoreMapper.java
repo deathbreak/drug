@@ -22,6 +22,12 @@ public interface StoreMapper {
 	 */
 	void DeleteCountZero();
 	/**
+	 * 库存预警
+	 * @param c (预警的数量)
+	 * @return
+	 */
+	List<Store> StoreYJ(int c);
+	/**
 	 * 使用时这个方法时注意,把原批号pihao就赋值给Store.guige,
 	 * 然后把要改的批号pihao赋值给Store.pihao
 	 */

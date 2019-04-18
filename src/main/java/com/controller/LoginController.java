@@ -70,10 +70,6 @@ public class LoginController {
 			map.put("datetips", SS.CheckStoreService());
 			return "date/date";
 	}
-	@RequestMapping("/rx")  //rx 
-	public String to_rx(){
-			return "rx/rx";
-	}
 	@RequestMapping("/sellover")  //sellover 
 	public String to_sellover(Map<String,Object> map){
 			map.put("sellover", SellS.GetASService());
@@ -84,8 +80,15 @@ public class LoginController {
 			SellS.DelSelloverService(drugname,changshang,pihao);
 			return "redirect:/sellover";
 	}
-	@RequestMapping("/storetip")  //storetip 
-	public String to_storetip(){
+	@RequestMapping("/storetip")  //storetip ¿â´æÔ¤¾¯
+	public String to_storetip(@RequestParam(value="c",required=false,defaultValue="1")String c,Map<String,Object> map){
+		int a = 0;
+		try {
+			a = Integer.parseInt(c);
+		} catch (Exception e) {
+			a = 1;
+		}
+			map.put("yj", SS.YJService(a));
 			return "storetip/storetip";
 	}
 	@RequestMapping(value="/tips")  //tipsÏúÊÛ¼ÇÂ¼

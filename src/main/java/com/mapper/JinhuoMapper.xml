@@ -25,6 +25,10 @@
 		<delete id="DelJinhuoRecords">   
 				delete from jinhuorecords where gonghuoshang=#{gonghuoshang}
 		</delete>
-		
-		
+		<select id="GAJRecords" resultType="Jinhuo">
+				select * from jinhuorecords
+		</select>
+		<select id="GJRGHS" resultType="Jinhuo">
+				select * from jinhuorecords where `gonghuoshang` like "%"#{gonghuoshang}"%"
+		</select>
 </mapper>

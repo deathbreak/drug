@@ -43,6 +43,7 @@ public class Json {
 		public void setSix(int six) {
 			this.six = six;
 		}
+		public Json(){}
 		public Json(String first, String second, String three, String four,
 				String five, int six) {
 			super();
@@ -53,5 +54,4 @@ public class Json {
 			this.five = five;
 			this.six = six;
 		}
-		public Json(){}
 }
