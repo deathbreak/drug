@@ -126,14 +126,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</form>
 			</div>
 			<div>
-					<a class="btn btn-info btn-lg" href="#" role="button">结算</a>
+					<a class="btn btn-info btn-lg" href="<%=basePath%>sellit" role="button">结算</a>
 					<a class="btn btn-primary btn-lg" href="<%=basePath%>printsell" role="button">打印小票</a>
+					<!-- printsell -->
 					<c:if test="${not empty rxinfo }">
 							<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">
 										<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>继续填写
 							</button>
   					</c:if>
-					<!-- printsell -->
 			</div>
 		</div>
 	</div>

@@ -30,8 +30,9 @@ public class RxService {
 		}else {
 			int len = itstr.size();
 			List<Json> re = new ArrayList<Json>();
-			StringBuffer forappend = new StringBuffer("");
+			//StringBuffer forappend = new StringBuffer("");
 			for(int ii=0;ii<len;ii++) {
+				StringBuffer forappend = new StringBuffer("");
 				List<Rxdrug> RD = rdm.GetIt(itstr.get(ii));
 				for (Rxdrug rxdrug : RD) {
 					forappend.append(rxdrug.getDrugname()+",");
