@@ -277,10 +277,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				return true;
 		}
 	};
-	$(".btn.btn-primary.btn-acg").click(function(){
+	$(".btn.btn-danger.btn-acg").click(function(){
 		$("#fordel").val($(this).data("delit"));
 	});
-	$(".btn.btn-primary.btn-abcd").click(function(){
+	$(".btn.btn-info.btn-abcd").click(function(){
 		$("#input-time").val($(this).data("sss"));
 		$.ajax({
 			url:"<%=basePath%>getrxtime",
