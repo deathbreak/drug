@@ -6,6 +6,8 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -106,8 +108,8 @@ public class SellService {
 					rdm.AddRxdrug(rd);
 					CheckRxdrug.add(rd);
 				}
-				
-				sell.AddSellrecords(new Sellrecords(udsell.getDrugname(), udsell.getChangshang(), udsell.getPrice(), udsell.getDate(), udsell.getPihao(), udsell.getBeizhu(), udsell.getUnit(), udsell.getGuige(), udsell.getAmount(), udsell.getSum(), date2));
+				String bp = store.QueryBpByNCP(udsell.getDrugname(), udsell.getChangshang(), udsell.getPihao());
+				sell.AddSellrecords(new Sellrecords(udsell.getDrugname(), udsell.getChangshang(), bp, udsell.getPrice(), udsell.getDate(), udsell.getPihao(), udsell.getBeizhu(), udsell.getUnit(), udsell.getGuige(), udsell.getAmount(), udsell.getSum(), date2));
 				String newcount=StringPro.sub(udsell.getCount(),udsell.getAmount());
 				store.UpdateStoreCount(newcount, udsell.getDrugname(), udsell.getChangshang(), udsell.getPihao());
 				if(newcount.equals("0")){
@@ -139,17 +141,70 @@ public class SellService {
 			p.printSheet("0001","久合院药店","李群",sum,"现金","普通会员","7802273","江坡渡大桥边",check);
 		}
 	}
-	//倒序输出结果
-	public List<Sellrecords> GetRecordsService(String selltime){
-		if(selltime.equals("")||selltime==null){
+//	//倒序输出结果
+//	public List<Sellrecords> GetRecordsService(String selltime){
+//		if(selltime.equals("")||selltime==null){
+//			List<Sellrecords> re = sell.GetAllSellrecords();
+//			Collections.reverse(re);
+//			return re;
+//		}else{
+//			return sell.GetRecordsByST(selltime);
+//		}
+//	}
+	//update this function
+	public PageInfo<Sellrecords> GetRecordsService(Integer pn, String selltime){
+		if(selltime.equals("nowtime")){
+		    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		    selltime = sdf.format(new Date());//获取系统当前时间
+		}
+
+		if(selltime.equals("")||selltime==null) {
+			PageHelper.startPage(pn, 8);
 			List<Sellrecords> re = sell.GetAllSellrecords();
 			Collections.reverse(re);
-			return re;
-		}else{
-			return sell.GetRecordsByST(selltime);
+			PageInfo<Sellrecords> page_1 = new PageInfo<Sellrecords>(re,5);
+			return page_1;
+		}else {
+			PageHelper.startPage(pn, 8);
+			List<Sellrecords> re2 = sell.GetRecordsByST(selltime);
+			Collections.reverse(re2);
+			PageInfo<Sellrecords> page_2 = new PageInfo<Sellrecords>(re2,5);
+			return page_2;
 		}
 	}
-
+	//time
+	public String GetTimeInfo(String selltime){
+		if(selltime.equals("nowtime")){
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+			return sdf.format(new Date());
+		}else {
+			return selltime;
+		}
+	}
+	//算净利润
+	public String GetMoneyInfo(String selltime){
+		if(selltime.equals("nowtime")){
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+			selltime = sdf.format(new Date());//获取系统当前时间
+		}
+		if (selltime.equals("") || selltime == null) {
+			List<Sellrecords> re = sell.GetAllSellrecords();
+			return ReturnSum(re);
+		} else {
+			List<Sellrecords> re2 = sell.GetRecordsByST(selltime);
+			return ReturnSum(re2);
+		}
+	}
+	public String ReturnSum(List<Sellrecords> re){
+		String sum = "0";
+		for(Sellrecords sellrecords : re){
+			if(sellrecords.getBeginprice()==null||sellrecords.getBeginprice().equals("")){
+				sellrecords.setBeginprice("0");
+			}
+			sum = StringPro.add(sum, StringPro.mul(sellrecords.getAmount(), StringPro.sub(sellrecords.getPrice(), sellrecords.getBeginprice())));
+		}
+		return sum;
+	}
 	public void DelRecordsService(String drugname, String changshang,
 			String pihao, String selltime) {
 		sell.DeleteSellrecords(drugname, changshang, pihao, selltime);

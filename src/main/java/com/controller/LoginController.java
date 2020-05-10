@@ -92,15 +92,18 @@ public class LoginController {
 			return "storetip/storetip";
 	}
 	@RequestMapping(value="/tips")  //tips销售记录
-	public String to_tips(Map<String,Object> map){
-			map.put("alltips", SellS.GetRecordsService(""));
+	public String to_tips(@RequestParam(value="pn",defaultValue="1")Integer pn,
+						  @RequestParam(value="selltime",defaultValue="nowtime")String selltime, Map<String,Object> map){
+			map.put("alltips", SellS.GetRecordsService(pn,selltime));
+			map.put("moneyinfo", SellS.GetMoneyInfo(selltime));
+			map.put("today", SellS.GetTimeInfo(selltime));
 			return "tips/tips";
 	}
-	@RequestMapping(value="/gettips",method=RequestMethod.POST)  //tips销售记录
-	public String to_gettips(String selltime,Map<String,Object> map){
-			map.put("alltips", SellS.GetRecordsService(selltime));
-			return "tips/tips";
-	}
+//	@RequestMapping(value="/gettips")  //tips销售记录
+//	public String to_gettips(String selltime,Map<String,Object> map){
+//			map.put("alltips", SellS.GetRecordsService(1,selltime));
+//			return "tips/tips";
+//	}
 	@RequestMapping(value="/deltips",method=RequestMethod.POST)  //deltips销售记录
 	public String to_deltips(String drugname,String changshang,String pihao,String selltime){
 			SellS.DelRecordsService(drugname, changshang, pihao, selltime);

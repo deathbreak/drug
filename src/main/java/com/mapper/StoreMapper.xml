@@ -1,36 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper
-	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.mapper.StoreMapper">
-		<select id="QueryByNCP" resultType="Store">
+    <select id="QueryByNCP" resultType="Store">
 				select * from store where drugname=#{drugname} and changshang=#{changshang} and pihao=#{pihao}
-		</select>	
-		<insert id="AddStore" parameterType="Store">
+		</select>
+    <select id="QueryBpByNCP" resultType="String">
+				select beginprice from store where drugname=#{drugname} and changshang=#{changshang} and pihao=#{pihao}
+		</select>
+    <insert id="AddStore" parameterType="Store">
 				insert into store(`drugname`,`changshang`,`beginprice`,`price`,`begindate`,`date`,`pihao`,`beizhu`,`location`,`count`,`unit`,`guige`,`tiaoxingma`)values(#{drugname},#{changshang},#{beginprice},#{price},#{begindate},#{date},#{pihao},#{beizhu},#{location},#{count},#{unit},#{guige},#{tiaoxingma})
 		</insert>
-		<update id="UpdateStoreCount">
+    <update id="UpdateStoreCount">
 				update store set `count`=#{count} where drugname=#{drugname} and changshang=#{changshang} and pihao=#{pihao}
 		</update>
-		<delete id="DeleteStore">   
+    <delete id="DeleteStore">
 				delete from store where drugname=#{drugname} and changshang=#{changshang} and pihao=#{pihao}
 		</delete>
-		<select id="GetAllStore" resultType="Store">
+    <select id="GetAllStore" resultType="Store">
 				select * from store
 		</select>
-		<select id="QueryBySTiao" resultType="Store">
+    <select id="QueryBySTiao" resultType="Store">
 				select * from store where `tiaoxingma`=#{tiaoxingma} 
 		</select>
-		<select id="QueryBySName" resultType="Store">
+    <select id="QueryBySName" resultType="Store">
 				select * from store where `drugname` like "%"#{drugname}"%"
 		</select>
-		<update id="UpdateStoreSomeInfo">
+    <update id="UpdateStoreSomeInfo">
 				UPDATE store SET `beginprice`=#{beginprice},`price`=#{price},`begindate`=#{begindate},`date`=#{date},`pihao`=#{pihao},`count`=#{count} WHERE drugname=#{drugname} and changshang=#{changshang} and pihao=#{guige}
 		</update>
-		<select id="StoreYJ" resultType="Store">
+    <select id="StoreYJ" resultType="Store">
 				SELECT * from store where `count` &lt;= #{count}
 		</select>
-		<delete id="DeleteCountZero">   
+    <delete id="DeleteCountZero">
 				delete from store where count='0'
 		</delete>
 </mapper>

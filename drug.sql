@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50723
 File Encoding         : 65001
 
-Date: 2019-04-18 12:39:10
+Date: 2020-05-10 00:31:42
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -164,6 +164,7 @@ DROP TABLE IF EXISTS `sellrecords`;
 CREATE TABLE `sellrecords` (
   `drugname` varchar(100) DEFAULT NULL,
   `changshang` varchar(100) DEFAULT NULL,
+  `beginprice` varchar(100) DEFAULT NULL,
   `price` varchar(100) DEFAULT NULL,
   `date` varchar(100) DEFAULT NULL,
   `pihao` varchar(100) DEFAULT NULL,

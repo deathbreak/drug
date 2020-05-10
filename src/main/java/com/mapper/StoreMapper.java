@@ -11,6 +11,7 @@ import com.bean.Store;
 @Repository
 public interface StoreMapper {
 	List<Store> QueryByNCP(@Param("drugname")String drugname,@Param("changshang")String changshang,@Param("pihao")String pihao);//根据name,changshang,pihao查询
+	String QueryBpByNCP(@Param("drugname")String drugname,@Param("changshang")String changshang,@Param("pihao")String pihao);//根据name,changshang,pihao查询beginprice
 	void AddStore(Store store);
 	void UpdateStoreCount(@Param("count")String count,@Param("drugname")String drugname,@Param("changshang")String changshang,@Param("pihao")String pihao);
 	void DeleteStore(@Param("drugname")String drugname,@Param("changshang")String changshang,@Param("pihao")String pihao);

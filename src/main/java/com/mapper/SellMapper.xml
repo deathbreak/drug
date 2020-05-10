@@ -25,7 +25,7 @@
 		
 		<!-- sellrecords -->
 		<insert id="AddSellrecords" parameterType="Sellrecords">
-				insert into sellrecords values(#{drugname},#{changshang},#{price},#{date},#{pihao},#{beizhu},#{unit},#{guige},#{amount},#{sum},#{selltime})
+				insert into sellrecords values(#{drugname},#{changshang},#{beginprice},#{price},#{date},#{pihao},#{beizhu},#{unit},#{guige},#{amount},#{sum},#{selltime})
 		</insert>
 		<select id="GetAllSellrecords" resultType="Sellrecords">
 				select * from sellrecords

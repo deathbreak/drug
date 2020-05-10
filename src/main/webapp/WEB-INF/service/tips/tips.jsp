@@ -57,7 +57,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</div>
 		
 		<div class="row" style="padding-top:3px">
-			<form action="<%=basePath%>gettips" method="post">
+			<form action="<%=basePath%>tips" method="post">
 				<div class="input-group col-md-3" >
 					<input type="text" class="form-control picker"
 						name="selltime" id="querytime" value="" readonly /> 
@@ -67,12 +67,57 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</div>
 			</form>
 		</div>
-		<c:if test="${empty alltips}">
+	   <div class="row">
+		   ${today}预计净利润:${moneyinfo}元
+	   </div>
+		<c:if test="${alltips.list.size()==0 }">
 				<div class="row">
 					没有当天的销售记录。
 				</div>
 		</c:if>
-		<c:if test="${alltips.size()>0}">
+		<c:if test="${alltips.list.size()>0 }">
+<%--			<div class="row">--%>
+<%--				<div class="col-md-12">--%>
+<%--					<table class="table table-hover table-condensed table-bordered">--%>
+<%--						<tr>--%>
+<%--							<th>药品名称</th>--%>
+<%--							<th>厂商</th>--%>
+<%--							<th>销售价格</th>--%>
+<%--							<th>有效期至</th>--%>
+<%--							<th>批号</th>--%>
+<%--							<th>备注</th>--%>
+<%--							<th>单位</th>--%>
+<%--							<th>规格</th>--%>
+<%--							<th>数量</th>--%>
+<%--							<th>金额</th>--%>
+<%--							<th>交易时间</th>--%>
+<%--							<th>操作</th>--%>
+<%--						</tr>--%>
+<%--						<c:forEach items="${alltips.list }" var="dq">--%>
+<%--							<tr>--%>
+<%--								<td>${dq.drugname }</td>--%>
+<%--								<td>${dq.changshang }</td>--%>
+<%--								<td>${dq.price }</td>--%>
+<%--								<td>${dq.date }</td>--%>
+<%--								<td>${dq.pihao }</td>--%>
+<%--								<td>${dq.beizhu }</td>--%>
+<%--								<td>${dq.unit }</td>--%>
+<%--								<td>${dq.guige }</td>--%>
+<%--								<td>${dq.amount }</td>--%>
+<%--								<td>${dq.sum }</td>--%>
+<%--								<td>${dq.selltime }</td>--%>
+
+<%--								<td>--%>
+<%--									<button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal">--%>
+<%--										<span class="glyphicon glyphicon-ban-circle"--%>
+<%--											aria-hidden="true"></span>删除--%>
+<%--									</button>--%>
+<%--								</td>--%>
+<%--							</tr>--%>
+<%--						</c:forEach>--%>
+<%--					</table>--%>
+<%--				</div>--%>
+<%--			</div>--%>
 			<div class="row">
 				<div class="col-md-12">
 					<table class="table table-hover table-condensed table-bordered">
@@ -90,7 +135,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<th>交易时间</th>
 							<th>操作</th>
 						</tr>
-						<c:forEach items="${alltips }" var="dq">
+						<c:forEach items="${alltips.list }" var="dq">
 							<tr>
 								<td>${dq.drugname }</td>
 								<td>${dq.changshang }</td>
@@ -107,12 +152,64 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<td>
 									<button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal">
 										<span class="glyphicon glyphicon-ban-circle"
-											aria-hidden="true"></span>删除
+											  aria-hidden="true"></span>删除
 									</button>
 								</td>
 							</tr>
 						</c:forEach>
 					</table>
+				</div>
+			</div>
+			<!--  -->
+
+			<div class="row">
+				<div class="col-md-6" style="padding-top:27px"><strong>当前第${alltips.pageNum}页,总${alltips.pages}页,共${alltips.total}条记录</strong></div>
+				<div class="col-md-6">
+					<nav aria-label="Page navigation">
+						<ul class="pagination">
+							<li><a href="<%=basePath%>tips?pn=1&selltime=${today }">首页</a></li>
+							<c:if test="${alltips.hasPreviousPage }">
+								<li><a href="<%=basePath%>tips?pn=${alltips.pageNum - 1}&selltime=${today }"
+									   aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
+								</a></li>
+							</c:if>
+
+
+							<c:forEach items="${alltips.navigatepageNums }" var="page_Num">
+								<c:if test="${page_Num == alltips.pageNum}">
+									<li class="active"><a href="#">${page_Num }</a></li>
+								</c:if>
+								<c:if test="${page_Num != alltips.pageNum}">
+									<li><a href="<%=basePath%>tips?pn=${page_Num }&selltime=${today }">${page_Num }</a></li>
+								</c:if>
+							</c:forEach>
+							<c:if test="${alltips.hasNextPage }">
+								<li><a href="<%=basePath%>tips?pn=${alltips.pageNum + 1}&selltime=${today }"
+									   aria-label="Next"> <span aria-hidden="true">&raquo;</span>
+								</a></li>
+							</c:if>
+
+							<li><a href="<%=basePath%>tips?pn=${alltips.pages}&selltime=${today }">末页</a></li>
+							<!--  -->
+							<li>
+								<div class="btn-group dropup">
+									<button type="button" class="btn btn-default dropdown-toggle"
+											data-toggle="dropdown" aria-haspopup="true"
+											aria-expanded="false">
+										跳转 <span class="caret"></span>
+									</button>
+									<ul class="dropdown-menu">
+										<c:forEach var="x" begin="1" end="${alltips.pages}"
+												   step="10">
+											<li><a
+													href="<%=basePath%>tips?pn=${x}&selltime=${today }">跳转至第${x }页</a></li>
+										</c:forEach>
+									</ul>
+								</div>
+							</li>
+							<!--  -->
+						</ul>
+					</nav>
 				</div>
 			</div>
 			</c:if>
