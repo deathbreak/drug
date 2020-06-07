@@ -96,12 +96,12 @@ public class SellService {
 		if(!updatesell.isEmpty()){
 			
 			
-			SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//ÉèÖÃÈÕÆÚ¸ñÊ½
+			SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//è®¾ç½®æ—¥æœŸæ ¼å¼
             String date2=df.format(new Date());
             List<Rxdrug> CheckRxdrug = new ArrayList<Rxdrug>();
 			for (Sell udsell : updatesell) {
 				
-				if(udsell.getBeizhu().equals("´¦·½Ò©")) {
+				if(udsell.getBeizhu().equals("å¤„æ–¹è¯")) {
 					Rxdrug rd = new Rxdrug(date2,udsell.getDrugname(),udsell.getChangshang(),udsell.getDate(),udsell.getPihao(),udsell.getAmount());
 					rdm.AddRxdrug(rd);
 					CheckRxdrug.add(rd);
@@ -136,10 +136,10 @@ public class SellService {
 				Sell ff=(Sell)check.get(a);
                 sum=StringPro.add(sum,ff.getSum());
 			}
-			p.printSheet("0001","¾ÃºÏÔºÒ©µê","ÀîÈº",sum,"ÏÖ½ğ","ÆÕÍ¨»áÔ±","7802273","½­ÆÂ¶É´óÇÅ±ß",check);
+			p.printSheet("0001","xxxè¯åº—","å¼ ä¸‰",sum,"ç°é‡‘","æ™®é€šä¼šå‘˜","7xxxxx3","xxxå¤§æ¡¥è¾¹",check);
 		}
 	}
-	//µ¹ĞòÊä³ö½á¹û
+	//å€’åºè¾“å‡ºç»“æœ
 	public List<Sellrecords> GetRecordsService(String selltime){
 		if(selltime.equals("")||selltime==null){
 			List<Sellrecords> re = sell.GetAllSellrecords();
@@ -165,7 +165,7 @@ public class SellService {
 	}
 	/**
 	 * 
-	 * @return Î´¼ÇÂ¼µÄ´¦·½Ò©ÌõÊı
+	 * @return æœªè®°å½•çš„å¤„æ–¹è¯æ¡æ•°
 	 */
 	public Integer RxCountService() {
 		return rdm.CountNullRx();
@@ -175,9 +175,9 @@ public class SellService {
 			List<Rxperson> check = rpm.GetByTime(rx.getTime());
 			if(check.size()==0) {
 				rpm.AddRxperson(rx);
-				return "Ìí¼Ó´¦·½Ò©ĞÅÏ¢³É¹¦";
+				return "æ·»åŠ å¤„æ–¹è¯ä¿¡æ¯æˆåŠŸ";
 			}else {
-				return "Ìí¼ÓÊ§°Ü,ÒÑ¾­Ìí¼ÓÁËÕâ¸ö´¦·½Ò©ĞÅÏ¢";
+				return "æ·»åŠ å¤±è´¥,å·²ç»æ·»åŠ äº†è¿™ä¸ªå¤„æ–¹è¯ä¿¡æ¯";
 			}
 	}
 }
