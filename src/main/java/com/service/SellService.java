@@ -138,7 +138,7 @@ public class SellService {
 				Sell ff=(Sell)check.get(a);
                 sum=StringPro.add(sum,ff.getSum());
 			}
-			p.printSheet("0001","久合院药店","李群",sum,"现金","普通会员","7802273","江坡渡大桥边",check);
+			p.printSheet("0001","xxx药店","张三",sum,"现金","普通会员","7xxxxx3","xxx大桥边",check);
 		}
 	}
 //	//倒序输出结果
