@@ -3,5 +3,5 @@
 maven+spring+springmvc+mybatis+mysql.
 项目运行后样例<https://www.deathbreaktest.club/drug>
 user: admin password: 123456
-有啥问题可以问我qq1310748243
+有啥问题可以问我微信15638534323
 
