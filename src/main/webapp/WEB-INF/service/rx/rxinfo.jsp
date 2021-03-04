@@ -110,7 +110,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<tr>
 								<td>年龄:</td>
 								<td colspan="2">${it.rxperson[0].age }</td>								
-								<td>聊系方式:</td>
+								<td>联系方式:</td>
 								<td colspan="2">${it.rxperson[0].phone }</td>
 							</tr>
 							<tr>
