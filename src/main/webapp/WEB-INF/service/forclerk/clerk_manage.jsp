@@ -72,11 +72,13 @@
                 <table class="table table-hover table-condensed table-bordered">
                     <tr>
                         <th>员工账号</th>
+                        <th>员工密码</th>
                         <th>操作</th>
                     </tr>
                     <c:forEach items="${info }" var="dq">
                         <tr>
                             <td>${dq.user }</td>
+                            <td>${dq.password }</td>
                             <td>
                                 <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal2">
 										<span class="glyphicon glyphicon-ban-circle"

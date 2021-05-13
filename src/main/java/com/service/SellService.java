@@ -6,8 +6,7 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
-import com.github.pagehelper.PageHelper;
-import com.github.pagehelper.PageInfo;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -136,40 +135,19 @@ public class SellService {
 			String sum="0";
 			for (int a=check.size()-1;a>=0;a--) {
 				Sell ff=(Sell)check.get(a);
-                sum=StringPro.add(sum,ff.getSum());
+				sum=StringPro.add(sum,ff.getSum());
 			}
 			p.printSheet("0001","xxx药店","张三",sum,"现金","普通会员","7xxxxx3","xxx大桥边",check);
 		}
 	}
-//	//倒序输出结果
-//	public List<Sellrecords> GetRecordsService(String selltime){
-//		if(selltime.equals("")||selltime==null){
-//			List<Sellrecords> re = sell.GetAllSellrecords();
-//			Collections.reverse(re);
-//			return re;
-//		}else{
-//			return sell.GetRecordsByST(selltime);
-//		}
-//	}
-	//update this function
-	public PageInfo<Sellrecords> GetRecordsService(Integer pn, String selltime){
-		if(selltime.equals("nowtime")){
-		    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-		    selltime = sdf.format(new Date());//获取系统当前时间
-		}
-
-		if(selltime.equals("")||selltime==null) {
-			PageHelper.startPage(pn, 8);
+	//倒序输出结果
+	public List<Sellrecords> GetRecordsService(String selltime){
+		if(selltime.equals("")||selltime==null){
 			List<Sellrecords> re = sell.GetAllSellrecords();
 			Collections.reverse(re);
-			PageInfo<Sellrecords> page_1 = new PageInfo<Sellrecords>(re,5);
-			return page_1;
-		}else {
-			PageHelper.startPage(pn, 8);
-			List<Sellrecords> re2 = sell.GetRecordsByST(selltime);
-			Collections.reverse(re2);
-			PageInfo<Sellrecords> page_2 = new PageInfo<Sellrecords>(re2,5);
-			return page_2;
+			return re;
+		}else{
+			return sell.GetRecordsByST(selltime);
 		}
 	}
 	//time
@@ -181,11 +159,11 @@ public class SellService {
 			return selltime;
 		}
 	}
-	//算净利润
+	//
 	public String GetMoneyInfo(String selltime){
 		if(selltime.equals("nowtime")){
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-			selltime = sdf.format(new Date());//获取系统当前时间
+			selltime = sdf.format(new Date());//
 		}
 		if (selltime.equals("") || selltime == null) {
 			List<Sellrecords> re = sell.GetAllSellrecords();

@@ -10,7 +10,7 @@
 <head>
 
 
-    <title>销售管理系统</title>
+    <title>医药信息管理系统</title>
     <script src="static-res/js/jquery.js"></script>
     <link href="static-res/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="static-res/css/main.css" rel="stylesheet">
@@ -34,7 +34,7 @@
 <div class="container-fluid">
     <div class="row" style="background-color:rgba(232,232,232,0.6);">
         <div class="main_nav">
-            <h1>销售管理系统</h1>
+            <h1>医药信息管理系统</h1>
         </div>
     </div>
     <div class="row" style="height:50px">
