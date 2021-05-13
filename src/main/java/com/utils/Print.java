@@ -98,7 +98,7 @@ public class Print implements Printable{
 		return height;
 	}
 	
-	@Override
+
 	public int print(Graphics graphics, PageFormat pageFormat, int pageIndex) throws PrinterException {
 		try {
 			/**

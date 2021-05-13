@@ -46,7 +46,11 @@ public class LoginController {
 						login.setUser(username);
 						login.setPassword(password);
 						hs.setAttribute("login", login);
-						return "redirect:/main";
+						if (it.getRole() == 0){
+							return "redirect:/sell_user";
+						}else{
+							return "redirect:/main";
+						}
 					} else {
 						N++;
 					}

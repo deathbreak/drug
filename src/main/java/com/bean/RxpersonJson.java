@@ -3,7 +3,7 @@ package com.bean;
 import java.util.List;
 /**
  * for return Json
- * @author 13107
+ *
  *
  */
 public class RxpersonJson {

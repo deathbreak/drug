@@ -39,6 +39,9 @@
 					<mvc:mapping path="/**"/>
 					<mvc:exclude-mapping path="/static-res/**"/>
 					<mvc:exclude-mapping path="/index.jsp" />
+					<mvc:exclude-mapping path="/register" />
+					<mvc:exclude-mapping path="/register_user" />
+					<mvc:exclude-mapping path="/register.jsp" />
 					<mvc:exclude-mapping path="/login" />
 					<mvc:exclude-mapping path="/" />
 					<bean class="com.interceptors.LoginInterceptor"></bean>
