@@ -62,7 +62,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<th>药品名称</th>
 							<th>厂商</th>
 							<th>销售价格</th>
-							<th>有效期至</th>
+							<th>售完的时间</th>
 							<th>批号</th>
 							<th>备注</th>
 							<th>库存</th>

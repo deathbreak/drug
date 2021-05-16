@@ -113,7 +113,7 @@ public class SellService {
 				String newcount=StringPro.sub(udsell.getCount(),udsell.getAmount());
 				store.UpdateStoreCount(newcount, udsell.getDrugname(), udsell.getChangshang(), udsell.getPihao());
 				if(newcount.equals("0")){
-					sell.AddSellover(new Sellover(udsell.getDrugname(), udsell.getChangshang(), udsell.getPrice(), udsell.getDate(), udsell.getPihao(), udsell.getBeizhu(), newcount, udsell.getUnit(), udsell.getGuige()));
+					sell.AddSellover(new Sellover(udsell.getDrugname(), udsell.getChangshang(), udsell.getPrice(), date2, udsell.getPihao(), udsell.getBeizhu(), newcount, udsell.getUnit(), udsell.getGuige()));
 					store.DeleteCountZero();
 				}
 			}
