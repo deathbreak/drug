@@ -122,7 +122,7 @@
                         <tr>
                             <td>年龄:</td>
                             <td colspan="2"><input type="number" class="form-control" id="input-age" name="age" placeholder="" value=""></td>
-                            <td>*聊系方式:</td>
+                            <td>*联系方式:</td>
                             <td colspan="2"><input type="text" class="form-control" id="input-phone" name="phone" placeholder="" value=""></td>
                         </tr>
                         <tr>
