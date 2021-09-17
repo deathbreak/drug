@@ -1,3 +1,5 @@
 Manifest-Version: 1.0
-Class-Path: 
+Built-By: Administrator
+Created-By: Apache Maven 3.6.0
+Build-Jdk: 1.8.0_171
 
