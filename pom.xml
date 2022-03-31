@@ -26,7 +26,7 @@
 <!--        上面这个处理eclipse项目转到idea编译的mybatis编译BindingException异常-->
 
     <properties>
-        <mypro.spring.version>4.3.9.RELEASE</mypro.spring.version>
+        <mypro.spring.version>5.3.18</mypro.spring.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
