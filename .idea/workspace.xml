@@ -1,0 +1,1614 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="drug:war exploded" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="26764e7f-66d8-461f-a5f7-c547736aa712" name="Default Changelist" comment="修改readme_2021_9_17">
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/drug_war.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/drug_war_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__aopalliance_aopalliance_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_5_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_14_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_14_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_14_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_jsqlparser_jsqlparser_4_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_pagehelper_pagehelper_5_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_protobuf_protobuf_java_3_21_9.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_mchange_c3p0_0_9_5_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_mchange_mchange_commons_java_0_2_20.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_mysql_mysql_connector_j_8_0_32.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_validation_jakarta_validation_api_2_0_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_javax_servlet_api_3_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_jsp_jsp_api_2_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_jsp_jstl_jstl_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_jsp_jstl_jstl_api_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_servlet_api_2_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_validation_validation_api_2_0_1_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_9_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_web_jstl_impl_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_validator_hibernate_validator_6_2_1_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_validator_hibernate_validator_annotation_processor_6_2_1_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_2_1_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_5_13.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_2_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_2_21_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aspects_5_2_21_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_2_21_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_2_21_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_2_21_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_2_21_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_2_21_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_5_2_21_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_5_2_21_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_5_2_21_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_5_2_21_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_5_2_21_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_websocket_5_2_21_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__taglibs_standard_1_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drug.iml" beforeDir="false" afterPath="$PROJECT_DIR$/drug.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drug.sql" beforeDir="false" afterPath="$PROJECT_DIR$/drug.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bean/Datetips.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bean/Datetips.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bean/Drug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bean/Drug.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bean/Jinhuo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bean/Jinhuo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bean/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bean/Manager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bean/Rxdrug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bean/Rxdrug.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bean/Rxperson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bean/Rxperson.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bean/Store.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bean/Store.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/controller/ClerkController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/controller/ClerkController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/controller/DruginfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/controller/DruginfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/controller/JinhuoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/controller/JinhuoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/controller/RxController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/controller/RxController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/controller/SellController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/controller/SellController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/controller/StoreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/controller/StoreController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/interceptors/LoginInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/interceptors/LoginInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mapper/DrugMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mapper/DrugMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mapper/RxdrugMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mapper/RxdrugMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mapper/RxpersonMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mapper/RxpersonMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mapper/StoreMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mapper/StoreMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/service/DruginfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/service/DruginfoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/service/JinhuoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/service/JinhuoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/service/ManagerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/service/ManagerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/service/RxService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/service/RxService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/service/SellService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/service/SellService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/service/StoreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/service/StoreService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/utils/Boolean_tiaoxingma.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/utils/Boolean_tiaoxingma.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/utils/Print.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/utils/Print.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/utils/StringPro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/utils/StringPro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db.properties" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>queryjhdruginfo</find>
+      <find>inputsum</find>
+      <find>numMulti</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/service/sell/sellamount_user.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/service/sell/sellselect_user.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/service/forclerk/clerk_manage.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/service/SellService.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/service/sellover/sellover.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/service/rx/rx_user.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/service/rx/rxinfo_user.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/service/sell/sell_user.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/service/sell/sell.jsp" />
+        <option value="$PROJECT_DIR$/target/classes/db.properties" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/main/java/com/controller/DruginfoController.java" />
+        <option value="$MAVEN_REPOSITORY$/org/springframework/spring-core/4.3.9.RELEASE/spring-core-4.3.9.RELEASE.pom" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/db.properties" />
+      </list>
+    </option>
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="$USER_HOME$/software/maven-home" />
+        <option name="mavenHome" value="$USER_HOME$/software/apache-maven-3.6.0" />
+        <option name="userSettingsFile" value="$USER_HOME$/software/apache-maven-3.6.0/conf/settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="drug" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="drug" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="drug" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
+          <item name="clean" type="36feed69:MavenProjectsStructure$PluginNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="drug" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
+          <item name="compiler" type="36feed69:MavenProjectsStructure$PluginNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="drug" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
+          <item name="deploy" type="36feed69:MavenProjectsStructure$PluginNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="drug" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
+          <item name="install" type="36feed69:MavenProjectsStructure$PluginNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="drug" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
+          <item name="resources" type="36feed69:MavenProjectsStructure$PluginNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="drug" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
+          <item name="surefire" type="36feed69:MavenProjectsStructure$PluginNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="drug" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
+          <item name="war" type="36feed69:MavenProjectsStructure$PluginNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="305" />
+    <option name="y" value="149" />
+    <option name="width" value="1571" />
+    <option name="height" value="829" />
+  </component>
+  <component name="ProjectId" id="2NcrPLE7LA6mILhPS5M6meit4TZ" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="drug" type="b2602c69:ProjectViewProjectNode" />
+              <item name="drug" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="drug" type="b2602c69:ProjectViewProjectNode" />
+              <item name="drug" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="drug" type="b2602c69:ProjectViewProjectNode" />
+              <item name="drug" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="drug" type="b2602c69:ProjectViewProjectNode" />
+              <item name="drug" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="drug" type="b2602c69:ProjectViewProjectNode" />
+              <item name="drug" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="drug" type="b2602c69:ProjectViewProjectNode" />
+              <item name="drug" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="bean" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="drug" type="b2602c69:ProjectViewProjectNode" />
+              <item name="drug" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="drug" type="b2602c69:ProjectViewProjectNode" />
+              <item name="drug" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="interceptors" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="drug" type="b2602c69:ProjectViewProjectNode" />
+              <item name="drug" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="mapper" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="drug" type="b2602c69:ProjectViewProjectNode" />
+              <item name="drug" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="drug" type="b2602c69:ProjectViewProjectNode" />
+              <item name="drug" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="drug" type="b2602c69:ProjectViewProjectNode" />
+              <item name="drug" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="drug" type="b2602c69:ProjectViewProjectNode" />
+              <item name="drug" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="static-res" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="drug" type="b2602c69:ProjectViewProjectNode" />
+              <item name="drug" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="static-res" type="462c0819:PsiDirectoryNode" />
+              <item name="bootstrap-3.3.7-dist" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="drug" type="b2602c69:ProjectViewProjectNode" />
+              <item name="drug" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="static-res" type="462c0819:PsiDirectoryNode" />
+              <item name="bootstrap-3.3.7-dist" type="462c0819:PsiDirectoryNode" />
+              <item name="datetimepicker" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="drug" type="b2602c69:ProjectViewProjectNode" />
+              <item name="drug" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="drug" type="b2602c69:ProjectViewProjectNode" />
+              <item name="drug" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="drug" type="b2602c69:ProjectViewProjectNode" />
+              <item name="drug" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="forclerk" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="drug" type="b2602c69:ProjectViewProjectNode" />
+              <item name="drug" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/dbk/IdeaProjects/drug",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "File.Encoding",
+    "spring.configuration.checksum": "05b2815ccf6592b0f62fe89851e114fa",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\idea_workspace\drug" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
+      <deployment />
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="bd17921f-94e2-4610-bca3-401231c23dfa" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="54555" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="tomcat-8.5.87" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.87" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/drug" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="drug:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/drug" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="087c639b-1968-4ea2-9135-0561c9e661b1" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="54555" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="drug:war exploded" />
+        </option>
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="StructureViewFactory">
+    <option name="ACTIVE_ACTIONS" value=",ALPHA_COMPARATOR" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="26764e7f-66d8-461f-a5f7-c547736aa712" name="Default Changelist" comment="" />
+      <created>1620890602513</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1620890602513</updated>
+      <workItem from="1620890606143" duration="151000" />
+      <workItem from="1620890847106" duration="7887000" />
+      <workItem from="1621078987334" duration="2335000" />
+      <workItem from="1621131857309" duration="13545000" />
+      <workItem from="1621251095112" duration="8938000" />
+      <workItem from="1621331519833" duration="4105000" />
+      <workItem from="1621424024990" duration="164000" />
+      <workItem from="1621571099345" duration="1050000" />
+      <workItem from="1622218535872" duration="36000" />
+      <workItem from="1622223208388" duration="324000" />
+      <workItem from="1622280410541" duration="306000" />
+      <workItem from="1622280943972" duration="4827000" />
+      <workItem from="1627038099888" duration="872000" />
+      <workItem from="1627174491164" duration="786000" />
+      <workItem from="1631622789183" duration="661000" />
+      <workItem from="1631715074583" duration="558000" />
+      <workItem from="1631789561951" duration="2039000" />
+      <workItem from="1631874931970" duration="2389000" />
+      <workItem from="1632234212027" duration="21000" />
+      <workItem from="1632413356688" duration="1034000" />
+      <workItem from="1633181323411" duration="683000" />
+      <workItem from="1633356534590" duration="162000" />
+      <workItem from="1633356726284" duration="1285000" />
+      <workItem from="1633360523552" duration="1003000" />
+      <workItem from="1636292387729" duration="69000" />
+      <workItem from="1649846898601" duration="1483000" />
+      <workItem from="1650534414828" duration="1496000" />
+      <workItem from="1652699291758" duration="959000" />
+      <workItem from="1652871004323" duration="20000" />
+      <workItem from="1655445835858" duration="641000" />
+      <workItem from="1655779735520" duration="12000" />
+      <workItem from="1655954727999" duration="906000" />
+      <workItem from="1656031263369" duration="6000" />
+      <workItem from="1656294531418" duration="1364000" />
+      <workItem from="1656311986192" duration="58000" />
+      <workItem from="1668831734299" duration="50000" />
+      <workItem from="1669015476769" duration="219000" />
+      <workItem from="1669016020909" duration="1645000" />
+      <workItem from="1669449228564" duration="3070000" />
+      <workItem from="1669575761822" duration="116000" />
+      <workItem from="1669628084849" duration="9000" />
+      <workItem from="1669630007164" duration="364000" />
+      <workItem from="1669650089964" duration="58000" />
+      <workItem from="1669971588109" duration="11000" />
+      <workItem from="1670334943464" duration="994000" />
+      <workItem from="1672256735223" duration="7871000" />
+      <workItem from="1677832145370" duration="1424000" />
+      <workItem from="1679974187295" duration="4000" />
+      <workItem from="1679974199737" duration="7017000" />
+    </task>
+    <task id="LOCAL-00001" summary="增加店员角色">
+      <created>1620891512337</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1620891512337</updated>
+    </task>
+    <task id="LOCAL-00002" summary="增加店员角色2">
+      <created>1620891565361</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1620891565361</updated>
+    </task>
+    <task id="LOCAL-00003" summary="增加利润以及普通店员角色">
+      <created>1620919911685</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1620919911685</updated>
+    </task>
+    <task id="LOCAL-00004" summary="增加利润以及普通店员角色_">
+      <created>1620920411140</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1620920411140</updated>
+    </task>
+    <task id="LOCAL-00005" summary="缺货信息显示售完的时间">
+      <created>1621143601242</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1621143601242</updated>
+    </task>
+    <task id="LOCAL-00006" summary="字写错了">
+      <created>1621178289697</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1621178289697</updated>
+    </task>
+    <task id="LOCAL-00007" summary="修改readme">
+      <created>1622223326851</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1622223326851</updated>
+    </task>
+    <task id="LOCAL-00008" summary="修改readme_2021_9_17">
+      <created>1631875498413</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1631875498413</updated>
+    </task>
+    <task id="LOCAL-00009" summary="修改readme_2021_1004">
+      <created>1633360594191</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1633360594191</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="78006000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="305" y="149" width="1571" height="829" extended-state="0" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7809111" visible="true" weight="0.26406354" />
+      <window_info id="Structure" order="1" sideWeight="0.21885157" side_tool="true" weight="0.18283582" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Web" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" weight="0.48920864" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3991323" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Spring" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.329718" />
+      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50053304" side_tool="true" weight="0.329718" />
+      <window_info anchor="bottom" id="Java Enterprise" order="11" />
+      <window_info anchor="bottom" id="Database Changes" order="12" />
+      <window_info anchor="bottom" id="Version Control" order="13" weight="0.41323212" />
+      <window_info anchor="bottom" id="Application Servers" order="14" weight="0.329718" />
+      <window_info anchor="bottom" id="Messages" order="15" weight="0.3294964" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="3" weight="0.32960597" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="right" id="Bean Validation" order="9" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="增加店员角色" />
+    <MESSAGE value="增加店员角色2" />
+    <MESSAGE value="增加利润以及普通店员角色" />
+    <MESSAGE value="增加利润以及普通店员角色_" />
+    <MESSAGE value="缺货信息显示售完的时间" />
+    <MESSAGE value="字写错了" />
+    <MESSAGE value="修改readme" />
+    <MESSAGE value="修改readme_2021_9_17" />
+    <MESSAGE value="修改readme_2021_1004" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改readme_2021_1004" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/service/tostore/toaddjinhuo.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1464">
+          <caret line="237" column="10" lean-forward="true" selection-start-line="225" selection-start-column="8" selection-end-line="237" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/service/tostore/jhrecords.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1242" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/StoreController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="32" column="33" lean-forward="true" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/service/date/date.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="91" column="53" lean-forward="true" selection-start-line="91" selection-start-column="53" selection-end-line="91" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/service/storetip/storetip.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1449" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mapper/StoreMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="410">
+          <caret line="29" column="4" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mapper/StoreMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="25" column="17" lean-forward="true" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2001">
+          <caret line="101" column="39" selection-start-line="101" selection-start-column="39" selection-end-line="101" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/service/StoreService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1909">
+          <caret line="105" column="38" selection-start-line="105" selection-start-column="38" selection-end-line="105" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/service/ManagerService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="27" column="29" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
+          <folding>
+            <element signature="e#352#353#0" expanded="true" />
+            <element signature="e#399#400#0" expanded="true" />
+            <element signature="e#782#783#0" expanded="true" />
+            <element signature="e#817#818#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/service/RxService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="30" column="35" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/RxController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/SellController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1127">
+          <caret line="60" column="33" selection-start-line="60" selection-start-column="33" selection-end-line="60" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/classes/db.properties" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/ClerkController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1955">
+          <caret line="101" column="52" selection-start-line="101" selection-start-column="52" selection-end-line="101" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/service/tostore/ghsinfo.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3381">
+          <caret line="147" column="41" selection-start-line="147" selection-start-column="41" selection-end-line="147" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/register.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="92">
+            <caret line="4" column="39" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static-res/bootstrap-3.3.7-dist/datetimepicker/bootstrap-datetimepicker.zh-CN.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static-res/bootstrap-3.3.7-dist/datetimepicker/bootstrap-datetimepicker.min.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bean/Rxdrug.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="759">
+          <caret line="57" selection-start-line="57" selection-end-line="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static-res/bootstrap-3.3.7-dist/datetimepicker/bootstrap-datetimepicker.min.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bean/Rxperson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/sqlMapConfig.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/drug-0.0.1-SNAPSHOT/WEB-INF/classes/db.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="uml://MAVEN/com.dbk.mypro:drug:0.0.1-SNAPSHOT">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>MAVEN</ID>
+          <OriginalElement>com.dbk.mypro:drug:0.0.1-SNAPSHOT</OriginalElement>
+          <nodes>
+            <node x="0.0" y="603.2583333333333">com.dbk.mypro:drug:0.0.1-SNAPSHOT</node>
+            <node x="206.5" y="496.60807291666663">javax.servlet:javax.servlet-api:jar:3.1.0</node>
+            <node x="219.0" y="223.81302083333344">org.springframework:spring-core:jar:4.3.9.RELEASE</node>
+            <node x="433.0" y="308.5752604166666">org.springframework:spring-core:jar:4.3.9.RELEASE/commons-logging:commons-logging:jar:1.2</node>
+            <node x="220.5" y="0.0">org.springframework:spring-aop:jar:4.3.9.RELEASE</node>
+            <node x="448.0" y="131.9999999999999">org.springframework:spring-aop:jar:4.3.9.RELEASE/org.springframework:spring-beans:jar:4.3.9.RELEASE</node>
+            <node x="210.0" y="766.7583333333333">org.springframework:spring-aspects:jar:4.3.9.RELEASE</node>
+            <node x="445.5" y="766.7583333333333">org.springframework:spring-aspects:jar:4.3.9.RELEASE/org.aspectj:aspectjweaver:jar:1.8.9</node>
+            <node x="211.0" y="121.99999999999989">org.springframework:spring-context:jar:4.3.9.RELEASE</node>
+            <node x="434.0" y="201.91302083333346">org.springframework:spring-context:jar:4.3.9.RELEASE/org.springframework:spring-expression:jar:4.3.9.RELEASE</node>
+            <node x="219.5" y="325.81302083333344">org.springframework:spring-jdbc:jar:4.3.9.RELEASE</node>
+            <node x="460.5" y="267.5752604166666">org.springframework:spring-jdbc:jar:4.3.9.RELEASE/org.springframework:spring-tx:jar:4.3.9.RELEASE</node>
+            <node x="221.5" y="371.85807291666663">org.springframework:spring-test:jar:4.3.9.RELEASE</node>
+            <node x="208.5" y="60.999999999999886">org.springframework:spring-webmvc:jar:4.3.9.RELEASE</node>
+            <node x="453.5" y="70.99999999999994">org.springframework:spring-webmvc:jar:4.3.9.RELEASE/org.springframework:spring-web:jar:4.3.9.RELEASE</node>
+            <node x="201.0" y="284.81302083333344">org.springframework:spring-websocket:jar:4.3.9.RELEASE</node>
+            <node x="227.0" y="537.6080729166666">taglibs:standard:jar:1.1.2</node>
+            <node x="213.5" y="1032.7583333333332">javax.validation:validation-api:jar:2.0.0.Final</node>
+            <node x="219.5" y="848.7583333333333">com.github.pagehelper:pagehelper:jar:5.0.0</node>
+            <node x="457.5" y="848.7583333333333">com.github.pagehelper:pagehelper:jar:5.0.0/com.github.jsqlparser:jsqlparser:jar:0.9.5</node>
+            <node x="190.5" y="619.6080729166666">mysql:mysql-connector-java:jar:5.1.42</node>
+            <node x="209.5" y="889.7583333333333">org.mybatis:mybatis-spring:jar:1.3.2</node>
+            <node x="230.5" y="701.6080729166666">org.mybatis:mybatis:jar:3.4.6</node>
+            <node x="181.5" y="1073.7583333333332">com.mchange:mchange-commons-java:jar:0.2.11</node>
+            <node x="212.5" y="930.7583333333333">org.jboss.logging:jboss-logging:jar:3.2.1.Final</node>
+            <node x="202.5" y="414.60807291666663">com.fasterxml.jackson.core:jackson-databind:jar:2.9.10.5</node>
+            <node x="428.0" y="436.8502604166666">com.fasterxml.jackson.core:jackson-databind:jar:2.9.10.5/com.fasterxml.jackson.core:jackson-annotations:jar:2.9.10</node>
+            <node x="449.0" y="395.8502604166666">com.fasterxml.jackson.core:jackson-databind:jar:2.9.10.5/com.fasterxml.jackson.core:jackson-core:jar:2.9.10</node>
+            <node x="197.5" y="971.7583333333333">org.hibernate.validator:hibernate-validator:jar:6.0.0.Final</node>
+            <node x="446.0" y="936.0083333333333">org.hibernate.validator:hibernate-validator:jar:6.0.0.Final/org.jboss.logging:jboss-logging:jar:3.3.0.Final</node>
+            <node x="458.0" y="977.0083333333333">org.hibernate.validator:hibernate-validator:jar:6.0.0.Final/com.fasterxml:classmate:jar:1.3.1</node>
+            <node x="132.0" y="455.60807291666663">org.hibernate.validator:hibernate-validator-annotation-processor:jar:6.0.0.Final</node>
+            <node x="239.0" y="1134.7583333333332">com.mchange:c3p0:jar:0.9.5.2</node>
+            <node x="220.0" y="578.6080729166666">aopalliance:aopalliance:jar:1.0</node>
+            <node x="230.0" y="660.6080729166666">org.glassfish.web:jstl-impl:jar:1.2</node>
+            <node x="456.0" y="725.7583333333333">org.glassfish.web:jstl-impl:jar:1.2/javax.servlet:servlet-api:jar:2.5</node>
+            <node x="466.5" y="579.3953124999997">org.glassfish.web:jstl-impl:jar:1.2/javax.servlet.jsp:jsp-api:jar:2.1</node>
+            <node x="467.0" y="664.7583333333333">org.glassfish.web:jstl-impl:jar:1.2/javax.servlet.jsp.jstl:jstl-api:jar:1.2</node>
+            <node x="245.0" y="807.7583333333333">javax.servlet.jsp.jstl:jstl:jar:1.2</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="org.springframework:spring-jdbc:jar:4.3.9.RELEASE" target="org.springframework:spring-jdbc:jar:4.3.9.RELEASE/org.springframework:spring-tx:jar:4.3.9.RELEASE">
+              <point x="45.5" y="5.25" />
+              <point x="398.0" y="341.56302083333344" />
+              <point x="418.0" y="285.0752604166666" />
+              <point x="-38.0" y="7.0" />
+            </edge>
+            <edge source="org.glassfish.web:jstl-impl:jar:1.2" target="org.glassfish.web:jstl-impl:jar:1.2/javax.servlet.jsp.jstl:jstl-api:jar:1.2">
+              <point x="35.0" y="-0.0" />
+              <point x="398.0" y="671.1080729166666" />
+              <point x="418.0" y="675.2583333333333" />
+              <point x="-31.5" y="-0.0" />
+            </edge>
+            <edge source="org.springframework:spring-webmvc:jar:4.3.9.RELEASE" target="org.springframework:spring-core:jar:4.3.9.RELEASE">
+              <point x="-56.5" y="5.25" />
+              <point x="112.0" y="76.74999999999989" />
+              <point x="112.0" y="225.91302083333346" />
+              <point x="-46.0" y="-8.399999999999977" />
+            </edge>
+            <edge source="org.springframework:spring-webmvc:jar:4.3.9.RELEASE/org.springframework:spring-web:jar:4.3.9.RELEASE" target="org.springframework:spring-aop:jar:4.3.9.RELEASE">
+              <point x="-45.0" y="-8.400000000000091" />
+              <point x="418.0" y="73.09999999999985" />
+              <point x="398.0" y="5.25" />
+              <point x="44.5" y="-5.25" />
+            </edge>
+            <edge source="org.springframework:spring-context:jar:4.3.9.RELEASE/org.springframework:spring-expression:jar:4.3.9.RELEASE" target="org.springframework:spring-core:jar:4.3.9.RELEASE">
+              <point x="-64.5" y="7.0" />
+              <point x="418.0" y="219.41302083333346" />
+              <point x="398.0" y="234.31302083333344" />
+              <point x="46.0" y="-0.0" />
+            </edge>
+            <edge source="org.springframework:spring-jdbc:jar:4.3.9.RELEASE/org.springframework:spring-tx:jar:4.3.9.RELEASE" target="org.springframework:spring-core:jar:4.3.9.RELEASE">
+              <point x="-38.0" y="-0.0" />
+              <point x="418.0" y="278.0752604166666" />
+              <point x="398.0" y="238.51302083333348" />
+              <point x="46.0" y="4.2000000000000455" />
+            </edge>
+            <edge source="org.springframework:spring-webmvc:jar:4.3.9.RELEASE" target="org.springframework:spring-context:jar:4.3.9.RELEASE/org.springframework:spring-expression:jar:4.3.9.RELEASE">
+              <point x="56.5" y="7.0" />
+              <point x="398.0" y="78.49999999999989" />
+              <point x="418.0" y="205.41302083333346" />
+              <point x="-64.5" y="-7.0" />
+            </edge>
+            <edge source="org.springframework:spring-test:jar:4.3.9.RELEASE" target="org.springframework:spring-core:jar:4.3.9.RELEASE">
+              <point x="-43.5" y="-5.25" />
+              <point x="72.0" y="377.10807291666663" />
+              <point x="72.0" y="238.51302083333348" />
+              <point x="-46.0" y="4.2000000000000455" />
+            </edge>
+            <edge source="org.springframework:spring-jdbc:jar:4.3.9.RELEASE/org.springframework:spring-tx:jar:4.3.9.RELEASE" target="org.springframework:spring-aop:jar:4.3.9.RELEASE/org.springframework:spring-beans:jar:4.3.9.RELEASE">
+              <point x="-38.0" y="-7.0" />
+              <point x="418.0" y="271.0752604166666" />
+              <point x="418.0" y="151.2499999999999" />
+              <point x="-50.5" y="8.75" />
+            </edge>
+            <edge source="com.dbk.mypro:drug:0.0.1-SNAPSHOT" target="org.mybatis:mybatis:jar:3.4.6">
+              <point x="26.0" y="2.1875" />
+              <point x="72.0" y="712.1080729166666" />
+              <point x="-34.5" y="-0.0" />
+            </edge>
+            <edge source="org.springframework:spring-webmvc:jar:4.3.9.RELEASE" target="org.springframework:spring-aop:jar:4.3.9.RELEASE/org.springframework:spring-beans:jar:4.3.9.RELEASE">
+              <point x="56.5" y="-0.0" />
+              <point x="398.0" y="71.49999999999989" />
+              <point x="418.0" y="137.2499999999999" />
+              <point x="-50.5" y="-5.25" />
+            </edge>
+            <edge source="org.springframework:spring-webmvc:jar:4.3.9.RELEASE" target="org.springframework:spring-context:jar:4.3.9.RELEASE">
+              <point x="0.0" y="10.5" />
+              <point x="0.0" y="-10.5" />
+            </edge>
+            <edge source="com.dbk.mypro:drug:0.0.1-SNAPSHOT" target="javax.servlet.jsp.jstl:jstl:jar:1.2">
+              <point x="26.0" y="3.9375" />
+              <point x="72.0" y="818.2583333333333" />
+              <point x="-20.0" y="-0.0" />
+            </edge>
+            <edge source="org.springframework:spring-webmvc:jar:4.3.9.RELEASE" target="org.springframework:spring-aop:jar:4.3.9.RELEASE">
+              <point x="0.0" y="-10.5" />
+              <point x="0.0" y="10.5" />
+            </edge>
+            <edge source="com.github.pagehelper:pagehelper:jar:5.0.0" target="com.github.pagehelper:pagehelper:jar:5.0.0/com.github.jsqlparser:jsqlparser:jar:0.9.5">
+              <point x="45.5" y="-0.0" />
+              <point x="-41.0" y="-0.0" />
+            </edge>
+            <edge source="org.springframework:spring-webmvc:jar:4.3.9.RELEASE" target="org.springframework:spring-webmvc:jar:4.3.9.RELEASE/org.springframework:spring-web:jar:4.3.9.RELEASE">
+              <point x="56.5" y="-7.0" />
+              <point x="398.0" y="64.49999999999989" />
+              <point x="418.0" y="77.2999999999999" />
+              <point x="-45.0" y="-4.2000000000000455" />
+            </edge>
+            <edge source="com.dbk.mypro:drug:0.0.1-SNAPSHOT" target="com.mchange:mchange-commons-java:jar:0.2.11">
+              <point x="26.0" y="9.1875" />
+              <point x="72.0" y="1084.2583333333332" />
+              <point x="-83.5" y="-0.0" />
+            </edge>
+            <edge source="org.springframework:spring-webmvc:jar:4.3.9.RELEASE/org.springframework:spring-web:jar:4.3.9.RELEASE" target="org.springframework:spring-core:jar:4.3.9.RELEASE">
+              <point x="-45.0" y="4.2000000000000455" />
+              <point x="418.0" y="85.69999999999999" />
+              <point x="398.0" y="225.91302083333346" />
+              <point x="46.0" y="-8.399999999999977" />
+            </edge>
+            <edge source="org.springframework:spring-aspects:jar:4.3.9.RELEASE" target="org.springframework:spring-aspects:jar:4.3.9.RELEASE/org.aspectj:aspectjweaver:jar:1.8.9">
+              <point x="55.0" y="-0.0" />
+              <point x="-53.0" y="-0.0" />
+            </edge>
+            <edge source="com.mchange:c3p0:jar:0.9.5.2" target="com.mchange:mchange-commons-java:jar:0.2.11">
+              <point x="0.0" y="-10.5" />
+              <point x="0.0" y="10.5" />
+            </edge>
+            <edge source="org.springframework:spring-websocket:jar:4.3.9.RELEASE" target="org.springframework:spring-core:jar:4.3.9.RELEASE">
+              <point x="0.0" y="-10.5" />
+              <point x="0.0" y="10.5" />
+            </edge>
+            <edge source="org.springframework:spring-aop:jar:4.3.9.RELEASE" target="org.springframework:spring-core:jar:4.3.9.RELEASE">
+              <point x="-44.5" y="-0.0" />
+              <point x="102.0" y="10.5" />
+              <point x="102.0" y="230.1130208333334" />
+              <point x="-46.0" y="-4.2000000000000455" />
+            </edge>
+            <edge source="org.springframework:spring-webmvc:jar:4.3.9.RELEASE/org.springframework:spring-web:jar:4.3.9.RELEASE" target="org.springframework:spring-aop:jar:4.3.9.RELEASE/org.springframework:spring-beans:jar:4.3.9.RELEASE">
+              <point x="0.0" y="10.5" />
+              <point x="0.0" y="-10.5" />
+            </edge>
+            <edge source="com.dbk.mypro:drug:0.0.1-SNAPSHOT" target="org.springframework:spring-context:jar:4.3.9.RELEASE">
+              <point x="26.0" y="-8.3125" />
+              <point x="72.0" y="132.4999999999999" />
+              <point x="-54.0" y="-0.0" />
+            </edge>
+            <edge source="com.dbk.mypro:drug:0.0.1-SNAPSHOT" target="org.springframework:spring-test:jar:4.3.9.RELEASE">
+              <point x="26.0" y="-4.8125" />
+              <point x="72.0" y="387.60807291666663" />
+              <point x="-43.5" y="5.25" />
+            </edge>
+            <edge source="com.dbk.mypro:drug:0.0.1-SNAPSHOT" target="aopalliance:aopalliance:jar:1.0">
+              <point x="26.0" y="-0.4375" />
+              <point x="72.0" y="589.1080729166666" />
+              <point x="-45.0" y="-0.0" />
+            </edge>
+            <edge source="org.springframework:spring-context:jar:4.3.9.RELEASE" target="org.springframework:spring-aop:jar:4.3.9.RELEASE">
+              <point x="-54.0" y="-7.0" />
+              <point x="122.0" y="125.49999999999989" />
+              <point x="122.0" y="17.5" />
+              <point x="-44.5" y="7.0" />
+            </edge>
+            <edge source="org.springframework:spring-context:jar:4.3.9.RELEASE" target="org.springframework:spring-context:jar:4.3.9.RELEASE/org.springframework:spring-expression:jar:4.3.9.RELEASE">
+              <point x="54.0" y="7.0" />
+              <point x="398.0" y="139.4999999999999" />
+              <point x="418.0" y="212.41302083333346" />
+              <point x="-64.5" y="-0.0" />
+            </edge>
+            <edge source="com.fasterxml.jackson.core:jackson-databind:jar:2.9.10.5" target="com.fasterxml.jackson.core:jackson-databind:jar:2.9.10.5/com.fasterxml.jackson.core:jackson-core:jar:2.9.10">
+              <point x="62.5" y="-5.25" />
+              <point x="398.0" y="419.85807291666663" />
+              <point x="418.0" y="406.3502604166666" />
+              <point x="-49.5" y="-0.0" />
+            </edge>
+            <edge source="org.springframework:spring-aop:jar:4.3.9.RELEASE" target="org.springframework:spring-aop:jar:4.3.9.RELEASE/org.springframework:spring-beans:jar:4.3.9.RELEASE">
+              <point x="44.5" y="5.25" />
+              <point x="398.0" y="15.75" />
+              <point x="418.0" y="133.7499999999999" />
+              <point x="-50.5" y="-8.75" />
+            </edge>
+            <edge source="org.hibernate.validator:hibernate-validator:jar:6.0.0.Final" target="org.hibernate.validator:hibernate-validator:jar:6.0.0.Final/org.jboss.logging:jboss-logging:jar:3.3.0.Final">
+              <point x="67.5" y="-5.25" />
+              <point x="398.0" y="977.0083333333333" />
+              <point x="418.0" y="951.7583333333333" />
+              <point x="-52.5" y="5.25" />
+            </edge>
+            <edge source="com.dbk.mypro:drug:0.0.1-SNAPSHOT" target="com.mchange:c3p0:jar:0.9.5.2">
+              <point x="26.0" y="10.0625" />
+              <point x="72.0" y="1145.2583333333332" />
+              <point x="-26.0" y="-0.0" />
+            </edge>
+            <edge source="org.springframework:spring-aop:jar:4.3.9.RELEASE/org.springframework:spring-beans:jar:4.3.9.RELEASE" target="org.springframework:spring-core:jar:4.3.9.RELEASE">
+              <point x="-50.5" y="1.75" />
+              <point x="418.0" y="144.2499999999999" />
+              <point x="398.0" y="230.1130208333334" />
+              <point x="46.0" y="-4.2000000000000455" />
+            </edge>
+            <edge source="org.springframework:spring-core:jar:4.3.9.RELEASE" target="org.springframework:spring-core:jar:4.3.9.RELEASE/commons-logging:commons-logging:jar:1.2">
+              <point x="46.0" y="8.399999999999977" />
+              <point x="398.0" y="242.71302083333342" />
+              <point x="418.0" y="319.0752604166666" />
+              <point x="-65.5" y="-0.0" />
+            </edge>
+            <edge source="org.springframework:spring-context:jar:4.3.9.RELEASE" target="org.springframework:spring-aop:jar:4.3.9.RELEASE/org.springframework:spring-beans:jar:4.3.9.RELEASE">
+              <point x="54.0" y="-0.0" />
+              <point x="398.0" y="132.4999999999999" />
+              <point x="418.0" y="140.7499999999999" />
+              <point x="-50.5" y="-1.75" />
+            </edge>
+            <edge source="com.dbk.mypro:drug:0.0.1-SNAPSHOT" target="org.springframework:spring-aop:jar:4.3.9.RELEASE">
+              <point x="26.0" y="-10.0625" />
+              <point x="72.0" y="3.5" />
+              <point x="-44.5" y="-7.0" />
+            </edge>
+            <edge source="com.dbk.mypro:drug:0.0.1-SNAPSHOT" target="org.glassfish.web:jstl-impl:jar:1.2">
+              <point x="26.0" y="1.3125" />
+              <point x="72.0" y="671.1080729166666" />
+              <point x="-35.0" y="-0.0" />
+            </edge>
+            <edge source="org.hibernate.validator:hibernate-validator:jar:6.0.0.Final" target="javax.validation:validation-api:jar:2.0.0.Final">
+              <point x="0.0" y="10.5" />
+              <point x="0.0" y="-10.5" />
+            </edge>
+            <edge source="org.glassfish.web:jstl-impl:jar:1.2" target="org.glassfish.web:jstl-impl:jar:1.2/javax.servlet:servlet-api:jar:2.5">
+              <point x="35.0" y="7.0" />
+              <point x="398.0" y="678.1080729166666" />
+              <point x="418.0" y="736.2583333333333" />
+              <point x="-42.5" y="-0.0" />
+            </edge>
+            <edge source="org.springframework:spring-context:jar:4.3.9.RELEASE" target="org.springframework:spring-core:jar:4.3.9.RELEASE">
+              <point x="0.0" y="10.5" />
+              <point x="0.0" y="-10.5" />
+            </edge>
+            <edge source="com.dbk.mypro:drug:0.0.1-SNAPSHOT" target="org.hibernate.validator:hibernate-validator:jar:6.0.0.Final">
+              <point x="26.0" y="7.4375" />
+              <point x="72.0" y="982.2583333333333" />
+              <point x="-67.5" y="-0.0" />
+            </edge>
+            <edge source="com.dbk.mypro:drug:0.0.1-SNAPSHOT" target="org.springframework:spring-aspects:jar:4.3.9.RELEASE">
+              <point x="26.0" y="3.0625" />
+              <point x="72.0" y="777.2583333333333" />
+              <point x="-55.0" y="-0.0" />
+            </edge>
+            <edge source="org.springframework:spring-websocket:jar:4.3.9.RELEASE" target="org.springframework:spring-webmvc:jar:4.3.9.RELEASE/org.springframework:spring-web:jar:4.3.9.RELEASE">
+              <point x="64.0" y="-0.0" />
+              <point x="398.0" y="295.31302083333344" />
+              <point x="418.0" y="89.90000000000003" />
+              <point x="-45.0" y="8.400000000000091" />
+            </edge>
+            <edge source="com.dbk.mypro:drug:0.0.1-SNAPSHOT" target="org.springframework:spring-core:jar:4.3.9.RELEASE">
+              <point x="26.0" y="-7.4375" />
+              <point x="72.0" y="234.31302083333344" />
+              <point x="-46.0" y="-0.0" />
+            </edge>
+            <edge source="com.dbk.mypro:drug:0.0.1-SNAPSHOT" target="org.jboss.logging:jboss-logging:jar:3.2.1.Final">
+              <point x="26.0" y="6.5625" />
+              <point x="72.0" y="941.2583333333333" />
+              <point x="-52.5" y="-0.0" />
+            </edge>
+            <edge source="org.glassfish.web:jstl-impl:jar:1.2/javax.servlet.jsp.jstl:jstl-api:jar:1.2" target="org.glassfish.web:jstl-impl:jar:1.2/javax.servlet:servlet-api:jar:2.5">
+              <point x="0.0" y="10.5" />
+              <point x="0.0" y="-10.5" />
+            </edge>
+            <edge source="com.dbk.mypro:drug:0.0.1-SNAPSHOT" target="org.springframework:spring-jdbc:jar:4.3.9.RELEASE">
+              <point x="26.0" y="-5.6875" />
+              <point x="72.0" y="341.56302083333344" />
+              <point x="-45.5" y="5.25" />
+            </edge>
+            <edge source="org.hibernate.validator:hibernate-validator:jar:6.0.0.Final" target="org.hibernate.validator:hibernate-validator:jar:6.0.0.Final/com.fasterxml:classmate:jar:1.3.1">
+              <point x="67.5" y="5.25" />
+              <point x="-40.5" y="-0.0" />
+            </edge>
+            <edge source="com.dbk.mypro:drug:0.0.1-SNAPSHOT" target="javax.validation:validation-api:jar:2.0.0.Final">
+              <point x="26.0" y="8.3125" />
+              <point x="72.0" y="1043.2583333333332" />
+              <point x="-51.5" y="-0.0" />
+            </edge>
+            <edge source="com.dbk.mypro:drug:0.0.1-SNAPSHOT" target="org.hibernate.validator:hibernate-validator-annotation-processor:jar:6.0.0.Final">
+              <point x="26.0" y="-3.0625" />
+              <point x="72.0" y="466.10807291666663" />
+              <point x="-133.0" y="-0.0" />
+            </edge>
+            <edge source="com.dbk.mypro:drug:0.0.1-SNAPSHOT" target="mysql:mysql-connector-java:jar:5.1.42">
+              <point x="26.0" y="0.4375" />
+              <point x="72.0" y="630.1080729166666" />
+              <point x="-74.5" y="-0.0" />
+            </edge>
+            <edge source="org.hibernate.validator:hibernate-validator:jar:6.0.0.Final/org.jboss.logging:jboss-logging:jar:3.3.0.Final" target="org.jboss.logging:jboss-logging:jar:3.2.1.Final">
+              <point x="-52.5" y="-5.25" />
+              <point x="52.5" y="-0.0" />
+            </edge>
+            <edge source="com.dbk.mypro:drug:0.0.1-SNAPSHOT" target="taglibs:standard:jar:1.1.2">
+              <point x="26.0" y="-1.3125" />
+              <point x="72.0" y="548.1080729166666" />
+              <point x="-38.0" y="-0.0" />
+            </edge>
+            <edge source="com.dbk.mypro:drug:0.0.1-SNAPSHOT" target="com.github.pagehelper:pagehelper:jar:5.0.0">
+              <point x="26.0" y="4.8125" />
+              <point x="72.0" y="859.2583333333333" />
+              <point x="-45.5" y="-0.0" />
+            </edge>
+            <edge source="com.dbk.mypro:drug:0.0.1-SNAPSHOT" target="javax.servlet:javax.servlet-api:jar:3.1.0">
+              <point x="26.0" y="-2.1875" />
+              <point x="72.0" y="507.10807291666663" />
+              <point x="-58.5" y="-0.0" />
+            </edge>
+            <edge source="com.dbk.mypro:drug:0.0.1-SNAPSHOT" target="org.springframework:spring-webmvc:jar:4.3.9.RELEASE">
+              <point x="26.0" y="-9.1875" />
+              <point x="72.0" y="66.24999999999989" />
+              <point x="-56.5" y="-5.25" />
+            </edge>
+            <edge source="com.dbk.mypro:drug:0.0.1-SNAPSHOT" target="org.springframework:spring-websocket:jar:4.3.9.RELEASE">
+              <point x="26.0" y="-6.5625" />
+              <point x="72.0" y="300.56302083333344" />
+              <point x="-64.0" y="5.25" />
+            </edge>
+            <edge source="com.dbk.mypro:drug:0.0.1-SNAPSHOT" target="com.fasterxml.jackson.core:jackson-databind:jar:2.9.10.5">
+              <point x="26.0" y="-3.9375" />
+              <point x="72.0" y="425.10807291666663" />
+              <point x="-62.5" y="-0.0" />
+            </edge>
+            <edge source="org.springframework:spring-webmvc:jar:4.3.9.RELEASE/org.springframework:spring-web:jar:4.3.9.RELEASE" target="org.springframework:spring-context:jar:4.3.9.RELEASE">
+              <point x="-45.0" y="-0.0" />
+              <point x="418.0" y="81.49999999999994" />
+              <point x="398.0" y="125.49999999999989" />
+              <point x="54.0" y="-7.0" />
+            </edge>
+            <edge source="com.dbk.mypro:drug:0.0.1-SNAPSHOT" target="org.mybatis:mybatis-spring:jar:1.3.2">
+              <point x="26.0" y="5.6875" />
+              <point x="72.0" y="900.2583333333333" />
+              <point x="-55.5" y="-0.0" />
+            </edge>
+            <edge source="org.springframework:spring-websocket:jar:4.3.9.RELEASE" target="org.springframework:spring-context:jar:4.3.9.RELEASE">
+              <point x="-64.0" y="-5.25" />
+              <point x="92.0" y="290.06302083333344" />
+              <point x="92.0" y="139.4999999999999" />
+              <point x="-54.0" y="7.0" />
+            </edge>
+            <edge source="org.glassfish.web:jstl-impl:jar:1.2/javax.servlet.jsp.jstl:jstl-api:jar:1.2" target="org.glassfish.web:jstl-impl:jar:1.2/javax.servlet.jsp:jsp-api:jar:2.1">
+              <point x="0.0" y="-10.5" />
+              <point x="0.0" y="10.5" />
+            </edge>
+            <edge source="org.glassfish.web:jstl-impl:jar:1.2" target="org.glassfish.web:jstl-impl:jar:1.2/javax.servlet.jsp:jsp-api:jar:2.1">
+              <point x="35.0" y="-7.0" />
+              <point x="398.0" y="664.1080729166666" />
+              <point x="418.0" y="589.8953124999997" />
+              <point x="-32.0" y="-0.0" />
+            </edge>
+            <edge source="org.springframework:spring-jdbc:jar:4.3.9.RELEASE" target="org.springframework:spring-core:jar:4.3.9.RELEASE">
+              <point x="-45.5" y="-5.25" />
+              <point x="82.0" y="331.06302083333344" />
+              <point x="82.0" y="242.71302083333342" />
+              <point x="-46.0" y="8.399999999999977" />
+            </edge>
+            <edge source="org.springframework:spring-jdbc:jar:4.3.9.RELEASE" target="org.springframework:spring-aop:jar:4.3.9.RELEASE/org.springframework:spring-beans:jar:4.3.9.RELEASE">
+              <point x="45.5" y="-5.25" />
+              <point x="398.0" y="331.06302083333344" />
+              <point x="418.0" y="147.7499999999999" />
+              <point x="-50.5" y="5.25" />
+            </edge>
+            <edge source="com.fasterxml.jackson.core:jackson-databind:jar:2.9.10.5" target="com.fasterxml.jackson.core:jackson-databind:jar:2.9.10.5/com.fasterxml.jackson.core:jackson-annotations:jar:2.9.10">
+              <point x="62.5" y="5.25" />
+              <point x="398.0" y="430.35807291666663" />
+              <point x="-70.5" y="-0.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.270567986230637" x="297.0" y="169.0" />
+          <SelectedNodes>
+            <node>org.springframework:spring-jdbc:jar:4.3.9.RELEASE/org.springframework:spring-tx:jar:4.3.9.RELEASE</node>
+            <node>org.springframework:spring-core:jar:4.3.9.RELEASE/commons-logging:commons-logging:jar:1.2</node>
+          </SelectedNodes>
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>All</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/drug-0.0.1-SNAPSHOT/WEB-INF/classes/spring_config.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/springmvc-config.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring_config.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$MAVEN_REPOSITORY$/org/springframework/spring-core/4.3.9.RELEASE/spring-core-4.3.9.RELEASE.pom">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1265">
+          <caret line="55" column="28" selection-start-line="55" selection-start-column="28" selection-end-line="55" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/service/tips/tips.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="21" column="2" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/utils/Print.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/interceptors/LoginInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mapper/GonghuoshangMapper.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mapper/ManagerMapper.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mapper/RxdrugMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mapper/RxpersonMapper.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mapper/SellMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="23" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mapper/SellMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/drug.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="22" column="32" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mapper/JinhuoMapper.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mapper/JinhuoMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="13" column="37" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/service/DruginfoService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="33" column="26" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/service/SellService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2829">
+          <caret line="146" column="60" selection-start-line="146" selection-start-column="60" selection-end-line="146" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#857#858#0" expanded="true" />
+            <element signature="e#888#889#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3174">
+          <caret line="138" column="38" selection-start-line="138" selection-start-column="38" selection-end-line="138" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/JinhuoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="37" column="40" selection-start-line="37" selection-start-column="40" selection-end-line="37" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/service/JinhuoService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2553">
+          <caret line="136" column="32" selection-start-line="136" selection-start-column="32" selection-end-line="136" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mapper/DrugMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="21" column="78" selection-start-line="21" selection-start-column="78" selection-end-line="21" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/DruginfoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="53" column="48" selection-start-line="53" selection-start-column="48" selection-end-line="53" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mapper/RxdrugMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="826">
+          <caret line="38" column="9" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/db.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" column="35" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>drug:war</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.19194062" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Spring</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.19194062" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.19194062" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

@@ -17,194 +17,192 @@ import java.util.List;
 import com.bean.Sell;
 
 
-public class Print implements Printable{
-	private static String TITLE;//±êÌâ
-	private static String ORDERNO;//µ¥ºÅ
-	private static String STORENAME;//ÃÅµê
-	private static String CASHIER;//ÊÕÒøÔ±
-	private static String CASH;//×ÜÏÖ½ğ
-	private static String PAYMENT;//Ö§¸¶·½Ê½
-	private static String USERNAME;//»áÔ±Ãû³Æ
-	private static String TEL;//¿Í·şµç»°
-	private static String ADDRESS;//µØÖ·
-	private static List<Sell> Goodsinfo;
-	
-	
+public class Print implements Printable {
+    private static String TITLE;//æ ‡é¢˜
+    private static String ORDERNO;//å•å·
+    private static String STORENAME;//é—¨åº—
+    private static String CASHIER;//æ”¶é“¶å‘˜
+    private static String CASH;//æ€»ç°é‡‘
+    private static String PAYMENT;//æ”¯ä»˜æ–¹å¼
+    private static String USERNAME;//ä¼šå‘˜åç§°
+    private static String TEL;//å®¢æœç”µè¯
+    private static String ADDRESS;//åœ°å€
+    private static List<Sell> Goodsinfo;
 
 
-	private static void chushihua(String orderNo, String storeName, String cashier, String cash, String payment, String userName, String tel, String address,List<Sell> goodsinfo){
-		TITLE ="ÊÕÒøĞ¡Æ±";
-		ORDERNO =orderNo;
-		STORENAME =storeName;
-		CASHIER =cashier;
-		CASH =cash;
-		PAYMENT =payment;
-		USERNAME =userName;
-		TEL =tel;
-		ADDRESS =address;
-		Goodsinfo =goodsinfo;
-		
-	}
-	
-	/**
-	 * ÓÃÓÚ½«ÉÌÆ·ÁãÊÛ½øĞĞ½øĞĞ´òÓ¡
-	 */
-	public  void printSheet(String orderNo, String storeName, String cashier, String cash, String payment, String userName, String tel, String address, List<Sell> Goodsinfo) {
-		chushihua(orderNo,storeName, cashier, cash, payment, userName, tel, address, Goodsinfo);
-		// Í¨Ë×Àí½â¾ÍÊÇÊé¡¢ÎÄµµ
-		Book book = new Book();
-		// ÉèÖÃ³ÉÊú´ò
-		PageFormat pf = new PageFormat();
-		pf.setOrientation(PageFormat.PORTRAIT); //LANDSCAPE±íÊ¾ºá´ò;PORTRAIT±íÊ¾Êú´ò;REVERSE_LANDSCAPE±íÊ¾´òÓ¡¿Õ°×
-		// Í¨¹ıPaperÉèÖÃÒ³ÃæµÄ¿Õ°×±ß¾àºÍ¿É´òÓ¡ÇøÓò¡£±ØĞëÓëÊµ¼Ê´òÓ¡Ö½ÕÅ´óĞ¡Ïà·û¡£
-		Paper p = new Paper();
-		int length = printSize(Goodsinfo);//¼ÓÖµ²ÎÊıÎª115£¬Ôö¼ÓĞĞÊıĞèÒªÔö¼Ó¸ß¶È
-		System.out.println("Paper length is:"+length);
-		p.setSize(165, length); // Ö½ÕÅ´óĞ¡A4Ö½(595, 842),¾­²âÊÔ58mmÎª165 
-		p.setImageableArea(5, 5, 155, length); //ÉèÖÃ´òÓ¡ÇøÓò£¬A4Ö½µÄÄ¬ÈÏX,Y±ß¾àÊÇ72
-		//x - ÓÃÀ´ÉèÖÃ´Ë paper ¿É³ÉÏñÇøÓò×óÉÏ½ÇµÄ x ×ø±ê
-		//y - ÓÃÀ´ÉèÖÃ´Ë paper ¿É³ÉÏñÇøÓò×óÉÏ½ÇµÄ y ×ø±ê
-		//width - ÓÃÀ´ÉèÖÃ´Ë paper ¿É³ÉÏñÇøÓò¿í¶ÈµÄÖµ
-		//height - ÓÃÀ´ÉèÖÃ´Ë paper ¿É³ÉÏñÇøÓò¸ß¶ÈµÄÖµ
-		pf.setPaper(p);
-		// °Ñ PageFormat ºÍ Printable Ìí¼Óµ½ÊéÖĞ£¬×é³ÉÒ»¸öÒ³Ãæ
-		book.append(new Print(), pf);
-		// »ñÈ¡´òÓ¡·şÎñ¶ÔÏó
-		PrinterJob job = PrinterJob.getPrinterJob();
-		// ÉèÖÃ´òÓ¡Àà
-		job.setPageable(book);
-		try {
-			// // ¿ÉÒÔÓÃprintDialogÏÔÊ¾´òÓ¡¶Ô»°¿ò£¬ÔÚÓÃ»§È·ÈÏºó´òÓ¡£»Ò²¿ÉÒÔÖ±½Ó´òÓ¡
-			// if (a) {
-			job.print();
-			// }
-		} catch (PrinterException e) {
-			e.printStackTrace();
-		}
-	}
-	
-	public static Integer printSize(List<Sell> goodsArray) {
-		int height = 200;//¼ÓÖµ²ÎÊıÎª140£¬Ôö¼ÓĞĞÊıĞèÒªÔö¼Ó¸ß¶È
-		if (goodsArray.size() > 0) {
-			height += goodsArray.size()*10;
-			for(int i=0;i<goodsArray.size();i++){
-				goodsArray.get(i).getDrugname();
-				//String[] goods = goodsArray[i].split(",");
-				if(goodsArray.get(i).getDrugname().length()>8){//Ãû³Æ³¬11¸ö×Ö,»»ĞĞ
-					height += 10;
-				}
-			}
-		}
-		return height;
-	}
-	
+    private static void chushihua(String orderNo, String storeName, String cashier, String cash, String payment, String userName, String tel, String address, List<Sell> goodsinfo) {
+        TITLE = "æ”¶é“¶å°ç¥¨";
+        ORDERNO = orderNo;
+        STORENAME = storeName;
+        CASHIER = cashier;
+        CASH = cash;
+        PAYMENT = payment;
+        USERNAME = userName;
+        TEL = tel;
+        ADDRESS = address;
+        Goodsinfo = goodsinfo;
 
-	public int print(Graphics graphics, PageFormat pageFormat, int pageIndex) throws PrinterException {
-		try {
-			/**
-			 * * @param GraphicÖ¸Ã÷´òÓ¡µÄÍ¼ĞÎ»·¾³ 
-			 * PageFormatÖ¸Ã÷´òÓ¡Ò³¸ñÊ½£¨Ò³Ãæ´óĞ¡ÒÔµãÎª¼ÆÁ¿µ¥Î»£¬
-			 * 1µãÎª1Ó¢´çµÄ1/72£¬1Ó¢´çÎª25.4ºÁÃ×¡£A4Ö½´óÖÂÎª595¡Á842µã£© *
-			 * @param pageIndexÖ¸Ã÷Ò³ºÅ
-			 **/
-			// ×ª»»³ÉGraphics2D
-			Graphics2D g2d = (Graphics2D) graphics;
-			// ÉèÖÃ´òÓ¡ÑÕÉ«ÎªºÚÉ«
-			g2d.setColor(Color.black);
-			// ´òÓ¡Æğµã×ø±ê
-			switch (pageIndex) {
-				case 0:
-					String xuxian = "------------------------------------";
-					double x = pageFormat.getImageableX();
-					double y = pageFormat.getImageableY() + 10;
-					//ÉèÖÃ´òÓ¡×ÖÌå£¨×ÖÌåÃû³Æ¡¢ÑùÊ½ºÍµã´óĞ¡£©£¨×ÖÌåÃû³Æ¿ÉÒÔÊÇÎïÀí»òÕßÂß¼­Ãû³Æ£©
-					Font fontTitle = new Font("ĞÂËÎÌå", Font.BOLD, 10);
-					g2d.setFont(fontTitle); // ÉèÖÃ×ÖÌå
-					//´òÓ¡±êÌâ
-					g2d.drawString(TITLE, (float) x + 40, (float) y);
-					y += fontTitle.getSize2D()+4;
-					
-					Font fontContent = new Font("ĞÂËÎÌå", Font.PLAIN, 7);
-					g2d.setFont(fontContent); //ÉèÖÃ×ÖÌå
-					//´òÓ¡ ¶©µ¥ºÅ
-					g2d.drawString("µ¥ºÅ£º" + ORDERNO, (float) x, (float) y);
-					y += fontContent.getSize2D()+4;
-					g2d.drawString("ÃÅµê£º" + STORENAME, (float) x, (float) y);
-					y += fontContent.getSize2D()+4;
-					g2d.drawString("ÊÕÒøÔ±£º" +CASHIER, (float) x, (float) y);
-					y += fontContent.getSize2D()+4;
-					SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-					g2d.drawString("Ê±¼ä£º" + format.format(new Date()), (float) x, (float) y);
-					y += fontContent.getSize2D()+4; 
-					
-					g2d.drawString(xuxian, (float) x, (float) y);
-					y += fontContent.getSize2D()+2;
-					
-					g2d.drawString("Ãû³Æ", (float) x, (float) y);
-					g2d.drawString("Êı", (float) x + 70, (float) y);
-					//g2d.drawString("»ı·Öµ¥", (float) x + 80, (float) y);
-					g2d.drawString("ÏÖ½ğµ¥", (float) x + 110, (float) y);
-					y += fontContent.getSize2D()+2;
-					g2d.drawString("Á¿", (float) x + 70, (float) y);
-					//g2d.drawString("¼Û", (float) x + 80, (float) y);
-					g2d.drawString("¼Û", (float) x + 110, (float) y);
-					y += fontContent.getSize2D()+2;
-					@SuppressWarnings("unused")
-					Double totalCount = 0.0,totalPrice = 0.0 ;
-					
-					for(int i=0;i<Goodsinfo.size();i++){
-						//String[] goods = GOODSARRAY[i].split(",");
-						
-						totalCount += Double.valueOf(Goodsinfo.get(i).getCount());
-						//totalPrice += Double.valueOf(GOODSARRAY.get(i).getCount())*Double.valueOf(GOODSARRAY.get(i).get);
-						String goodsName = Goodsinfo.get(i).getDrugname().length()>8?Goodsinfo.get(i).getDrugname().substring(0, 8):Goodsinfo.get(i).getDrugname();
-						g2d.drawString((i+1) + "." + goodsName, (float) x, (float) y);
-						if(Goodsinfo.get(i).getDrugname().length()>8){//Ãû³Æ³¬8¸ö×Ö,»»ĞĞ
-							y += fontContent.getSize2D()+2;
-							g2d.drawString(Goodsinfo.get(i).getDrugname().substring(8), (float) x+7, (float) y);
-						}
-						if(Goodsinfo.get(i).getDrugname().length()>20){
-							y += fontContent.getSize2D()+2;
-						}
-						g2d.drawString(Goodsinfo.get(i).getAmount().toString(), (float) x + 70, (float) y);
-						//g2d.drawString(Goodsinfo.get(i).getJifen().toString(), (float) x + 80, (float) y);
-						g2d.drawString(Goodsinfo.get(i).getPrice().toString(), (float) x + 110, (float) y);
-						y += fontContent.getSize2D()+2; 
-			        }
-					g2d.drawString(xuxian, (float) x, (float) y);
-					y += fontContent.getSize2D()+2; 
-					/*g2d.drawString("¼şÊı£º"+totalCount, (float) x , (float) y);
+    }
+
+    /**
+     * ç”¨äºå°†å•†å“é›¶å”®è¿›è¡Œè¿›è¡Œæ‰“å°
+     */
+    public void printSheet(String orderNo, String storeName, String cashier, String cash, String payment, String userName, String tel, String address, List<Sell> Goodsinfo) {
+        chushihua(orderNo, storeName, cashier, cash, payment, userName, tel, address, Goodsinfo);
+        // é€šä¿—ç†è§£å°±æ˜¯ä¹¦ã€æ–‡æ¡£
+        Book book = new Book();
+        // è®¾ç½®æˆç«–æ‰“
+        PageFormat pf = new PageFormat();
+        pf.setOrientation(PageFormat.PORTRAIT); //LANDSCAPEè¡¨ç¤ºæ¨ªæ‰“;PORTRAITè¡¨ç¤ºç«–æ‰“;REVERSE_LANDSCAPEè¡¨ç¤ºæ‰“å°ç©ºç™½
+        // é€šè¿‡Paperè®¾ç½®é¡µé¢çš„ç©ºç™½è¾¹è·å’Œå¯æ‰“å°åŒºåŸŸã€‚å¿…é¡»ä¸å®é™…æ‰“å°çº¸å¼ å¤§å°ç›¸ç¬¦ã€‚
+        Paper p = new Paper();
+        int length = printSize(Goodsinfo);//åŠ å€¼å‚æ•°ä¸º115ï¼Œå¢åŠ è¡Œæ•°éœ€è¦å¢åŠ é«˜åº¦
+        System.out.println("Paper length is:" + length);
+        p.setSize(165, length); // çº¸å¼ å¤§å°A4çº¸(595, 842),ç»æµ‹è¯•58mmä¸º165
+        p.setImageableArea(5, 5, 155, length); //è®¾ç½®æ‰“å°åŒºåŸŸï¼ŒA4çº¸çš„é»˜è®¤X,Yè¾¹è·æ˜¯72
+        //x - ç”¨æ¥è®¾ç½®æ­¤ paper å¯æˆåƒåŒºåŸŸå·¦ä¸Šè§’çš„ x åæ ‡
+        //y - ç”¨æ¥è®¾ç½®æ­¤ paper å¯æˆåƒåŒºåŸŸå·¦ä¸Šè§’çš„ y åæ ‡
+        //width - ç”¨æ¥è®¾ç½®æ­¤ paper å¯æˆåƒåŒºåŸŸå®½åº¦çš„å€¼
+        //height - ç”¨æ¥è®¾ç½®æ­¤ paper å¯æˆåƒåŒºåŸŸé«˜åº¦çš„å€¼
+        pf.setPaper(p);
+        // æŠŠ PageFormat å’Œ Printable æ·»åŠ åˆ°ä¹¦ä¸­ï¼Œç»„æˆä¸€ä¸ªé¡µé¢
+        book.append(new Print(), pf);
+        // è·å–æ‰“å°æœåŠ¡å¯¹è±¡
+        PrinterJob job = PrinterJob.getPrinterJob();
+        // è®¾ç½®æ‰“å°ç±»
+        job.setPageable(book);
+        try {
+            // // å¯ä»¥ç”¨printDialogæ˜¾ç¤ºæ‰“å°å¯¹è¯æ¡†ï¼Œåœ¨ç”¨æˆ·ç¡®è®¤åæ‰“å°ï¼›ä¹Ÿå¯ä»¥ç›´æ¥æ‰“å°
+            // if (a) {
+            job.print();
+            // }
+        } catch (PrinterException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static Integer printSize(List<Sell> goodsArray) {
+        int height = 200;//åŠ å€¼å‚æ•°ä¸º140ï¼Œå¢åŠ è¡Œæ•°éœ€è¦å¢åŠ é«˜åº¦
+        if (goodsArray.size() > 0) {
+            height += goodsArray.size() * 10;
+            for (int i = 0; i < goodsArray.size(); i++) {
+                goodsArray.get(i).getDrugname();
+                //String[] goods = goodsArray[i].split(",");
+                if (goodsArray.get(i).getDrugname().length() > 8) {//åç§°è¶…11ä¸ªå­—,æ¢è¡Œ
+                    height += 10;
+                }
+            }
+        }
+        return height;
+    }
+
+
+    public int print(Graphics graphics, PageFormat pageFormat, int pageIndex) throws PrinterException {
+        try {
+            /**
+             * * @param GraphicæŒ‡æ˜æ‰“å°çš„å›¾å½¢ç¯å¢ƒ
+             * PageFormatæŒ‡æ˜æ‰“å°é¡µæ ¼å¼ï¼ˆé¡µé¢å¤§å°ä»¥ç‚¹ä¸ºè®¡é‡å•ä½ï¼Œ
+             * 1ç‚¹ä¸º1è‹±å¯¸çš„1/72ï¼Œ1è‹±å¯¸ä¸º25.4æ¯«ç±³ã€‚A4çº¸å¤§è‡´ä¸º595Ã—842ç‚¹ï¼‰ *
+             * @param pageIndexæŒ‡æ˜é¡µå·
+             **/
+            // è½¬æ¢æˆGraphics2D
+            Graphics2D g2d = (Graphics2D) graphics;
+            // è®¾ç½®æ‰“å°é¢œè‰²ä¸ºé»‘è‰²
+            g2d.setColor(Color.black);
+            // æ‰“å°èµ·ç‚¹åæ ‡
+            switch (pageIndex) {
+                case 0:
+                    String xuxian = "------------------------------------";
+                    double x = pageFormat.getImageableX();
+                    double y = pageFormat.getImageableY() + 10;
+                    //è®¾ç½®æ‰“å°å­—ä½“ï¼ˆå­—ä½“åç§°ã€æ ·å¼å’Œç‚¹å¤§å°ï¼‰ï¼ˆå­—ä½“åç§°å¯ä»¥æ˜¯ç‰©ç†æˆ–è€…é€»è¾‘åç§°ï¼‰
+                    Font fontTitle = new Font("æ–°å®‹ä½“", Font.BOLD, 10);
+                    g2d.setFont(fontTitle); // è®¾ç½®å­—ä½“
+                    //æ‰“å°æ ‡é¢˜
+                    g2d.drawString(TITLE, (float) x + 40, (float) y);
+                    y += fontTitle.getSize2D() + 4;
+
+                    Font fontContent = new Font("æ–°å®‹ä½“", Font.PLAIN, 7);
+                    g2d.setFont(fontContent); //è®¾ç½®å­—ä½“
+                    //æ‰“å° è®¢å•å·
+                    g2d.drawString("å•å·ï¼š" + ORDERNO, (float) x, (float) y);
+                    y += fontContent.getSize2D() + 4;
+                    g2d.drawString("é—¨åº—ï¼š" + STORENAME, (float) x, (float) y);
+                    y += fontContent.getSize2D() + 4;
+                    g2d.drawString("æ”¶é“¶å‘˜ï¼š" + CASHIER, (float) x, (float) y);
+                    y += fontContent.getSize2D() + 4;
+                    SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                    g2d.drawString("æ—¶é—´ï¼š" + format.format(new Date()), (float) x, (float) y);
+                    y += fontContent.getSize2D() + 4;
+
+                    g2d.drawString(xuxian, (float) x, (float) y);
+                    y += fontContent.getSize2D() + 2;
+
+                    g2d.drawString("åç§°", (float) x, (float) y);
+                    g2d.drawString("æ•°", (float) x + 70, (float) y);
+                    //g2d.drawString("ç§¯åˆ†å•", (float) x + 80, (float) y);
+                    g2d.drawString("ç°é‡‘å•", (float) x + 110, (float) y);
+                    y += fontContent.getSize2D() + 2;
+                    g2d.drawString("é‡", (float) x + 70, (float) y);
+                    //g2d.drawString("ä»·", (float) x + 80, (float) y);
+                    g2d.drawString("ä»·", (float) x + 110, (float) y);
+                    y += fontContent.getSize2D() + 2;
+                    @SuppressWarnings("unused")
+                    Double totalCount = 0.0, totalPrice = 0.0;
+
+                    for (int i = 0; i < Goodsinfo.size(); i++) {
+                        //String[] goods = GOODSARRAY[i].split(",");
+
+                        totalCount += Double.valueOf(Goodsinfo.get(i).getCount());
+                        //totalPrice += Double.valueOf(GOODSARRAY.get(i).getCount())*Double.valueOf(GOODSARRAY.get(i).get);
+                        String goodsName = Goodsinfo.get(i).getDrugname().length() > 8 ? Goodsinfo.get(i).getDrugname().substring(0, 8) : Goodsinfo.get(i).getDrugname();
+                        g2d.drawString((i + 1) + "." + goodsName, (float) x, (float) y);
+                        if (Goodsinfo.get(i).getDrugname().length() > 8) {//åç§°è¶…8ä¸ªå­—,æ¢è¡Œ
+                            y += fontContent.getSize2D() + 2;
+                            g2d.drawString(Goodsinfo.get(i).getDrugname().substring(8), (float) x + 7, (float) y);
+                        }
+                        if (Goodsinfo.get(i).getDrugname().length() > 20) {
+                            y += fontContent.getSize2D() + 2;
+                        }
+                        g2d.drawString(Goodsinfo.get(i).getAmount().toString(), (float) x + 70, (float) y);
+                        //g2d.drawString(Goodsinfo.get(i).getJifen().toString(), (float) x + 80, (float) y);
+                        g2d.drawString(Goodsinfo.get(i).getPrice().toString(), (float) x + 110, (float) y);
+                        y += fontContent.getSize2D() + 2;
+                    }
+                    g2d.drawString(xuxian, (float) x, (float) y);
+                    y += fontContent.getSize2D() + 2;
+					/*g2d.drawString("ä»¶æ•°ï¼š"+totalCount, (float) x , (float) y);
 					y += fontContent.getSize2D()+2;*/
-					/*g2d.drawString("»ı·Ö×Ü¼Æ£º"+ String.format("%.2f",Double.valueOf(INTEGRAL)), (float) x ,(float) y);
+					/*g2d.drawString("ç§¯åˆ†æ€»è®¡ï¼š"+ String.format("%.2f",Double.valueOf(INTEGRAL)), (float) x ,(float) y);
 					y += fontContent.getSize2D()+2;*/
-					g2d.drawString("ÏÖ½ğ×Ü¼Æ£º"+ String.format("%.2f",Double.valueOf(CASH)), (float) x, (float) y);
-					y += fontContent.getSize2D()+2;
-					g2d.drawString("Ö§¸¶·½Ê½£º"+ PAYMENT, (float) x, (float) y);
-					y += fontContent.getSize2D()+2;
-					g2d.drawString("»áÔ±Ãû³Æ£º"+ USERNAME, (float) x, (float) y);
-					y += fontContent.getSize2D()+2; 
-					g2d.drawString(xuxian, (float) x, (float) y);
-					y += fontContent.getSize2D()+4; 
-					String address = ADDRESS.length()>16?ADDRESS.substring(0,16):ADDRESS;
-					g2d.drawString("µØÖ·£º" + address, (float) x, (float) y);
-					if(ADDRESS.length()>16){
-						y += fontContent.getSize2D()+2;
-						g2d.drawString(ADDRESS.substring(16), (float) x+20, (float) y);
-					}
-					y += fontContent.getSize2D()+2; 
-					g2d.drawString("Ğ»Ğ»»İ¹Ë,×£ÄúÔçÈÕ¿µ¸´!!!", (float) x+22, (float) y);
-					y += fontContent.getSize2D()+2; 
-					g2d.drawString("¿Í·şµç»°("+TEL+")", (float) x+25, (float) y);
-					y += fontContent.getSize2D()+10; 
-					return PAGE_EXISTS;
-				default:
-					return NO_SUCH_PAGE;
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return 0;
-	}
-	
+                    g2d.drawString("ç°é‡‘æ€»è®¡ï¼š" + String.format("%.2f", Double.valueOf(CASH)), (float) x, (float) y);
+                    y += fontContent.getSize2D() + 2;
+                    g2d.drawString("æ”¯ä»˜æ–¹å¼ï¼š" + PAYMENT, (float) x, (float) y);
+                    y += fontContent.getSize2D() + 2;
+                    g2d.drawString("ä¼šå‘˜åç§°ï¼š" + USERNAME, (float) x, (float) y);
+                    y += fontContent.getSize2D() + 2;
+                    g2d.drawString(xuxian, (float) x, (float) y);
+                    y += fontContent.getSize2D() + 4;
+                    String address = ADDRESS.length() > 16 ? ADDRESS.substring(0, 16) : ADDRESS;
+                    g2d.drawString("åœ°å€ï¼š" + address, (float) x, (float) y);
+                    if (ADDRESS.length() > 16) {
+                        y += fontContent.getSize2D() + 2;
+                        g2d.drawString(ADDRESS.substring(16), (float) x + 20, (float) y);
+                    }
+                    y += fontContent.getSize2D() + 2;
+                    g2d.drawString("è°¢è°¢æƒ é¡¾,ç¥æ‚¨æ—©æ—¥åº·å¤!!!", (float) x + 22, (float) y);
+                    y += fontContent.getSize2D() + 2;
+                    g2d.drawString("å®¢æœç”µè¯(" + TEL + ")", (float) x + 25, (float) y);
+                    y += fontContent.getSize2D() + 10;
+                    return PAGE_EXISTS;
+                default:
+                    return NO_SUCH_PAGE;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
 }
 

@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.mchange:mchange-commons-java:0.2.20">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/software/maven-home/com/mchange/mchange-commons-java/0.2.20/mchange-commons-java-0.2.20.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/software/maven-home/com/mchange/mchange-commons-java/0.2.20/mchange-commons-java-0.2.20-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/software/maven-home/com/mchange/mchange-commons-java/0.2.20/mchange-commons-java-0.2.20-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

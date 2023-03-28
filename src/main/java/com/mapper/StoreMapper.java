@@ -10,27 +10,27 @@ import com.bean.Store;
 
 @Repository
 public interface StoreMapper {
-	List<Store> QueryByNCP(@Param("drugname")String drugname,@Param("changshang")String changshang,@Param("pihao")String pihao);//¸ù¾İname,changshang,pihao²éÑ¯
-	String QueryBpByNCP(@Param("drugname")String drugname,@Param("changshang")String changshang,@Param("pihao")String pihao);//¸ù¾İname,changshang,pihao²éÑ¯beginprice
+	List<Store> QueryByNCP(@Param("drugname")String drugname,@Param("changshang")String changshang,@Param("pihao")String pihao);//æ ¹æ®name,changshang,pihaoæŸ¥è¯¢
+	String QueryBpByNCP(@Param("drugname")String drugname,@Param("changshang")String changshang,@Param("pihao")String pihao);//æ ¹æ®name,changshang,pihaoæŸ¥è¯¢beginprice
 	void AddStore(Store store);
 	void UpdateStoreCount(@Param("count")String count,@Param("drugname")String drugname,@Param("changshang")String changshang,@Param("pihao")String pihao);
 	void DeleteStore(@Param("drugname")String drugname,@Param("changshang")String changshang,@Param("pihao")String pihao);
 	List<Store> GetAllStore();
 	List<Store> QueryBySTiao(String tiao);
-	List<Store> QueryBySName(String name);  //¸ù¾İdrugnameÄ£ºı²éÑ¯
+	List<Store> QueryBySName(String name);  //æ ¹æ®drugnameæ¨¡ç³ŠæŸ¥è¯¢
 	/**
-	 * ÓÃÓÚÈ±»õĞÅÏ¢ÄÇ±ß
+	 * ç”¨äºç¼ºè´§ä¿¡æ¯é‚£è¾¹
 	 */
 	void DeleteCountZero();
 	/**
-	 * ¿â´æÔ¤¾¯
-	 * @param c (Ô¤¾¯µÄÊıÁ¿)
+	 * åº“å­˜é¢„è­¦
+	 * @param c (é¢„è­¦çš„æ•°é‡)
 	 * @return
 	 */
 	List<Store> StoreYJ(int c);
 	/**
-	 * Ê¹ÓÃÊ±Õâ¸ö·½·¨Ê±×¢Òâ,°ÑÔ­ÅúºÅpihao¾Í¸³Öµ¸øStore.guige,
-	 * È»ºó°ÑÒª¸ÄµÄÅúºÅpihao¸³Öµ¸øStore.pihao
+	 * ä½¿ç”¨æ—¶è¿™ä¸ªæ–¹æ³•æ—¶æ³¨æ„,æŠŠåŸæ‰¹å·pihaoå°±èµ‹å€¼ç»™Store.guige,
+	 * ç„¶åæŠŠè¦æ”¹çš„æ‰¹å·pihaoèµ‹å€¼ç»™Store.pihao
 	 */
 	void UpdateStoreSomeInfo(Store store);
 }

@@ -9,13 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
-
-
-
-
-
-
-
 import com.bean.Datetips;
 import com.bean.Store;
 import com.github.pagehelper.PageHelper;
@@ -28,95 +21,99 @@ import com.utils.StringPro;
 @Service
 public class StoreService {
 
-	@Autowired
-	StoreMapper store;
-	
-	public PageInfo<Store> QueryStoreService(Integer pn, String qs) {
-		if(qs==""||qs==null){
-			PageHelper.startPage(pn, 8);
-			List<Store> re = store.GetAllStore();
-			PageInfo<Store> page_1 = new PageInfo<Store>(re,5);
-			return page_1;
-		}else{
-			if(Boolean_tiaoxingma.CheckParam(qs)){
-				PageHelper.startPage(pn, 8);
-				List<Store> re2 = store.QueryBySTiao(qs);
-				PageInfo<Store> page_2 = new PageInfo<Store>(re2,5);
-				return page_2;
-			}else{
-				PageHelper.startPage(pn, 8);
-				List<Store> re3 = store.QueryBySName(qs);
-				PageInfo<Store> page_3 = new PageInfo<Store>(re3,5);
-				return page_3;
-			}
-		}
-	}
+    @Autowired
+    StoreMapper store;
 
-	public void DeleteService(String drugname, String changshang, String pihao) {
-		store.DeleteStore(drugname, changshang, pihao);	
-	}
+    public PageInfo<Store> QueryStoreService(Integer pn, String qs) {
+        if (qs == "" || qs == null) {
+            PageHelper.startPage(pn, 8);
+            List<Store> re = store.GetAllStore();
+            PageInfo<Store> page_1 = new PageInfo<Store>(re, 5);
+            return page_1;
+        } else {
+            if (Boolean_tiaoxingma.CheckParam(qs)) {
+                PageHelper.startPage(pn, 8);
+                List<Store> re2 = store.QueryBySTiao(qs);
+                PageInfo<Store> page_2 = new PageInfo<Store>(re2, 5);
+                return page_2;
+            } else {
+                PageHelper.startPage(pn, 8);
+                List<Store> re3 = store.QueryBySName(qs);
+                PageInfo<Store> page_3 = new PageInfo<Store>(re3, 5);
+                return page_3;
+            }
+        }
+    }
 
-	public void UpdateStoreService(Store reqstore) {
-		store.UpdateStoreSomeInfo(reqstore);
-		
-	}
-	/**
-	 * Ìí¼Ó¿â´æ,¸ù¾İ¿â´æÖĞÊÇ·ñÓĞÍ¬ÅúºÅÒ©Æ··µ»Øtrue»òfalse,ÓĞÍ¬ÅúºÅ·µ»Øtrue
-	 * @param s
-	 * @return
-	 */
-	public boolean AddStoreService(Store s){
-		List<Store> check = store.QueryByNCP(s.getDrugname(), s.getChangshang(), s.getPihao());
-		if(check.isEmpty()){
-			store.AddStore(s);
-			return false;
-		}else{
-			String newcount = StringPro.add(check.get(0).getCount(), s.getCount());
-			store.UpdateStoreCount(newcount, s.getDrugname(), s.getChangshang(), s.getPihao());
-			return true;
-		}
-	}
-	/**
-	 * Ğ§ÆÚÌáÊ¾
-	 * @return
-	 *Èç¹ûÃ»ÓĞ¼ÇÂ¼·µ»ØÖµÖ»ÓĞÒ»¸ö¼ÇÂ¼£¬²¢ÇÒflag="notip"
-	 */
-	public synchronized List<Datetips> CheckStoreService() {
-		List<Store> allstore = store.GetAllStore();
-		ArrayList<Datetips> re = new ArrayList<Datetips>();
-		if(allstore.isEmpty()){
-			re.add(new Datetips(null,null,null,null,null,null,null,null,null,null,null,null,"notip"));
-			return re;
-		}else{
-			SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
-            String nowdate=sdf.format(new Date());//»ñÈ¡ÏµÍ³µ±Ç°Ê±¼ä
-			for (Store s : allstore) {
-			try{
-				int flag = StringPro.daysBetween(nowdate,s.getDate());
-				if(flag<=180){
-					String tip = "";
-					String f = "";
-                	if(flag<=0){
-                		tip="ÒÑ¹ıÆÚ";
-                		f = "r";
-                	}else{
-                		tip="»¹ÓĞ"+flag+"Ìì¹ıÆÚ";
-                		f = "y";
-                	}
-                	Datetips nn = new Datetips(s.getDrugname(), s.getChangshang(), s.getBeginprice(), s.getPrice(), s.getDate(), s.getPihao(), s.getBeizhu(), s.getLocation(), s.getCount(), s.getUnit(), s.getGuige(), tip, f);
-                	re.add(nn);
-				}
-			}catch(Exception e) {
-				continue;
-			}
-		}
-			if(re.isEmpty()){
-				re.add(new Datetips(null,null,null,null,null,null,null,null,null,null,null,null,"notip"));
-			}
-			return re;
-		}
-	}
-	public List<Store> YJService(int c){
-		return store.StoreYJ(c);
-	}
+    public void DeleteService(String drugname, String changshang, String pihao) {
+        store.DeleteStore(drugname, changshang, pihao);
+    }
+
+    public void UpdateStoreService(Store reqstore) {
+        store.UpdateStoreSomeInfo(reqstore);
+
+    }
+
+    /**
+     * æ·»åŠ åº“å­˜,æ ¹æ®åº“å­˜ä¸­æ˜¯å¦æœ‰åŒæ‰¹å·è¯å“è¿”å›trueæˆ–false,æœ‰åŒæ‰¹å·è¿”å›true
+     *
+     * @param s
+     * @return
+     */
+    public boolean AddStoreService(Store s) {
+        List<Store> check = store.QueryByNCP(s.getDrugname(), s.getChangshang(), s.getPihao());
+        if (check.isEmpty()) {
+            store.AddStore(s);
+            return false;
+        } else {
+            String newcount = StringPro.add(check.get(0).getCount(), s.getCount());
+            store.UpdateStoreCount(newcount, s.getDrugname(), s.getChangshang(), s.getPihao());
+            return true;
+        }
+    }
+
+    /**
+     * æ•ˆæœŸæç¤º
+     *
+     * @return å¦‚æœæ²¡æœ‰è®°å½•è¿”å›å€¼åªæœ‰ä¸€ä¸ªè®°å½•ï¼Œå¹¶ä¸”flag="notip"
+     */
+    public synchronized List<Datetips> CheckStoreService() {
+        List<Store> allstore = store.GetAllStore();
+        ArrayList<Datetips> re = new ArrayList<Datetips>();
+        if (allstore.isEmpty()) {
+            re.add(new Datetips(null, null, null, null, null, null, null, null, null, null, null, null, "notip"));
+            return re;
+        } else {
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            String nowdate = sdf.format(new Date());//è·å–ç³»ç»Ÿå½“å‰æ—¶é—´
+            for (Store s : allstore) {
+                try {
+                    int flag = StringPro.daysBetween(nowdate, s.getDate());
+                    if (flag <= 180) {
+                        String tip = "";
+                        String f = "";
+                        if (flag <= 0) {
+                            tip = "å·²è¿‡æœŸ";
+                            f = "r";
+                        } else {
+                            tip = "è¿˜æœ‰" + flag + "å¤©è¿‡æœŸ";
+                            f = "y";
+                        }
+                        Datetips nn = new Datetips(s.getDrugname(), s.getChangshang(), s.getBeginprice(), s.getPrice(), s.getDate(), s.getPihao(), s.getBeizhu(), s.getLocation(), s.getCount(), s.getUnit(), s.getGuige(), tip, f);
+                        re.add(nn);
+                    }
+                } catch (Exception e) {
+                    continue;
+                }
+            }
+            if (re.isEmpty()) {
+                re.add(new Datetips(null, null, null, null, null, null, null, null, null, null, null, null, "notip"));
+            }
+            return re;
+        }
+    }
+
+    public List<Store> YJService(int c) {
+        return store.StoreYJ(c);
+    }
 }

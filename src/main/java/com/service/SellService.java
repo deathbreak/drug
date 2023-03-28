@@ -24,124 +24,125 @@ import com.mapper.StoreMapper;
 import com.utils.*;
 
 
-
 @Service
 public class SellService {
 
-	@Autowired
-	SellMapper sell;
+    @Autowired
+    SellMapper sell;
 
-	@Autowired
-	StoreMapper store;
+    @Autowired
+    StoreMapper store;
 
-	@Autowired
-	RxdrugMapper rdm;
+    @Autowired
+    RxdrugMapper rdm;
 
-	@Autowired
-	RxpersonMapper rpm;
-	public List<Sell> GetAllSellService(){
-		return sell.GetAllSell();
-	}
+    @Autowired
+    RxpersonMapper rpm;
 
-	public void DeleteSellService(String drugname, String changshang,
-								  String pihao, String amount) {
-		sell.DeleteSellByDCPA(drugname, changshang, pihao, amount);
+    public List<Sell> GetAllSellService() {
+        return sell.GetAllSell();
+    }
 
-	}
+    public void DeleteSellService(String drugname, String changshang,
+                                  String pihao, String amount) {
+        sell.DeleteSellByDCPA(drugname, changshang, pihao, amount);
 
-	public List<Store> ForSellSelectService(String qd) {
-		if(qd==""||qd==null){
-			List<Store> re = store.GetAllStore();
-			return re;
-		}else{
-			if(Boolean_tiaoxingma.CheckParam(qd)){
-				List<Store> re2 = store.QueryBySTiao(qd);
-				return re2;
-			}else{
-				List<Store> re3 = store.QueryBySName(qd);
-				return re3;
-			}
-		}
-	}
+    }
 
-	public List<Store> QueryDCPinStoreService(String drugname, String changshang,
-											  String pihao) {
-		return store.QueryByNCP(drugname, changshang, pihao);
-	}
+    public List<Store> ForSellSelectService(String qd) {
+        if (qd == "" || qd == null) {
+            List<Store> re = store.GetAllStore();
+            return re;
+        } else {
+            if (Boolean_tiaoxingma.CheckParam(qd)) {
+                List<Store> re2 = store.QueryBySTiao(qd);
+                return re2;
+            } else {
+                List<Store> re3 = store.QueryBySName(qd);
+                return re3;
+            }
+        }
+    }
 
-	public void ProSellService(String drugname, String changshang,
-							   String pihao, String amount) {
+    public List<Store> QueryDCPinStoreService(String drugname, String changshang,
+                                              String pihao) {
+        return store.QueryByNCP(drugname, changshang, pihao);
+    }
 
-		List<Store> sssss = store.QueryByNCP(drugname, changshang, pihao);
+    public void ProSellService(String drugname, String changshang,
+                               String pihao, String amount) {
 
-		if(!sssss.isEmpty()){
-			Store xs = sssss.get(0);
-			List<Sell> checksell = sell.QuerySellByDCP(drugname, changshang, pihao);
-			int flag = checksell.size();
-			if(flag<=0){
-				String sum = "";
-				sum=StringPro.mul(xs.getPrice(),amount);
-				Sell as = new Sell(xs.getDrugname(),xs.getChangshang(),xs.getPrice(), xs.getDate(),xs.getPihao(),xs.getBeizhu(), xs.getCount(), xs.getUnit(), xs.getGuige(), amount, sum);
-				sell.AddSell(as);
-			}else{
-				Sell dd = checksell.get(0);
-				String newamount=StringPro.add(dd.getAmount(),amount);
-				String sum2=StringPro.mul(newamount,dd.getPrice());
-				sell.UpdateSellCountSum(newamount, sum2, drugname, changshang, pihao);
-			}
-		}
+        List<Store> sssss = store.QueryByNCP(drugname, changshang, pihao);
 
-	}
+        if (!sssss.isEmpty()) {
+            Store xs = sssss.get(0);
+            List<Sell> checksell = sell.QuerySellByDCP(drugname, changshang, pihao);
+            int flag = checksell.size();
+            if (flag <= 0) {
+                String sum = "";
+                sum = StringPro.mul(xs.getPrice(), amount);
+                Sell as = new Sell(xs.getDrugname(), xs.getChangshang(), xs.getPrice(), xs.getDate(), xs.getPihao(), xs.getBeizhu(), xs.getCount(), xs.getUnit(), xs.getGuige(), amount, sum);
+                sell.AddSell(as);
+            } else {
+                Sell dd = checksell.get(0);
+                String newamount = StringPro.add(dd.getAmount(), amount);
+                String sum2 = StringPro.mul(newamount, dd.getPrice());
+                sell.UpdateSellCountSum(newamount, sum2, drugname, changshang, pihao);
+            }
+        }
 
-	public List<Rxdrug> SellitService() {
-		List<Sell> updatesell = sell.GetAllSell();
-		if(!updatesell.isEmpty()){
+    }
+
+    public List<Rxdrug> SellitService() {
+        List<Sell> updatesell = sell.GetAllSell();
+        if (!updatesell.isEmpty()) {
 
 
-			SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//…Ë÷√»’∆⁄∏Ò Ω
-			String date2=df.format(new Date());
-			List<Rxdrug> CheckRxdrug = new ArrayList<Rxdrug>();
-			for (Sell udsell : updatesell) {
+            SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//ËÆæÁΩÆÊó•ÊúüÊ†ºÂºè
+            String date2 = df.format(new Date());
+            List<Rxdrug> CheckRxdrug = new ArrayList<Rxdrug>();
+            for (Sell udsell : updatesell) {
 
-				if(udsell.getBeizhu().equals("¥¶∑Ω“©")) {
-					Rxdrug rd = new Rxdrug(date2,udsell.getDrugname(),udsell.getChangshang(),udsell.getDate(),udsell.getPihao(),udsell.getAmount());
-					rdm.AddRxdrug(rd);
-					CheckRxdrug.add(rd);
-				}
-				String bp = store.QueryBpByNCP(udsell.getDrugname(), udsell.getChangshang(), udsell.getPihao());
-				sell.AddSellrecords(new Sellrecords(udsell.getDrugname(), udsell.getChangshang(), bp, udsell.getPrice(), udsell.getDate(), udsell.getPihao(), udsell.getBeizhu(), udsell.getUnit(), udsell.getGuige(), udsell.getAmount(), udsell.getSum(), date2));
-				String newcount=StringPro.sub(udsell.getCount(),udsell.getAmount());
-				store.UpdateStoreCount(newcount, udsell.getDrugname(), udsell.getChangshang(), udsell.getPihao());
-				if(newcount.equals("0")){
-					sell.AddSellover(new Sellover(udsell.getDrugname(), udsell.getChangshang(), udsell.getPrice(), date2, udsell.getPihao(), udsell.getBeizhu(), newcount, udsell.getUnit(), udsell.getGuige()));
-					store.DeleteCountZero();
-				}
-			}
-			sell.DelTableSell();
-			if(CheckRxdrug.size()>0) {
-				return CheckRxdrug;
-			}else {
-				return null;
-			}
+                if (udsell.getBeizhu().equals("Â§ÑÊñπËçØ")) {
+                    Rxdrug rd = new Rxdrug(date2, udsell.getDrugname(), udsell.getChangshang(), udsell.getDate(), udsell.getPihao(), udsell.getAmount());
+                    rdm.AddRxdrug(rd);
+                    CheckRxdrug.add(rd);
+                }
+                String bp = store.QueryBpByNCP(udsell.getDrugname(), udsell.getChangshang(), udsell.getPihao());
+                sell.AddSellrecords(new Sellrecords(udsell.getDrugname(), udsell.getChangshang(), bp, udsell.getPrice(), udsell.getDate(), udsell.getPihao(), udsell.getBeizhu(), udsell.getUnit(), udsell.getGuige(), udsell.getAmount(), udsell.getSum(), date2));
+                String newcount = StringPro.sub(udsell.getCount(), udsell.getAmount());
+                store.UpdateStoreCount(newcount, udsell.getDrugname(), udsell.getChangshang(), udsell.getPihao());
+                if (newcount.equals("0")) {
+                    sell.AddSellover(new Sellover(udsell.getDrugname(), udsell.getChangshang(), udsell.getPrice(), date2, udsell.getPihao(), udsell.getBeizhu(), newcount, udsell.getUnit(), udsell.getGuige()));
+                    store.DeleteCountZero();
+                }
+            }
+            sell.DelTableSell();
+            if (CheckRxdrug.size() > 0) {
+                return CheckRxdrug;
+            } else {
+                return null;
+            }
 
-		}else {
-			return null;
-		}
-	}
+        } else {
+            return null;
+        }
+    }
 
-	public void PrintService() {
-		List<Sell> check = sell.GetAllSell();
-		if(!check.isEmpty()){
-			Print p=new Print();
-			String sum="0";
-			for (int a=check.size()-1;a>=0;a--) {
-				Sell ff=(Sell)check.get(a);
-				sum=StringPro.add(sum,ff.getSum());
-			}
-			p.printSheet("0001","xxx“©µÍ","’≈»˝",sum,"œ÷Ω","∆’Õ®ª·‘±","7xxxxx3","xxx¥Û«≈±ﬂ",check);
-		}
-	}
-	//	//µπ–Ú ‰≥ˆΩ·π˚
+    public void PrintService() {
+        List<Sell> check = sell.GetAllSell();
+        if (!check.isEmpty()) {
+            Print p = new Print();
+            String sum = "0";
+            for (int a = check.size() - 1; a >= 0; a--) {
+                Sell ff = (Sell) check.get(a);
+                sum = StringPro.add(sum, ff.getSum());
+            }
+            p.printSheet("0001", "xxxËçØÂ∫ó", "Âº†‰∏â", sum, "Áé∞Èáë", "ÊôÆÈÄö‰ºöÂëò", "7xxxxx3", "xxxÂ§ßÊ°•Ëæπ", check);
+        }
+    }
+
+    //	//ÂÄíÂ∫èËæìÂá∫ÁªìÊûú
 //	public List<Sellrecords> GetRecordsService(String selltime){
 //		if(selltime.equals("")||selltime==null){
 //			List<Sellrecords> re = sell.GetAllSellrecords();
@@ -151,90 +152,95 @@ public class SellService {
 //			return sell.GetRecordsByST(selltime);
 //		}
 //	}
-	//update this function
-	public PageInfo<Sellrecords> GetRecordsService(Integer pn, String selltime){
-		if(selltime.equals("nowtime")){
-			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-			selltime = sdf.format(new Date());//ªÒ»°œµÕ≥µ±«∞ ±º‰
-		}
+    //update this function
+    public PageInfo<Sellrecords> GetRecordsService(Integer pn, String selltime) {
+        if (selltime.equals("nowtime")) {
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            selltime = sdf.format(new Date());//Ëé∑ÂèñÁ≥ªÁªüÂΩìÂâçÊó∂Èó¥
+        }
 
-		if(selltime.equals("")||selltime==null) {
-			PageHelper.startPage(pn, 8);
-			List<Sellrecords> re = sell.GetAllSellrecords();
-			Collections.reverse(re);
-			PageInfo<Sellrecords> page_1 = new PageInfo<Sellrecords>(re,5);
-			return page_1;
-		}else {
-			PageHelper.startPage(pn, 8);
-			List<Sellrecords> re2 = sell.GetRecordsByST(selltime);
-			Collections.reverse(re2);
-			PageInfo<Sellrecords> page_2 = new PageInfo<Sellrecords>(re2,5);
-			return page_2;
-		}
-	}
-	//time
-	public String GetTimeInfo(String selltime){
-		if(selltime.equals("nowtime")){
-			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-			return sdf.format(new Date());
-		}else {
-			return selltime;
-		}
-	}
-	//À„æª¿˚»Û
-	public String GetMoneyInfo(String selltime){
-		if(selltime.equals("nowtime")){
-			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-			selltime = sdf.format(new Date());//ªÒ»°œµÕ≥µ±«∞ ±º‰
-		}
-		if (selltime.equals("") || selltime == null) {
-			List<Sellrecords> re = sell.GetAllSellrecords();
-			return ReturnSum(re);
-		} else {
-			List<Sellrecords> re2 = sell.GetRecordsByST(selltime);
-			return ReturnSum(re2);
-		}
-	}
-	public String ReturnSum(List<Sellrecords> re){
-		String sum = "0";
-		for(Sellrecords sellrecords : re){
-			if(sellrecords.getBeginprice()==null||sellrecords.getBeginprice().equals("")){
-				sellrecords.setBeginprice("0");
-			}
-			sum = StringPro.add(sum, StringPro.mul(sellrecords.getAmount(), StringPro.sub(sellrecords.getPrice(), sellrecords.getBeginprice())));
-		}
-		return sum;
-	}
-	public void DelRecordsService(String drugname, String changshang,
-								  String pihao, String selltime) {
-		sell.DeleteSellrecords(drugname, changshang, pihao, selltime);
+        if (selltime.equals("") || selltime == null) {
+            PageHelper.startPage(pn, 8);
+            List<Sellrecords> re = sell.GetAllSellrecords();
+            Collections.reverse(re);
+            PageInfo<Sellrecords> page_1 = new PageInfo<Sellrecords>(re, 5);
+            return page_1;
+        } else {
+            PageHelper.startPage(pn, 8);
+            List<Sellrecords> re2 = sell.GetRecordsByST(selltime);
+            Collections.reverse(re2);
+            PageInfo<Sellrecords> page_2 = new PageInfo<Sellrecords>(re2, 5);
+            return page_2;
+        }
+    }
 
-	}
-	public List<Sellover> GetASService(){
-		return sell.GetAllSellover();
-	}
+    //time
+    public String GetTimeInfo(String selltime) {
+        if (selltime.equals("nowtime")) {
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            return sdf.format(new Date());
+        } else {
+            return selltime;
+        }
+    }
 
-	public void DelSelloverService(String drugname, String changshang,
-								   String pihao) {
-		sell.DelSellover(drugname, changshang, pihao);
-	}
-	/**
-	 *
-	 * @return Œ¥º«¬ºµƒ¥¶∑Ω“©Ãı ˝
-	 */
-	public Integer RxCountService() {
-		return rdm.CountNullRx();
-	}
+    //ÁÆóÂáÄÂà©Ê∂¶
+    public String GetMoneyInfo(String selltime) {
+        if (selltime.equals("nowtime")) {
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            selltime = sdf.format(new Date());//Ëé∑ÂèñÁ≥ªÁªüÂΩìÂâçÊó∂Èó¥
+        }
+        if (selltime.equals("") || selltime == null) {
+            List<Sellrecords> re = sell.GetAllSellrecords();
+            return ReturnSum(re);
+        } else {
+            List<Sellrecords> re2 = sell.GetRecordsByST(selltime);
+            return ReturnSum(re2);
+        }
+    }
 
-	public String AddRxPersonService(Rxperson rx) {
-		List<Rxperson> check = rpm.GetByTime(rx.getTime());
-		if(check.size()==0) {
-			rpm.AddRxperson(rx);
-			return "ÃÌº”¥¶∑Ω“©–≈œ¢≥…π¶";
-		}else {
-			return "ÃÌº” ß∞‹,“—æ≠ÃÌº”¡À’‚∏ˆ¥¶∑Ω“©–≈œ¢";
-		}
-	}
+    public String ReturnSum(List<Sellrecords> re) {
+        String sum = "0";
+        for (Sellrecords sellrecords : re) {
+            if (sellrecords.getBeginprice() == null || sellrecords.getBeginprice().equals("")) {
+                sellrecords.setBeginprice("0");
+            }
+            sum = StringPro.add(sum, StringPro.mul(sellrecords.getAmount(), StringPro.sub(sellrecords.getPrice(), sellrecords.getBeginprice())));
+        }
+        return sum;
+    }
+
+    public void DelRecordsService(String drugname, String changshang,
+                                  String pihao, String selltime) {
+        sell.DeleteSellrecords(drugname, changshang, pihao, selltime);
+
+    }
+
+    public List<Sellover> GetASService() {
+        return sell.GetAllSellover();
+    }
+
+    public void DelSelloverService(String drugname, String changshang,
+                                   String pihao) {
+        sell.DelSellover(drugname, changshang, pihao);
+    }
+
+    /**
+     * @return Êú™ËÆ∞ÂΩïÁöÑÂ§ÑÊñπËçØÊù°Êï∞
+     */
+    public Integer RxCountService() {
+        return rdm.CountNullRx();
+    }
+
+    public String AddRxPersonService(Rxperson rx) {
+        List<Rxperson> check = rpm.GetByTime(rx.getTime());
+        if (check.size() == 0) {
+            rpm.AddRxperson(rx);
+            return "Ê∑ªÂä†Â§ÑÊñπËçØ‰ø°ÊÅØÊàêÂäü";
+        } else {
+            return "Ê∑ªÂä†Â§±Ë¥•,Â∑≤ÁªèÊ∑ªÂä†‰∫ÜËøô‰∏™Â§ÑÊñπËçØ‰ø°ÊÅØ";
+        }
+    }
 }
 
 

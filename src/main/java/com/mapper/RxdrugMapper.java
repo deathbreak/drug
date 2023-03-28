@@ -13,11 +13,11 @@ public interface RxdrugMapper {
 		List<Rxdrug> GetIt(String time);
 		Integer CountNullRx();
 		/**
-		 * @return »ñÈ¡Î´¼ÇÂ¼µÄ´¦·½Ò©¹ºÒ©Ê±¼ä(timeÖ÷¼ü)
+		 * @return è·å–æœªè®°å½•çš„å¤„æ–¹è¯è´­è¯æ—¶é—´(timeä¸»é”®)
 		 */
 		List<String> GetAllOverTime();
 		/**
-		 * ²éÑ¯µÇ¼ÇµÄ´¦·½Ò©¹ºÒ©¼ÇÂ¼
+		 * æŸ¥è¯¢ç™»è®°çš„å¤„æ–¹è¯è´­è¯è®°å½•
 		 * @param drug
 		 * @return
 		 */

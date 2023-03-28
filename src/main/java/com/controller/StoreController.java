@@ -20,154 +20,164 @@ import com.service.StoreService;
 
 @Controller
 public class StoreController {
-	@Autowired
-	StoreService SS;
-	
-	@Autowired
-	DruginfoService DS2;
-	
-	@RequestMapping("/store")  //store 
-	public String to_store(){
-			return "store/store";
-	}
-	@RequestMapping("/storeinfo")
-	public String to_storeinfo(Map<String,Object> map){
-				map.put("queryresult",SS.QueryStoreService(1,""));
-				map.put("querystring", "");
-				return "store/storeinfo";
-		}
-	@RequestMapping("/addstore")  //storeinfo 
-	public String to_addstore(){
-			return "store/addstore";
-	}
-	@RequestMapping("/querystore")  //storeinfo 
-	public String to_querystore(@RequestParam(value="pn",defaultValue="1")Integer pn,
-			@RequestParam(value="querystore")String qd,
-			Map<String,Object> map){
-			map.put("queryresult",SS.QueryStoreService(pn,qd));
-			map.put("querystring", qd);
-			return "store/querystore";
-	}
-	@RequestMapping("/querystore2")   //Õâ¸ö·½·¨»¹ĞèÒªÓÅ»¯£¬ºÄĞÔÄÜ£¬Ç°¶Ë¿ÉÒÔÊ¹ÓÃJSONÀ´Æ½ºâĞÔÄÜ
-	public String to_querystore2(@RequestParam(value="pn",defaultValue="1")Integer pn,
-			@RequestParam(value="querystore")String qd,
-			Map<String,Object> map){
-			map.put("queryresult",SS.QueryStoreService(pn,qd));
-			map.put("querystring", qd);
-			return "store/storeinfo";
-	}
-   @RequestMapping(value="/deletestore",method=RequestMethod.POST)
-	public String to_deletestore(String pn,String qd,String drugname,String changshang,
-			String pihao,RedirectAttributes attr){
-		
-			SS.DeleteService(drugname,changshang,pihao);
-			attr.addAttribute("pn", pn);
-			attr.addAttribute("querystore", qd);
-			return "redirect:/querystore";
-	}
-   @RequestMapping(value="/deletestore2",method=RequestMethod.POST)
-  	public String to_deletestore2(String pn,String qd,String drugname,String changshang,
-  			String pihao,RedirectAttributes attr){
-  			SS.DeleteService(drugname,changshang,pihao);
-  			attr.addAttribute("pn", pn);
-  			attr.addAttribute("querystore", qd);
-  			return "redirect:/querystore2";
-  	}
-   
-   
-    
-    @RequestMapping(value="/updatestore",method=RequestMethod.POST)
-	public String to_updatestore(@RequestParam(value="nowpage",defaultValue="1")Integer pn,
-			String nowqd,Map<String,Object> map,@Valid Store reqstore,BindingResult result){
-			if(result.hasErrors()){
-				map.put("queryresult",SS.QueryStoreService(pn,nowqd));
-				map.put("querystring", nowqd);
-				map.put("msg", "ĞŞ¸ÄÊ§°Ü:Ê±¼ä¸ñÊ½ÓĞÎó,Éú²úÈÕÆÚĞèÒªÊÇ¹ıÈ¥µÄÊ±¼ä,ÓĞĞ§ÆÚĞèÒªÊÇ½«À´µÄÊ±¼ä");	
-				return "store/querystore";
+    @Autowired
+    StoreService SS;
+
+    @Autowired
+    DruginfoService DS2;
+
+    @RequestMapping("/store")  //store
+    public String to_store() {
+        return "store/store";
+    }
+
+    @RequestMapping("/storeinfo")
+    public String to_storeinfo(Map<String, Object> map) {
+        map.put("queryresult", SS.QueryStoreService(1, ""));
+        map.put("querystring", "");
+        return "store/storeinfo";
+    }
+
+    @RequestMapping("/addstore")  //storeinfo
+    public String to_addstore() {
+        return "store/addstore";
+    }
+
+    @RequestMapping("/querystore")  //storeinfo
+    public String to_querystore(@RequestParam(value = "pn", defaultValue = "1") Integer pn,
+                                @RequestParam(value = "querystore") String qd,
+                                Map<String, Object> map) {
+        map.put("queryresult", SS.QueryStoreService(pn, qd));
+        map.put("querystring", qd);
+        return "store/querystore";
+    }
+
+    @RequestMapping("/querystore2")   //è¿™ä¸ªæ–¹æ³•è¿˜éœ€è¦ä¼˜åŒ–ï¼Œè€—æ€§èƒ½ï¼Œå‰ç«¯å¯ä»¥ä½¿ç”¨JSONæ¥å¹³è¡¡æ€§èƒ½
+    public String to_querystore2(@RequestParam(value = "pn", defaultValue = "1") Integer pn,
+                                 @RequestParam(value = "querystore") String qd,
+                                 Map<String, Object> map) {
+        map.put("queryresult", SS.QueryStoreService(pn, qd));
+        map.put("querystring", qd);
+        return "store/storeinfo";
+    }
+
+    @RequestMapping(value = "/deletestore", method = RequestMethod.POST)
+    public String to_deletestore(String pn, String qd, String drugname, String changshang,
+                                 String pihao, RedirectAttributes attr) {
+
+        SS.DeleteService(drugname, changshang, pihao);
+        attr.addAttribute("pn", pn);
+        attr.addAttribute("querystore", qd);
+        return "redirect:/querystore";
+    }
+
+    @RequestMapping(value = "/deletestore2", method = RequestMethod.POST)
+    public String to_deletestore2(String pn, String qd, String drugname, String changshang,
+                                  String pihao, RedirectAttributes attr) {
+        SS.DeleteService(drugname, changshang, pihao);
+        attr.addAttribute("pn", pn);
+        attr.addAttribute("querystore", qd);
+        return "redirect:/querystore2";
+    }
+
+
+    @RequestMapping(value = "/updatestore", method = RequestMethod.POST)
+    public String to_updatestore(@RequestParam(value = "nowpage", defaultValue = "1") Integer pn,
+                                 String nowqd, Map<String, Object> map, @Valid Store reqstore, BindingResult result) {
+        if (result.hasErrors()) {
+            map.put("queryresult", SS.QueryStoreService(pn, nowqd));
+            map.put("querystring", nowqd);
+            map.put("msg", "ä¿®æ”¹å¤±è´¥:æ—¶é—´æ ¼å¼æœ‰è¯¯,ç”Ÿäº§æ—¥æœŸéœ€è¦æ˜¯è¿‡å»çš„æ—¶é—´,æœ‰æ•ˆæœŸéœ€è¦æ˜¯å°†æ¥çš„æ—¶é—´");
+            return "store/querystore";
 			/*	List<FieldError> err = result.getFieldErrors();
 				if(err.size()==1){
-					map.put("msg", "ĞŞ¸ÄÊ§°Ü:"+err.get(0).getField()+err.get(0).getDefaultMessage());
+					map.put("msg", "ä¿®æ”¹å¤±è´¥:"+err.get(0).getField()+err.get(0).getDefaultMessage());
 					return "store/querystore";
 				}else{
-					map.put("msg", "ĞŞ¸ÄÊ§°Ü:"+err.get(0).getField()+err.get(0).getDefaultMessage()+
-							","+err.get(1).getField()+err.get(1).getDefaultMessage());   
+					map.put("msg", "ä¿®æ”¹å¤±è´¥:"+err.get(0).getField()+err.get(0).getDefaultMessage()+
+							","+err.get(1).getField()+err.get(1).getDefaultMessage());
 					return "store/querystore";
 				}    */
-			}else{
-				SS.UpdateStoreService(reqstore);
-				map.put("queryresult",SS.QueryStoreService(pn,nowqd));
-				map.put("querystring", nowqd);
-				map.put("msg", "ĞŞ¸Ä³É¹¦£¡");
-				return "store/querystore";
-			}
-	}
-    @RequestMapping(value="/updatestore2",method=RequestMethod.POST)
-	public String to_updatestore2(@RequestParam(value="nowpage",defaultValue="1")Integer pn,
-			String nowqd,Map<String,Object> map,@Valid Store reqstore,BindingResult result){
-			if(result.hasErrors()){
-				map.put("queryresult",SS.QueryStoreService(pn,nowqd));
-				map.put("querystring", nowqd);
-				map.put("msg", "ĞŞ¸ÄÊ§°Ü:Ê±¼ä¸ñÊ½ÓĞÎó,Éú²úÈÕÆÚĞèÒªÊÇ¹ıÈ¥µÄÊ±¼ä,ÓĞĞ§ÆÚĞèÒªÊÇ½«À´µÄÊ±¼ä");	
-				return "store/storeinfo";
-			}else{
-				SS.UpdateStoreService(reqstore);
-				map.put("queryresult",SS.QueryStoreService(pn,nowqd));
-				map.put("querystring", nowqd);
-				map.put("msg", "ĞŞ¸Ä³É¹¦£¡");
-				return "store/storeinfo";
-			}
-	}
-   /* @ResponseBody
-    @RequestMapping(value="/updatestore2",method=RequestMethod.POST)
-	public List<FieldError> to_updatestore2(@RequestParam(value="nowpage",defaultValue="1")Integer pn,
-			String nowqd,@Valid Store reqstore,BindingResult result){
-		 
-			if(result.hasErrors()){
-				
-				List<FieldError> err = result.getFieldErrors();
-				
-				return err;
-			}return null;
-	}*/
-    @RequestMapping("/selectdrug")  //store 
-	public String to_selectdrug(String queryselectdrug,Map<String,Object> map){
-			map.put("selectinfo", DS2.QueryDrugService(queryselectdrug));
-			return "store/selectpage";
-	}
+        } else {
+            SS.UpdateStoreService(reqstore);
+            map.put("queryresult", SS.QueryStoreService(pn, nowqd));
+            map.put("querystring", nowqd);
+            map.put("msg", "ä¿®æ”¹æˆåŠŸï¼");
+            return "store/querystore";
+        }
+    }
+
+    @RequestMapping(value = "/updatestore2", method = RequestMethod.POST)
+    public String to_updatestore2(@RequestParam(value = "nowpage", defaultValue = "1") Integer pn,
+                                  String nowqd, Map<String, Object> map, @Valid Store reqstore, BindingResult result) {
+        if (result.hasErrors()) {
+            map.put("queryresult", SS.QueryStoreService(pn, nowqd));
+            map.put("querystring", nowqd);
+            map.put("msg", "ä¿®æ”¹å¤±è´¥:æ—¶é—´æ ¼å¼æœ‰è¯¯,ç”Ÿäº§æ—¥æœŸéœ€è¦æ˜¯è¿‡å»çš„æ—¶é—´,æœ‰æ•ˆæœŸéœ€è¦æ˜¯å°†æ¥çš„æ—¶é—´");
+            return "store/storeinfo";
+        } else {
+            SS.UpdateStoreService(reqstore);
+            map.put("queryresult", SS.QueryStoreService(pn, nowqd));
+            map.put("querystring", nowqd);
+            map.put("msg", "ä¿®æ”¹æˆåŠŸï¼");
+            return "store/storeinfo";
+        }
+    }
+
+    /* @ResponseBody
+     @RequestMapping(value="/updatestore2",method=RequestMethod.POST)
+     public List<FieldError> to_updatestore2(@RequestParam(value="nowpage",defaultValue="1")Integer pn,
+             String nowqd,@Valid Store reqstore,BindingResult result){
+
+             if(result.hasErrors()){
+
+                 List<FieldError> err = result.getFieldErrors();
+
+                 return err;
+             }return null;
+     }*/
+    @RequestMapping("/selectdrug")  //store
+    public String to_selectdrug(String queryselectdrug, Map<String, Object> map) {
+        map.put("selectinfo", DS2.QueryDrugService(queryselectdrug));
+        return "store/selectpage";
+    }
+
     /*
     <td>
-	<a class="btn btn-info btn-sm" href="<%=basePath%>toaddstore?drugname=${ds.drugname }&changshang=${ds.changshang }&beizhu=${ds.beizhu }&location=${ds.location }&unit=${ds.unit }&guige=${ds.guige }&tiaoxingma=${ds.tiaoxingma }" role="button">
-		<span class="glyphicon glyphicon-hand-up" aria-hidden="true"></span>Ñ¡ÔñÌí¼Ó´ËÒ©Æ·
-	</a>
+    <a class="btn btn-info btn-sm" href="<%=basePath%>toaddstore?drugname=${ds.drugname }&changshang=${ds.changshang }&beizhu=${ds.beizhu }&location=${ds.location }&unit=${ds.unit }&guige=${ds.guige }&tiaoxingma=${ds.tiaoxingma }" role="button">
+        <span class="glyphicon glyphicon-hand-up" aria-hidden="true"></span>é€‰æ‹©æ·»åŠ æ­¤è¯å“
+    </a>
 </td>*/
-    @RequestMapping(value="/toaddstore",method=RequestMethod.POST)  
-	public String toaddstore(@Valid Drug drug,Map<String,Object> map){
-			map.put("drugstoreinfo", drug);
-			return "store/addstoreinfo";
-	}
+    @RequestMapping(value = "/toaddstore", method = RequestMethod.POST)
+    public String toaddstore(@Valid Drug drug, Map<String, Object> map) {
+        map.put("drugstoreinfo", drug);
+        return "store/addstoreinfo";
+    }
+
     //addtostore
-    @RequestMapping(value="/addtostore",method=RequestMethod.POST)
-   	public String to_addtostore(Map<String,Object> map,@Valid Store store,BindingResult result){
-   			if(result.hasErrors()){
-   				Drug dd = new Drug(store.getDrugname(), store.getChangshang(), store.getBeizhu(), store.getLocation(), store.getUnit(), store.getGuige(), store.getTiaoxingma());
-   				map.put("msg", "ĞŞ¸ÄÊ§°Ü:Ê±¼ä¸ñÊ½ÓĞÎó,Éú²úÈÕÆÚĞèÒªÊÇ¹ıÈ¥µÄÊ±¼ä,ÓĞĞ§ÆÚĞèÒªÊÇ½«À´µÄÊ±¼ä");	
-   				map.put("drugstoreinfo", dd);
-   				return "store/addstoreinfo";
-   			}else{
-   				if(SS.AddStoreService(store)){
-   					map.put("msg","ÒÑÓĞÍ¬ÅúºÅÒ©Æ·£¬Ìí¼Ó³É¹¦");
-   					return "store/addstore";
-   				}else{
-   					map.put("msg","Ìí¼Ó³É¹¦");
-   					return "store/addstore";
-   				}
-   			}
-   	}
+    @RequestMapping(value = "/addtostore", method = RequestMethod.POST)
+    public String to_addtostore(Map<String, Object> map, @Valid Store store, BindingResult result) {
+        if (result.hasErrors()) {
+            Drug dd = new Drug(store.getDrugname(), store.getChangshang(), store.getBeizhu(), store.getLocation(), store.getUnit(), store.getGuige(), store.getTiaoxingma());
+            map.put("msg", "ä¿®æ”¹å¤±è´¥:æ—¶é—´æ ¼å¼æœ‰è¯¯,ç”Ÿäº§æ—¥æœŸéœ€è¦æ˜¯è¿‡å»çš„æ—¶é—´,æœ‰æ•ˆæœŸéœ€è¦æ˜¯å°†æ¥çš„æ—¶é—´");
+            map.put("drugstoreinfo", dd);
+            return "store/addstoreinfo";
+        } else {
+            if (SS.AddStoreService(store)) {
+                map.put("msg", "å·²æœ‰åŒæ‰¹å·è¯å“ï¼Œæ·»åŠ æˆåŠŸ");
+                return "store/addstore";
+            } else {
+                map.put("msg", "æ·»åŠ æˆåŠŸ");
+                return "store/addstore";
+            }
+        }
+    }
+
     //deletetip
-    @RequestMapping(value="/deletetip",method=RequestMethod.POST)
-	public String to_deletetip(String drugname,String changshang,
-			String pihao){
-			SS.DeleteService(drugname,changshang,pihao);			
-			return "redirect:/date";
-	}
+    @RequestMapping(value = "/deletetip", method = RequestMethod.POST)
+    public String to_deletetip(String drugname, String changshang,
+                               String pihao) {
+        SS.DeleteService(drugname, changshang, pihao);
+        return "redirect:/date";
+    }
 }

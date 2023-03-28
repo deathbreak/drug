@@ -1,7 +1,7 @@
 package com.bean;
 
 public class Rxdrug {
-		private String time;  //¹ºÒ©Ê±¼ä
+		private String time;  //è´­è¯æ—¶é—´
 		private String drugname;
 		private String changshang;
 		private String date;

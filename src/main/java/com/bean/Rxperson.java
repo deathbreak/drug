@@ -1,17 +1,17 @@
 package com.bean;
 
 public class Rxperson {
-		private String time; //购药时间
-		private String name; //顾客姓名
-		private String gendar; //性别
-		private String age; //年龄
-		private String phone; //联系方式
-		private String location; //通讯地址
-		private String hospital; //医疗机构名称
-		private String htime; //就医日期
-		private String yz; //医嘱内容
-		private String ysname; //医师姓名
-		private String zdys; //驻店药师签名
+		private String time; //璐嵂鏃堕棿
+		private String name; //椤惧濮撳悕
+		private String gendar; //鎬у埆
+		private String age; //骞撮緞
+		private String phone; //鑱旂郴鏂瑰紡
+		private String location; //閫氳鍦板潃
+		private String hospital; //鍖荤枟鏈烘瀯鍚嶇О
+		private String htime; //灏卞尰鏃ユ湡
+		private String yz; //鍖诲槺鍐呭
+		private String ysname; //鍖诲笀濮撳悕
+		private String zdys; //椹诲簵鑽笀绛惧悕
 		public String getTime() {
 			return time;
 		}

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/drug.sql" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/bean/Datetips.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/bean/Drug.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/bean/Jinhuo.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/bean/Manager.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/bean/Rxdrug.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/bean/Rxperson.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/bean/Store.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/controller/ClerkController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/controller/JinhuoController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/controller/LoginController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/controller/StoreController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/interceptors/LoginInterceptor.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/mapper/DrugMapper.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/mapper/RxdrugMapper.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/mapper/RxpersonMapper.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/mapper/StoreMapper.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/service/DruginfoService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/service/SellService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/service/StoreService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/utils/Boolean_tiaoxingma.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/utils/Print.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/utils/StringPro.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp" charset="UTF-8" />
+  </component>
+</project>

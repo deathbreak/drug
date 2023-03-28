@@ -11,7 +11,7 @@ public interface RxpersonMapper {
 		void AddRxperson(Rxperson Rxp);
 		List<Rxperson> GetByTime(String time);
 		/**
-		 * »ñÈ¡ÒÑ¼ÇÂ¼µÄ´¦·½Ò©µÇ¼ÇÊ±¼ä.
+		 * è·å–å·²è®°å½•çš„å¤„æ–¹è¯ç™»è®°æ—¶é—´.
 		 * @return
 		 */
 		List<String> GetequalsTime();

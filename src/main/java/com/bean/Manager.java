@@ -3,7 +3,7 @@ package com.bean;
 public class Manager {
 	private String user;
 	private String password;
-	private Integer role;          // role   0/1 --->  ÆÕÍ¨µêÔ±/µê³¤
+	private Integer role;          // role   0/1 --->  æ™®é€šåº—å‘˜/åº—é•¿
 
 	public String getUser() {
 		return user;

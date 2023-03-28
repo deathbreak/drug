@@ -24,128 +24,142 @@ import com.utils.StringPro;
 
 @Service
 public class JinhuoService {
-		@Autowired
-		GonghuoshangMapper ghs;
-		
-		@Autowired
-		JinhuoMapper jin;
-		
-		@Autowired
-		StoreMapper sm; 
-		
-		@Autowired
-		DrugMapper drug;
-		/**
-		 * Ìí¼Ó¹©»õÉÌ£¬Èç¹ûÊı¾İ¿âÓĞÍ¬ÑùµÄ¼ÇÂ¼£¬·µ»ØMsg.fail£¬Èç¹ûÃ»ÓĞ¾ÍÌí¼Ó£¬²¢ÇÒ·µ»ØMsg.success
-		 * @param it(´«½øÀ´µÄÖµ)
-		 * @return
-		 */
-		public Msg AddGhsService(String it){
-			if(ghs.QueryGHS(it).isEmpty()){
-				ghs.AddGHS(it);
-				Msg re = Msg.success().add("success","success");
-				return re;
-			}else{
-				Msg re2 = Msg.fail().add("fail","Êı¾İ¿âÖĞÒÑ´æÔÚ´Î¹©»õÉÌĞÅÏ¢");
-				return re2;
-			}
-		}
-		/**
-		 * ·µ»ØËùÓĞghs
-		 * @return
-		 */
-		public List<Gonghuoshang> GetAllGhsService(){
-			return ghs.GeyAllGHS();
-		}
-		/**
-		 * É¾³ıitºÍrecordsÖĞµÄ¼ÇÂ¼
-		 * @param it
-		 */
-		public void DelGhsAndRecordsService(String it){
-			ghs.DelGHS(it);
-			jin.DelJinhuoRecords(it);
-			}
-		/**
-		 * del check
-		 * @param it
-		 */
-		public Msg DelGhsCheckService(String it){
-			int checkcount = jin.CountGhsRecords(it);
-			if(checkcount==0){
-				ghs.DelGHS(it);
-				Msg re = Msg.success().add("success", "delete success!!!");
-				return re;
-			}else{
-				Json j = new Json(it,null,null,null,null,checkcount);
-				Msg re2 = Msg.fail().add("grcount",j);
-				return re2;
-			}
-		}
-		
-		public List<Jinhuo> GetAllJinhuoService(){
-			return jin.GetAllJinhuo();
-		}
-		public void AddJinhuoService(Jinhuo j){
-			jin.AddJinhuo(j);
-		}
-		public void DeleteJinhuoService(String drugname, String changshang,
-				String pihao, String amount) {
-			jin.DelJinhuo(drugname, changshang, pihao, amount);
-		}
-		/**
-		 * ÉóºËÈë¿â
-		 * @return
-		 */
-		public boolean CpshService() {
-			List<Jinhuo> CheckJh = jin.GetAllJinhuo();
-			if(CheckJh.isEmpty()){
-				return false;
-			}else{
-				List<Store> checkstore = null;
-				for (Jinhuo j : CheckJh) {
-					jin.AddJinhuorecords(j);
-					checkstore = sm.QueryByNCP(j.getDrugname(),j.getChangshang(),j.getPihao());
-					if(checkstore.size()<=0){
-						try{
-						sm.AddStore(new Store(j.getDrugname(),j.getChangshang(),j.getBeginprice(),j.getPrice(),new SimpleDateFormat("yyyy-MM-dd").parse(j.getBegindate()),new SimpleDateFormat("yyyy-MM-dd").parse(j.getDate()), j.getPihao(),j.getBeizhu(), j.getLocation(), j.getAmount(), j.getUnit(), j.getGuige(), j.getTiaoxingma()));
-						}catch(Exception e){
-							
-						}
-					}else{
-						String newcount = StringPro.add(checkstore.get(0).getCount(), j.getAmount());
-						sm.UpdateStoreCount(newcount, j.getDrugname(), j.getChangshang(), j.getPihao());
-					}
-				}
-				jin.DelTableJinhuo();
-				return true;
-			}
-		}
-		public List<Drug> ForSelectService(String qd) {
-			if(qd==""||qd==null){
-				List<Drug> re = drug.GetAllDrug();
-				return re;
-			}else{
-				if(Boolean_tiaoxingma.CheckParam(qd)){
-					List<Drug> re2 = drug.QueryByTiao(qd);
-					return re2;
-				}else{
-					List<Drug> re3 = drug.QueryByName(qd);
-					return re3;
-				}
-			}
-		}
-		public PageInfo<Jinhuo> QueryJFYService(Integer pn, String qd) {
-			if(qd==""||qd==null){
-				PageHelper.startPage(pn, 8);
-				List<Jinhuo> re = jin.GAJRecords();
-				//Ê¹ÓÃpageinfo°ü×°²éÑ¯ºóµÄ½á¹û£¬Ö»ĞèÒª½«pageinfo½»¸øÒ³Ãæ¾ÍĞĞÁËPageInfo(ee,5)  5ÊÇÁ¬ĞøÏÔÊ¾¶àÉÙÒ³	
-				PageInfo<Jinhuo> page_1 = new PageInfo<Jinhuo>(re,5);
-				return page_1;
-			}else{
-					PageHelper.startPage(pn, 8);
-					List<Jinhuo> re3 = jin.GJRGHS(qd);
-					PageInfo<Jinhuo> page_3 = new PageInfo<Jinhuo>(re3,5);
-					return page_3;
-			}
-		}
+    @Autowired
+    GonghuoshangMapper ghs;
+
+    @Autowired
+    JinhuoMapper jin;
+
+    @Autowired
+    StoreMapper sm;
+
+    @Autowired
+    DrugMapper drug;
+
+    /**
+     * æ·»åŠ ä¾›è´§å•†ï¼Œå¦‚æœæ•°æ®åº“æœ‰åŒæ ·çš„è®°å½•ï¼Œè¿”å›Msg.failï¼Œå¦‚æœæ²¡æœ‰å°±æ·»åŠ ï¼Œå¹¶ä¸”è¿”å›Msg.success
+     *
+     * @param it(ä¼ è¿›æ¥çš„å€¼)
+     * @return
+     */
+    public Msg AddGhsService(String it) {
+        if (ghs.QueryGHS(it).isEmpty()) {
+            ghs.AddGHS(it);
+            Msg re = Msg.success().add("success", "success");
+            return re;
+        } else {
+            Msg re2 = Msg.fail().add("fail", "æ•°æ®åº“ä¸­å·²å­˜åœ¨æ¬¡ä¾›è´§å•†ä¿¡æ¯");
+            return re2;
+        }
+    }
+
+    /**
+     * è¿”å›æ‰€æœ‰ghs
+     *
+     * @return
+     */
+    public List<Gonghuoshang> GetAllGhsService() {
+        return ghs.GeyAllGHS();
+    }
+
+    /**
+     * åˆ é™¤itå’Œrecordsä¸­çš„è®°å½•
+     *
+     * @param it
+     */
+    public void DelGhsAndRecordsService(String it) {
+        ghs.DelGHS(it);
+        jin.DelJinhuoRecords(it);
+    }
+
+    /**
+     * del check
+     *
+     * @param it
+     */
+    public Msg DelGhsCheckService(String it) {
+        int checkcount = jin.CountGhsRecords(it);
+        if (checkcount == 0) {
+            ghs.DelGHS(it);
+            Msg re = Msg.success().add("success", "delete success!!!");
+            return re;
+        } else {
+            Json j = new Json(it, null, null, null, null, checkcount);
+            Msg re2 = Msg.fail().add("grcount", j);
+            return re2;
+        }
+    }
+
+    public List<Jinhuo> GetAllJinhuoService() {
+        return jin.GetAllJinhuo();
+    }
+
+    public void AddJinhuoService(Jinhuo j) {
+        jin.AddJinhuo(j);
+    }
+
+    public void DeleteJinhuoService(String drugname, String changshang,
+                                    String pihao, String amount) {
+        jin.DelJinhuo(drugname, changshang, pihao, amount);
+    }
+
+    /**
+     * å®¡æ ¸å…¥åº“
+     *
+     * @return
+     */
+    public boolean CpshService() {
+        List<Jinhuo> CheckJh = jin.GetAllJinhuo();
+        if (CheckJh.isEmpty()) {
+            return false;
+        } else {
+            List<Store> checkstore = null;
+            for (Jinhuo j : CheckJh) {
+                jin.AddJinhuorecords(j);
+                checkstore = sm.QueryByNCP(j.getDrugname(), j.getChangshang(), j.getPihao());
+                if (checkstore.size() <= 0) {
+                    try {
+                        sm.AddStore(new Store(j.getDrugname(), j.getChangshang(), j.getBeginprice(), j.getPrice(), new SimpleDateFormat("yyyy-MM-dd").parse(j.getBegindate()), new SimpleDateFormat("yyyy-MM-dd").parse(j.getDate()), j.getPihao(), j.getBeizhu(), j.getLocation(), j.getAmount(), j.getUnit(), j.getGuige(), j.getTiaoxingma()));
+                    } catch (Exception e) {
+
+                    }
+                } else {
+                    String newcount = StringPro.add(checkstore.get(0).getCount(), j.getAmount());
+                    sm.UpdateStoreCount(newcount, j.getDrugname(), j.getChangshang(), j.getPihao());
+                }
+            }
+            jin.DelTableJinhuo();
+            return true;
+        }
+    }
+
+    public List<Drug> ForSelectService(String qd) {
+        if (qd == "" || qd == null) {
+            List<Drug> re = drug.GetAllDrug();
+            return re;
+        } else {
+            if (Boolean_tiaoxingma.CheckParam(qd)) {
+                List<Drug> re2 = drug.QueryByTiao(qd);
+                return re2;
+            } else {
+                List<Drug> re3 = drug.QueryByName(qd);
+                return re3;
+            }
+        }
+    }
+
+    public PageInfo<Jinhuo> QueryJFYService(Integer pn, String qd) {
+        if (qd == "" || qd == null) {
+            PageHelper.startPage(pn, 8);
+            List<Jinhuo> re = jin.GAJRecords();
+            //ä½¿ç”¨pageinfoåŒ…è£…æŸ¥è¯¢åçš„ç»“æœï¼Œåªéœ€è¦å°†pageinfoäº¤ç»™é¡µé¢å°±è¡Œäº†PageInfo(ee,5)  5æ˜¯è¿ç»­æ˜¾ç¤ºå¤šå°‘é¡µ
+            PageInfo<Jinhuo> page_1 = new PageInfo<Jinhuo>(re, 5);
+            return page_1;
+        } else {
+            PageHelper.startPage(pn, 8);
+            List<Jinhuo> re3 = jin.GJRGHS(qd);
+            PageInfo<Jinhuo> page_3 = new PageInfo<Jinhuo>(re3, 5);
+            return page_3;
+        }
+    }
 }

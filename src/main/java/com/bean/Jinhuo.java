@@ -5,34 +5,34 @@ import javax.validation.constraints.Pattern;
 
 public class Jinhuo {
 	
-	@Pattern(regexp = "^.{1,22}$",message = "¸ñÊ½´íÎó»ò³¬¹ı×ÖÊıÏŞÖÆ")
-	@NotBlank(message="dn²»ÄÜÎª¿Õ")
+	@Pattern(regexp = "^.{1,22}$",message = "æ ¼å¼é”™è¯¯æˆ–è¶…è¿‡å­—æ•°é™åˆ¶")
+	@NotBlank(message="dnä¸èƒ½ä¸ºç©º")
 	private String drugname;
 	
-	@Pattern(regexp = "^.{1,22}$",message = "¸ñÊ½´íÎó»ò³¬¹ı×ÖÊıÏŞÖÆ")
-	@NotBlank(message="cs²»ÄÜÎª¿Õ")
+	@Pattern(regexp = "^.{1,22}$",message = "æ ¼å¼é”™è¯¯æˆ–è¶…è¿‡å­—æ•°é™åˆ¶")
+	@NotBlank(message="csä¸èƒ½ä¸ºç©º")
 	private String changshang;
 	
-	@Pattern(regexp = "^[1-9]\\d*\\.\\d*|^0\\.\\d*[1-9]\\d*$|^\\d+$",message = "Êı×Ö¸ñÊ½ÓĞÎó")
-	@NotBlank(message="bp²»ÄÜÎª¿Õ")
+	@Pattern(regexp = "^[1-9]\\d*\\.\\d*|^0\\.\\d*[1-9]\\d*$|^\\d+$",message = "æ•°å­—æ ¼å¼æœ‰è¯¯")
+	@NotBlank(message="bpä¸èƒ½ä¸ºç©º")
 	private String beginprice;
 	
-	@Pattern(regexp = "^[1-9]\\d*\\.\\d*|^0\\.\\d*[1-9]\\d*$|^\\d+$",message = "Êı×Ö¸ñÊ½ÓĞÎó")
-	@NotBlank(message="pri²»ÄÜÎª¿Õ")
+	@Pattern(regexp = "^[1-9]\\d*\\.\\d*|^0\\.\\d*[1-9]\\d*$|^\\d+$",message = "æ•°å­—æ ¼å¼æœ‰è¯¯")
+	@NotBlank(message="priä¸èƒ½ä¸ºç©º")
 	private String price;
 	
-	@Pattern(regexp = "^[1-9]\\d*|0$",message = "Êı×Ö¸ñÊ½ÓĞÎó")
-	@NotBlank(message="kc²»ÄÜÎª¿Õ")
+	@Pattern(regexp = "^[1-9]\\d*|0$",message = "æ•°å­—æ ¼å¼æœ‰è¯¯")
+	@NotBlank(message="kcä¸èƒ½ä¸ºç©º")
 	private String amount;
 	
-	@Pattern(regexp = "^[1-9]\\d*\\.\\d*|^0\\.\\d*[1-9]\\d*$|^\\d+$",message = "Êı×Ö¸ñÊ½ÓĞÎó")
-	@NotBlank(message="sum²»ÄÜÎª¿Õ")
+	@Pattern(regexp = "^[1-9]\\d*\\.\\d*|^0\\.\\d*[1-9]\\d*$|^\\d+$",message = "æ•°å­—æ ¼å¼æœ‰è¯¯")
+	@NotBlank(message="sumä¸èƒ½ä¸ºç©º")
 	private String sum;
 	private String begindate;
 	private String date;
 	
-	@Pattern(regexp = "^.{1,30}$",message = "¸ñÊ½´íÎó»ò³¬¹ı×ÖÊıÏŞÖÆ")
-	@NotBlank(message="ph²»ÄÜÎª¿Õ")
+	@Pattern(regexp = "^.{1,30}$",message = "æ ¼å¼é”™è¯¯æˆ–è¶…è¿‡å­—æ•°é™åˆ¶")
+	@NotBlank(message="phä¸èƒ½ä¸ºç©º")
 	private String pihao;
 	private String beizhu;
 	private String location;

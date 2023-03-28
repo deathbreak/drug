@@ -11,7 +11,7 @@ import com.bean.Manager;
 public class LoginInterceptor implements HandlerInterceptor {
 
     /**
-     * µÇÂ¼À¹½ØÆ÷
+     * ç™»å½•æ‹¦æˆªå™¨
      */
 //    @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
@@ -27,13 +27,13 @@ public class LoginInterceptor implements HandlerInterceptor {
 
     }
 
-//    @Override
+    //    @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler,
                            ModelAndView modelAndView) throws Exception {
 
     }
 
-//    @Override
+    //    @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex)
             throws Exception {
 

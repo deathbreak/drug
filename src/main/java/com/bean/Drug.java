@@ -4,31 +4,31 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 
 public class Drug {
-	@Pattern(regexp = "^.{1,22}$",message = "¸ñÊ½´íÎó»ò³¬¹ı×ÖÊıÏŞÖÆ")
-	@NotBlank(message="dn²»ÄÜÎª¿Õ")
+	@Pattern(regexp = "^.{1,22}$",message = "æ ¼å¼é”™è¯¯æˆ–è¶…è¿‡å­—æ•°é™åˆ¶")
+	@NotBlank(message="dnä¸èƒ½ä¸ºç©º")
 	private String drugname;
 	
-	@Pattern(regexp = "^.{1,22}$",message = "¸ñÊ½´íÎó»ò³¬¹ı×ÖÊıÏŞÖÆ")
-	@NotBlank(message="cs²»ÄÜÎª¿Õ")
+	@Pattern(regexp = "^.{1,22}$",message = "æ ¼å¼é”™è¯¯æˆ–è¶…è¿‡å­—æ•°é™åˆ¶")
+	@NotBlank(message="csä¸èƒ½ä¸ºç©º")
 	private String changshang;
 	
-	@Pattern(regexp = "^.{1,22}$",message = "¸ñÊ½´íÎó»ò³¬¹ı×ÖÊıÏŞÖÆ")
-	@NotBlank(message="bz²»ÄÜÎª¿Õ")
+	@Pattern(regexp = "^.{1,22}$",message = "æ ¼å¼é”™è¯¯æˆ–è¶…è¿‡å­—æ•°é™åˆ¶")
+	@NotBlank(message="bzä¸èƒ½ä¸ºç©º")
 	private String beizhu;
 	
-	@Pattern(regexp = "^.{1,22}$",message = "¸ñÊ½´íÎó»ò³¬¹ı×ÖÊıÏŞÖÆ")
-	@NotBlank(message="loc²»ÄÜÎª¿Õ")
+	@Pattern(regexp = "^.{1,22}$",message = "æ ¼å¼é”™è¯¯æˆ–è¶…è¿‡å­—æ•°é™åˆ¶")
+	@NotBlank(message="locä¸èƒ½ä¸ºç©º")
 	private String location;
 	
-	@Pattern(regexp = "^.{1,10}$",message = "¸ñÊ½´íÎó»ò³¬¹ı×ÖÊıÏŞÖÆ")
-	@NotBlank(message="unit²»ÄÜÎª¿Õ")
+	@Pattern(regexp = "^.{1,10}$",message = "æ ¼å¼é”™è¯¯æˆ–è¶…è¿‡å­—æ•°é™åˆ¶")
+	@NotBlank(message="unitä¸èƒ½ä¸ºç©º")
 	private String unit;
 	
-	@Pattern(regexp = "^.{1,22}$",message = "¸ñÊ½´íÎó»ò³¬¹ı×ÖÊıÏŞÖÆ")
-	@NotBlank(message="gg²»ÄÜÎª¿Õ")
+	@Pattern(regexp = "^.{1,22}$",message = "æ ¼å¼é”™è¯¯æˆ–è¶…è¿‡å­—æ•°é™åˆ¶")
+	@NotBlank(message="ggä¸èƒ½ä¸ºç©º")
 	private String guige;
 	
-	@Pattern(regexp = "^$|^[0-9]{6,22}$",message = "¸ñÊ½´íÎó»ò³¬¹ı×ÖÊıÏŞÖÆ")
+	@Pattern(regexp = "^$|^[0-9]{6,22}$",message = "æ ¼å¼é”™è¯¯æˆ–è¶…è¿‡å­—æ•°é™åˆ¶")
 	private String tiaoxingma;
 	public Drug(){}
 	public Drug(String drugname, String changshang, String beizhu,

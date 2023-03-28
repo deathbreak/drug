@@ -10,11 +10,11 @@ import com.bean.Drug;
 
 @Repository
 public interface DrugMapper {
-		List<Drug> QueryByNameCS(@Param("drugname")String drugname,@Param("changshang")String changshang);  //根据drugname和changshang查找
-		void AddDrug(Drug drug); //添加drug
-		void DeleteDrug(@Param("drugname")String drugname,@Param("changshang")String changshang);//根据drugname和changshang删除drug
-		List<Drug> GetAllDrug();//查询全部druginfo
-		List<Drug> QueryByTiao(String tiaoxingma); //根据条形码查询drug
-		List<Drug> QueryByName(String name);  //根据drugname模糊查询
+		List<Drug> QueryByNameCS(@Param("drugname")String drugname,@Param("changshang")String changshang);  //鏍规嵁drugname鍜宑hangshang鏌ユ壘
+		void AddDrug(Drug drug); //娣诲姞drug
+		void DeleteDrug(@Param("drugname")String drugname,@Param("changshang")String changshang);//鏍规嵁drugname鍜宑hangshang鍒犻櫎drug
+		List<Drug> GetAllDrug();//鏌ヨ鍏ㄩ儴druginfo
+		List<Drug> QueryByTiao(String tiaoxingma); //鏍规嵁鏉″舰鐮佹煡璇rug
+		List<Drug> QueryByName(String name);  //鏍规嵁drugname妯＄硦鏌ヨ
 		void Update(@Param("olddn")String olddn,@Param("oldcs")String oldcs,@Param("dd")Drug drug);
 }
