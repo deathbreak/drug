@@ -2,5 +2,5 @@
 药店销售管理系统
 maven+spring+springmvc+mybatis+mysql.
 项目运行后样例<https://www.deathbreaktest.club/project>
-有啥问题可以问我微信15638534323<人很忙 "多敲代码多学习(自学)">
+人太忙了,包调试运行走闲鱼-->[闲鱼链接](https://m.tb.cn/h.UIZxUGg?tk=XR2Id960h1lCZ3457)
 
