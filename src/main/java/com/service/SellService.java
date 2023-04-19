@@ -1,10 +1,7 @@
 package com.service;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -74,7 +71,7 @@ public class SellService {
 
         List<Store> sssss = store.QueryByNCP(drugname, changshang, pihao);
 
-        if (!sssss.isEmpty()) {
+        if (null != sssss && !sssss.isEmpty()) {
             Store xs = sssss.get(0);
             List<Sell> checksell = sell.QuerySellByDCP(drugname, changshang, pihao);
             int flag = checksell.size();
@@ -95,14 +92,11 @@ public class SellService {
 
     public List<Rxdrug> SellitService() {
         List<Sell> updatesell = sell.GetAllSell();
-        if (!updatesell.isEmpty()) {
-
-
+        if (null != updatesell && !updatesell.isEmpty()) {
             SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
             String date2 = df.format(new Date());
             List<Rxdrug> CheckRxdrug = new ArrayList<Rxdrug>();
             for (Sell udsell : updatesell) {
-
                 if (udsell.getBeizhu().equals("处方药")) {
                     Rxdrug rd = new Rxdrug(date2, udsell.getDrugname(), udsell.getChangshang(), udsell.getDate(), udsell.getPihao(), udsell.getAmount());
                     rdm.AddRxdrug(rd);

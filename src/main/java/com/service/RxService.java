@@ -41,6 +41,7 @@ public class RxService {
 
                 re.add(new Json(itstr.get(ii), forappend.toString(), null, null, null, 0));
             }
+            Collections.reverse(re);
             return re;
         }
 
