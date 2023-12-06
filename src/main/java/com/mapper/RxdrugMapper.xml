@@ -13,23 +13,27 @@
 				select * from rxdrug where `time` = #{time}
 		</select>
 		<select id="CountNullRx" resultType="java.lang.Integer"> <!-- 查未记录填写的处方药记录条数 -->
-			SELECT count(*) from 
-				(SELECT a.time from
-				((SELECT rxdrug.time,rxperson.time as timetwo,rxperson.`name` 
-				from rxdrug LEFT JOIN rxperson 
-				on rxdrug.time=rxperson.time) as a) 
-				where a.timetwo is NULL and a.`name` is NULL 
-				GROUP BY a.time) as b    
-		</select>
+--             SELECT COUNT(*)
+--             FROM (SELECT a.time
+--             FROM (SELECT rxd.time, rxp.time AS timetwo, rxp.`name`
+--             FROM rxdrug rxd
+--             LEFT JOIN rxperson rxp ON rxd.time = rxp.time) a
+--             WHERE a.timetwo IS NULL
+--             AND a.`name` IS NULL
+--             GROUP BY a.time) b;
+			SELECT COUNT(DISTINCT rxd.time)
+			FROM rxdrug rxd
+			LEFT JOIN rxperson rxp ON rxd.time = rxp.time AND rxp.`name` IS NOT NULL
+			WHERE rxp.time IS NULL;
+        </select>
 		<select id="GetAllOverTime" resultType="java.lang.String">
-				SELECT time from 
-					(SELECT a.time from
-					((SELECT rxdrug.time,rxperson.time as timetwo,rxperson.`name` 
-					from rxdrug LEFT JOIN rxperson 
-					on rxdrug.time=rxperson.time) as a) 
-					where a.timetwo is NULL and a.`name` is NULL 
-					GROUP BY a.time) as b
-		</select>
+            SELECT rxdrug.time
+            FROM rxdrug
+                     LEFT JOIN rxperson ON rxdrug.time = rxperson.time
+            WHERE rxperson.`name` IS NULL
+              AND rxperson.time IS NULL
+            GROUP BY rxdrug.time;
+        </select>
 		<select id="GetSomeDrugTime" resultType="java.lang.String">
 				SELECT time from rxdrug 
 				where rxdrug.time in 
