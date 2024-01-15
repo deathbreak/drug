@@ -3,21 +3,13 @@ package com.service;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
+import com.bean.*;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.mapper.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.bean.Rxdrug;
-import com.bean.Rxperson;
-import com.bean.Sell;
-import com.bean.Sellover;
-import com.bean.Sellrecords;
-import com.bean.Store;
-import com.mapper.RxdrugMapper;
-import com.mapper.RxpersonMapper;
-import com.mapper.SellMapper;
-import com.mapper.StoreMapper;
 import com.utils.*;
 
 
@@ -35,6 +27,9 @@ public class SellService {
 
     @Autowired
     RxpersonMapper rpm;
+
+    @Autowired
+    LimitsellMapper lm;
 
     public List<Sell> GetAllSellService() {
         return sell.GetAllSell();
@@ -88,6 +83,22 @@ public class SellService {
             }
         }
 
+    }
+
+    public ResponseResult CheckLimit() {
+        List<Sell> sell_info = sell.GetAllSell();
+        String re = "";
+        for (Sell sell : sell_info) {
+            Integer temp = lm.QueryLimit(sell.getDrugname(), sell.getChangshang());
+            int flag = (temp == null ? 0 : temp);
+            if (flag > 0 && flag < Integer.parseInt(sell.getAmount())) {
+                re = re + "药品名:" + sell.getDrugname() + ",生产厂商:" + sell.getChangshang() + ",限购:" + flag + ";";
+            }
+        }
+        if ("".equals(re)) {
+            return new ResponseResult(200, "is ok");
+        }
+        return new ResponseResult(202, re);
     }
 
     public List<Rxdrug> SellitService() {

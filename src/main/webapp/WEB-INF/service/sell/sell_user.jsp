@@ -11,6 +11,7 @@
 
 
     <title>医药信息管理系统</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <script src="static-res/js/jquery.js"></script>
     <link href="static-res/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="static-res/css/main.css" rel="stylesheet">
@@ -119,7 +120,7 @@
             </form>
         </div>
         <div>
-            <a class="btn btn-info btn-lg" href="<%=basePath%>sellit_user" role="button">结算</a>
+            <a class="btn btn-info btn-lg" href="<%=basePath%>sellit_user" onclick="event.preventDefault(); check()" role="button">结算</a>
             <a class="btn btn-primary btn-lg" href="<%=basePath%>printsell_user" role="button">打印小票</a>
             <!-- printsell -->
             <c:if test="${not empty rxinfo }">
@@ -254,6 +255,32 @@
             return true;
         }
     };
+
+
+    function check() {
+        return new Promise((resolve, reject) => {
+            $.ajax({
+                url:"<%=basePath%>getlimitinfo_clerk",
+                type:"POST",
+                success(result) {
+                    if(result.code == 200){
+                        resolve(true);
+                    }else {
+                        alert(result.msg);
+                        reject(false);
+                    }
+                },
+                error(err) {
+                    alert("请求出错");
+                    reject(false);
+                }
+            });
+        }).then(() => {
+            window.location.href = "<%=basePath%>sellit_user";
+        }).catch(() => {
+            // Do nothing
+        });
+    }
 </script>
 </body>
 </html>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.LimitsellMapper">
+    <insert id="AddLimit" parameterType="Limitsell">
+        insert into limitsell values(#{drugname},#{changshang},#{amount})
+    </insert>
+    <delete id="DelLimit">
+        delete from limitsell where drugname = #{drugname} and changshang=#{changshang}
+    </delete>
+    <select id="QueryLimit" resultType="java.lang.Integer">
+        select `amount` from limitsell where drugname=#{drugname} and changshang=#{changshang}
+    </select>
+
+    <select id="CountLimit" resultType="java.lang.Integer">
+        select count(*) from limitsell where drugname=#{drugname} and changshang=#{changshang}
+    </select>
+
+    <select id="GetAllLimit" resultType="Limitsell">
+        select * from limitsell
+    </select>
+</mapper>
